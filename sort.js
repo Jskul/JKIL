@@ -1,3 +1,4 @@
+;
 /**
  * 
  * 
@@ -38,7 +39,10 @@ class chap5_triselect {
 
 */
 
-;
+
+/**
+ * 
+ */
 JKIL.sortings.selectionSort = function (pa_array, ph_options) {
 	/*
 	 * TODO Check pa_array

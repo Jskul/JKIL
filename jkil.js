@@ -1,7 +1,8 @@
+;
 /**
  * 
  */
-;
 JKIL = {};
+
 JKIL.sortings = {};
-JKIL.comparison = {};
+JKIL.comparisons = {};
