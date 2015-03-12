@@ -1,0 +1,71 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  2</span> 
+<span class='line'>  3</span> </span><span class="COMM">/**
+<span class='line'>  4</span>  * @methodOf	JKIL.comparators
+<span class='line'>  5</span>  * 
+<span class='line'>  6</span>  * @description	Compares two objects according to a property that &lt;strong>has&lt;/strong> to be present in both of them (as an own property).&lt;br />
+<span class='line'>  7</span>  * 
+<span class='line'>  8</span>  * @example		&lt;b>Syntax:&lt;/b>
+<span class='line'>  9</span>  * 				JKIL.comparators.compareObjectsByKeyStrictly ( pO_a, pO_b, ps_key, pf_comparator )
+<span class='line'> 10</span>  * 
+<span class='line'> 11</span>  * @example		&lt;b>Example 1:&lt;/b>
+<span class='line'> 12</span>  * 				var a = {x: 12};
+<span class='line'> 13</span>  *				var b = {x: 13};
+<span class='line'> 14</span>  * 				var n = JKIL.comparators.compareObjectsByKeyStrictly(a, b, "x", JKIL.comparators.numbers); // n = -1
+<span class='line'> 15</span>  * 
+<span class='line'> 16</span>  * @example		&lt;b>Example 2: As a callback of a sort method.&lt;/b>
+<span class='line'> 17</span>  * 				objectArray = [{a: 45}, {a: -12}, {a: 5}, {a: 45}, {a: 0}, {a: 75}, {a: 69}, {a: 0}, {a: 145}, {a: 1000}, {a: -8}, {a: -565}];
+<span class='line'> 18</span>  * 				var a = JKIL.sortings.array.selectionSort ( objectArray,
+<span class='line'> 19</span>  * 				                                            {ascending: true,
+<span class='line'> 20</span>  * 				                                             comparator: function(a, b) {
+<span class='line'> 21</span>  * 				                                                 return JKIL.comparators.compareObjectsByKeyStrictly(a, b, "a", JKIL.comparators.numbers);
+<span class='line'> 22</span>  * 				                                             }
+<span class='line'> 23</span>  * 				                                            }
+<span class='line'> 24</span>  * 				                                          );
+<span class='line'> 25</span>  * 
+<span class='line'> 26</span>  * @param		{Object}	pO_a			The first object to be compared.&lt;br />&lt;br />
+<span class='line'> 27</span>  * @param		{Object}	pO_b			The second object to be compared.&lt;br />&lt;br />
+<span class='line'> 28</span>  * @param		{string}	ps_key			The name of the property objects have in common.&lt;br />&lt;br />
+<span class='line'> 29</span>  * @param		{function}	pf_comparator	A callback comparator function specifying how to compare &lt;code>pO_a[ps_key]&lt;/code> and &lt;code>pO_b[ps_key]&lt;/code>.
+<span class='line'> 30</span>  * 
+<span class='line'> 31</span>  * @returns		{number}	Returns a negative number if &lt;code>pO_a&lt;/code> occurs earlier in a sort than &lt;code>pO_b&lt;/code>, returns a positive number if &lt;code>pO_a&lt;/code> occurs afterwards in such a sort, and returns 0 if they occur at the same level or if &lt;code>pf_comparator&lt;/code> does not return a number.
+<span class='line'> 32</span>  * 
+<span class='line'> 33</span>  * @throws		TODO
+<span class='line'> 34</span>  * 
+<span class='line'> 35</span>  * @see	http://speakingjs.com/es5/ch18.html	TODO
+<span class='line'> 36</span>  */</span><span class="WHIT">
+<span class='line'> 37</span> </span><span class="NAME">JKIL.comparators.compareObjectsByKeyStrictly</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">pO_a</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">pO_b</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">ps_key</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">pf_comparator</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 38</span> </span><span class="WHIT">	</span><span class="COMM">/*
+<span class='line'> 39</span> 	 * 
+<span class='line'> 40</span> 	 * TODO exception
+<span class='line'> 41</span> 	 * 
+<span class='line'> 42</span> 	 */</span><span class="WHIT">
+<span class='line'> 43</span> </span><span class="WHIT">	</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">pO_a</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"object"</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">pO_a</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 44</span> </span><span class="WHIT">	</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">pO_b</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"object"</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">pO_b</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 45</span> </span><span class="WHIT">	</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ps_key</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"string"</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">ps_key.length</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="COMM">// TODO regex of legal keys</span><span class="WHIT">
+<span class='line'> 46</span> </span><span class="WHIT">	</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">pO_a.hasOwnProperty</span><span class="PUNC">(</span><span class="NAME">ps_key</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 47</span> </span><span class="WHIT">	</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">pO_b.hasOwnProperty</span><span class="PUNC">(</span><span class="NAME">ps_key</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 48</span> </span><span class="WHIT">	</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">pf_comparator</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"function"</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 49</span> </span><span class="WHIT">	</span><span class="WHIT">
+<span class='line'> 50</span> </span><span class="WHIT">	</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">_i_comparison</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 51</span> 
+<span class='line'> 52</span> </span><span class="WHIT">	</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 53</span> </span><span class="WHIT">		</span><span class="NAME">_i_comparison</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">pf_comparator</span><span class="PUNC">(</span><span class="NAME">pO_a</span><span class="PUNC">[</span><span class="NAME">ps_key</span><span class="PUNC">]</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">pO_b</span><span class="PUNC">[</span><span class="NAME">ps_key</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 54</span> </span><span class="WHIT">		</span><span class="WHIT">
+<span class='line'> 55</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">_i_comparison</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"number"</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 56</span> </span><span class="WHIT">			</span><span class="NAME">_i_comparison</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 57</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 58</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 59</span> </span><span class="WHIT">		</span><span class="NAME">_i_comparison</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 60</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 61</span> </span><span class="WHIT">	</span><span class="WHIT">
+<span class='line'> 62</span> </span><span class="WHIT">	</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">_i_comparison</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 63</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 64</span> </span></pre></body></html>

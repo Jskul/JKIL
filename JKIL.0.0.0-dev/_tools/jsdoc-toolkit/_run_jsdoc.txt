@@ -1,0 +1,9 @@
+// http://idiotechie.com/how-to-use-cmd-prompt-inside-eclipse/
+// https://code.google.com/p/jsdoc-toolkit/wiki/TagReference
+// http://en.wikipedia.org/wiki/JSDoc
+// https://code.google.com/p/jsdoc-toolkit/wiki/OtherTools
+
+
+cd /Users/ljankowski/Documents/PROJECTS/SEMANTOOLS/semantools/_shared/jsdoc-toolkit
+
+java -jar jsrun.jar app/run.js ../../source/*.js -t=templates/jsdoc -d=../../api/jsdoc -p

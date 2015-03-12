@@ -1,0 +1,48 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  2</span> 
+<span class='line'>  3</span> </span><span class="COMM">/**
+<span class='line'>  4</span>  * @methodOf	JKIL.comparators
+<span class='line'>  5</span>  * 
+<span class='line'>  6</span>  * @description	Compares the lengths of two strings and then their current locale.&lt;br />
+<span class='line'>  7</span>  * 
+<span class='line'>  8</span>  * @example		&lt;b>Syntax:&lt;/b>
+<span class='line'>  9</span>  * 				JKIL.comparators.compareStringsByLengthAndLocale ( ps_a, ps_b )
+<span class='line'> 10</span>  * 
+<span class='line'> 11</span>  * @param		{string}	ps_a	The first string to be compared.&lt;br />&lt;br />
+<span class='line'> 12</span>  * @param		{string}	ps_b	The second string to be compared.
+<span class='line'> 13</span>  * 
+<span class='line'> 14</span>  * @returns		{number}	Returns a negative number if &lt;code>ps_a.length &lt; ps_b.length&lt;/code>, returns a positive number if &lt;code>ps_a.length > ps_b.length&lt;/code>, and returns 0 if &lt;code>ps_a.length === ps_b.length&lt;/code>.
+<span class='line'> 15</span>  * 
+<span class='line'> 16</span>  * @throws		TODO
+<span class='line'> 17</span>  * 
+<span class='line'> 18</span>  * TODO process string litterals AND String objects
+<span class='line'> 19</span>  */</span><span class="WHIT">
+<span class='line'> 20</span> </span><span class="NAME">JKIL.comparators.compareStringsByLengthAndLocale</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">ps_a</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">ps_b</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 21</span> </span><span class="WHIT">	</span><span class="COMM">/*
+<span class='line'> 22</span> 	 * TODO Check a & b are strings
+<span class='line'> 23</span> 	 */</span><span class="WHIT">
+<span class='line'> 24</span> </span><span class="WHIT">	</span><span class="COMM">/*
+<span class='line'> 25</span> 	 * TODO check that localeCompare() is supported
+<span class='line'> 26</span> 	 * TODO allow the use of localeCompare() own options
+<span class='line'> 27</span> 	 * 
+<span class='line'> 28</span> 	 */</span><span class="WHIT">
+<span class='line'> 29</span> </span><span class="WHIT">	</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ps_a</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"string"</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 30</span> </span><span class="WHIT">	</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ps_b</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"string"</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 31</span> </span><span class="WHIT">	</span><span class="WHIT">
+<span class='line'> 32</span> </span><span class="WHIT">	</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">_i_comparison</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">ps_a.length</span><span class="WHIT"> </span><span class="PUNC">-</span><span class="WHIT"> </span><span class="NAME">ps_b.length</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 33</span> 
+<span class='line'> 34</span> </span><span class="WHIT">	</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">_i_comparison</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 35</span> </span><span class="WHIT">		</span><span class="NAME">_i_comparison</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">ps_a.localeCompare</span><span class="PUNC">(</span><span class="NAME">ps_b</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 36</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 37</span> </span><span class="WHIT">	</span><span class="WHIT">
+<span class='line'> 38</span> </span><span class="WHIT">	</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">_i_comparison</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 39</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 40</span> 
+<span class='line'> 41</span> </span></pre></body></html>
