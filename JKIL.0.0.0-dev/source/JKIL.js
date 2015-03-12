@@ -1,7 +1,7 @@
 ;
 
 /**
- * @namespace	Is a namespace TODO.
+ * @namespace	Is a namespace TODO TODO.
  * 
  * @description	A library TODO.
  */
