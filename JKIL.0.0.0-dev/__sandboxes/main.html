@@ -15,8 +15,11 @@
 		<script src="../source/JKIL.comparators.compareRandomly.js"></script>
 		<script src="../source/JKIL.comparators.compareArraysByLength.js"></script>
 		<script src="../source/JKIL.comparators.compareStringsByLength.js"></script>
-		<script src="../source/JKIL.comparators.compareStringsByLengthAndLocale.js"></script>
+		<script src="../source/JKIL.comparators.compareStringsByLengthThenLocale.js"></script>
 		<script src="../source/JKIL.sortings.array.selectionSort.js"></script>
+		<script src="../source/JKIL.sortings.array.bubbleSort.js"></script>
+		<script src="../source/JKIL.sortings.array.insertionSort.js"></script>
+		<script src="../source/JKIL.sortings.array.shellSort.js"></script>
 
 		<script>
 
@@ -110,17 +113,49 @@
 			console.log("var a = JKIL.sortings.array.selectionSort ( data.stringA, {ascending: false, comparator: JKIL.comparators.compareStringsByLength} );");
 			var a = JKIL.sortings.array.selectionSort ( data.stringA, {ascending: false, comparator: JKIL.comparators.compareStringsByLength} );
 			console.log(a);
-			*/
-			//console.log("---------------------------");
 			
-			console.log("var a = JKIL.sortings.array.selectionSort ( data.stringA, {ascending: true, comparator: compareStringsByLengthAndLocale} );");
-			var a = JKIL.sortings.array.selectionSort ( data.stringA, {ascending: true, comparator: JKIL.comparators.compareStringsByLengthAndLocale} );
+			console.log("---------------------------");
+			
+			console.log("var a = JKIL.sortings.array.selectionSort ( data.stringA, {ascending: true, comparator: compareStringsByLengthThenLocale} );");
+			var a = JKIL.sortings.array.selectionSort ( data.stringA, {ascending: true, comparator: JKIL.comparators.compareStringsByLengthThenLocale} );
 			console.log(a);
 
-			console.log("var a = JKIL.sortings.array.selectionSort ( data.stringA, {ascending: false, comparator: compareStringsByLengthAndLocale} );");
-			var a = JKIL.sortings.array.selectionSort ( data.stringA, {ascending: false, comparator: JKIL.comparators.compareStringsByLengthAndLocale} );
+			console.log("var a = JKIL.sortings.array.selectionSort ( data.stringA, {ascending: false, comparator: compareStringsByLengthThenLocale} );");
+			var a = JKIL.sortings.array.selectionSort ( data.stringA, {ascending: false, comparator: JKIL.comparators.compareStringsByLengthThenLocale} );
 			console.log(a);
+
+			console.log("---------------------------");
 			
+	        console.log("var a = JKIL.sortings.array.bubbleSort ( data.integerA, {ascending: true} );");
+            var a = JKIL.sortings.array.bubbleSort ( data.integerA, {ascending: true} );
+            console.log(a);
+			
+            console.log("var a = JKIL.sortings.array.bubbleSort ( data.integerA, {ascending: false} );");
+            var a = JKIL.sortings.array.bubbleSort ( data.integerA, {ascending: false} );
+            console.log(a);
+            
+            console.log("---------------------------");
+            
+            console.log("var a = JKIL.sortings.array.insertionSort ( data.integerA, {ascending: true} );");
+            var a = JKIL.sortings.array.insertionSort ( data.integerA, {ascending: true} );
+            console.log(a);
+            
+            console.log("var a = JKIL.sortings.array.insertionSort ( data.integerA, {ascending: false} );");
+            var a = JKIL.sortings.array.insertionSort ( data.integerA, {ascending: false} );
+            console.log(a);
+            */
+            console.log("---------------------------");
+            
+            console.log("var a = JKIL.sortings.array.shellSort ( data.integerA, {ascending: true} );");
+            var a = JKIL.sortings.array.shellSort ( data.integerA, {ascending: true} );
+            console.log(a);
+            
+            console.log("var a = JKIL.sortings.array.shellSort ( data.integerA, {ascending: false} );");
+            var a = JKIL.sortings.array.shellSort ( data.integerA, {ascending: false} );
+            console.log(a);
+            
+            
+            
 		</script>
 		
 	</head>

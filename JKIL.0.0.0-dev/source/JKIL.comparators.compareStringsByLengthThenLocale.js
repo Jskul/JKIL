@@ -6,7 +6,7 @@
  * @description	Compares the lengths of two strings and then their current locale.<br />
  * 
  * @example		<b>Syntax:</b>
- * 				JKIL.comparators.compareStringsByLengthAndLocale ( ps_a, ps_b )
+ * 				JKIL.comparators.compareStringsByLengthThenLocale ( ps_a, ps_b )
  * 
  * @param		{string}	ps_a	The first string to be compared.<br /><br />
  * @param		{string}	ps_b	The second string to be compared.
@@ -17,7 +17,7 @@
  * 
  * TODO process string litterals AND String objects
  */
-JKIL.comparators.compareStringsByLengthAndLocale = function (ps_a, ps_b) {
+JKIL.comparators.compareStringsByLengthThenLocale = function (ps_a, ps_b) {
 	/*
 	 * TODO Check a & b are strings
 	 */

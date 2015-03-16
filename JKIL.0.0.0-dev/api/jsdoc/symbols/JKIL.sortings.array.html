@@ -267,9 +267,36 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
+								<div class="fixedFont">JKIL.sortings.array.<b><a href="../symbols/JKIL.sortings.array.html#.bubbleSort">bubbleSort</a></b>(pa_array, ph_options)
+								</div>
+								<div class="description">Performs an <b>in-place</b> comparison sort of the given array using a <b>bubble sort algorithm</b> (worst and average performances equal O(<i>n</i><sup>2</sup>), best performance equals O(<i>n</i>)).</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">JKIL.sortings.array.<b><a href="../symbols/JKIL.sortings.array.html#.insertionSort">insertionSort</a></b>(pa_array, ph_options)
+								</div>
+								<div class="description">Performs an <b>in-place</b> comparison sort of the given array using an <b>insertion sort algorithm</b> (worst and average performances equal O(<i>n</i><sup>2</sup>), best performance equals O(<i>n</i>)).</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
 								<div class="fixedFont">JKIL.sortings.array.<b><a href="../symbols/JKIL.sortings.array.html#.selectionSort">selectionSort</a></b>(pa_array, ph_options)
 								</div>
-								<div class="description">Performs an <b>in-place</b> comparison sort of the given array (worst, best and average performances equal O(<i>n</i><sup>2</sup>)).</div>
+								<div class="description">Performs an <b>in-place</b> comparison sort of the given array using a <b>selection sort algorithm</b> (worst, best and average performances equal O(<i>n</i><sup>2</sup>)).</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">JKIL.sortings.array.<b><a href="../symbols/JKIL.sortings.array.html#.shellSort">shellSort</a></b>(pa_array, ph_options)
+								</div>
+								<div class="description">Performs an <b>in-place</b> comparison sort of the given array using a <b>Shell sort algorithm</b> (worst performance equals O(<i>n</i><sup>2</sup>), best performance equals O(<i>n</i> log<sup>2</sup> <i>n</i>), average performance depends on gap sequence).</div>
 							</td>
 						</tr>
 					
@@ -321,31 +348,31 @@ ul.inheritsList
 					Method Detail
 				</div>
 				
-					<a name=".selectionSort"> </a>
+					<a name=".bubbleSort"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
 					<span class="light">{Array}</span>
-					<span class="light">JKIL.sortings.array.</span><b>selectionSort</b>(pa_array, ph_options)
+					<span class="light">JKIL.sortings.array.</span><b>bubbleSort</b>(pa_array, ph_options)
 					
 					</div>
 					<div class="description">
-						Performs an <b>in-place</b> comparison sort of the given array (worst, best and average performances equal O(<i>n</i><sup>2</sup>)).<br />
+						Performs an <b>in-place</b> comparison sort of the given array using a <b>bubble sort algorithm</b> (worst and average performances equal O(<i>n</i><sup>2</sup>), best performance equals O(<i>n</i>)).<br />
 						
 							<br />
-							<i>Defined in: </i> <a href="../symbols/src/source_JKIL.sortings.array.selectionSort.js.html">JKIL.sortings.array.selectionSort.js</a>.
+							<i>Defined in: </i> <a href="../symbols/src/source_JKIL.sortings.array.bubbleSort.js.html">JKIL.sortings.array.bubbleSort.js</a>.
 						
 						
 					</div>
 					
 					
 					
-					<pre class="code">	<b>Syntax:</b>				JKIL.sortings.array.selectionSort ( pa_array, ph_options )</pre>
+					<pre class="code">	<b>Syntax:</b>				JKIL.sortings.array.bubbleSort ( pa_array, ph_options )</pre>
 					
-					<pre class="code">	<b>Example 1:</b>				var a = JKIL.sortings.array.selectionSort ( numberArray );</pre>
+					<pre class="code">	<b>Example 1:</b>             var a = JKIL.sortings.array.bubbleSort ( numberArray );</pre>
 					
-					<pre class="code">	<b>Example 2:</b>				var a = JKIL.sortings.array.selectionSort ( numberArray, {ascending: false} );</pre>
+					<pre class="code">    <b>Example 2:</b>             var a = JKIL.sortings.array.bubbleSort ( numberArray, {ascending: false} );</pre>
 					
-					<pre class="code">	<b>Example 3:</b>				var a = JKIL.sortings.array.selectionSort ( numberArray, {ascending: true, comparator: JKIL.comparators.compareNumbers} );</pre>
+					<pre class="code">    <b>Example 3:</b>             var a = JKIL.sortings.array.bubbleSort ( numberArray, {ascending: true, comparator: JKIL.comparators.compareNumbers} );</pre>
 					
 					
 					
@@ -363,7 +390,205 @@ ul.inheritsList
 									<span class="light fixedFont">{hash}</span> <b>ph_options</b>
 									<i>Optional</i>
 								</dt>
-								<dd>A hash of options:<br /><br />				{boolean}	ph_options.ascending	If <code>true</code>(default), the array is sorted in an ascending manner. If <code>false</code>, the array is sorted in a descending manner.<br /><br />				{Function}	ph_options.comparator	A callback anonymous function or a reference to a function that manages the comparison between each pair of values. By default, comparison is made with the <code>&lt;</code> and <code>&gt;</code> operators.</dd>
+								<dd>A hash of options:<br /><br /></dd>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>ph_options.ascending</b>
+									<i>Optional, Default: true</i>
+								</dt>
+								<dd>If <code>true</code>, the array is sorted in an ascending manner. If <code>false</code>, the array is sorted in a descending manner.<br /><br /></dd>
+							
+								<dt>
+									<span class="light fixedFont">{Function}</span> <b>ph_options.comparator</b>
+									<i>Optional, Default: compareNumbers</i>
+								</dt>
+								<dd>A callback anonymous function or a reference to a function that manages the comparison between each pair of values. By default, comparison is made with the <code>&lt;</code> and <code>&gt;</code> operators.</dd>
+							
+							</dl>
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Throws:</dt>
+							
+								<dt>
+									 <b></b>
+								</dt>
+								<dd>TODO</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Array}</span> The sorted given array (that is, <code>pa_array</code> is modified).</dd>
+							
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd>Rohaut. S. (2007) "Algorithmique - Techniques fondamentales de programmation (avec des exemples en Java)", Eni éditions. c. Le tri par sélection p. 110<br /><br /></dd>
+							
+								<dd>http://en.wikipedia.org/wiki/Bubble_sort<br /><br />TODO clean- https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/sort- http://www.javascriptkit.com/javatutors/arraysort.shtml- http://www.javascriptkit.com/javatutors/arraysort2.shtml</dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name=".insertionSort"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Array}</span>
+					<span class="light">JKIL.sortings.array.</span><b>insertionSort</b>(pa_array, ph_options)
+					
+					</div>
+					<div class="description">
+						Performs an <b>in-place</b> comparison sort of the given array using an <b>insertion sort algorithm</b> (worst and average performances equal O(<i>n</i><sup>2</sup>), best performance equals O(<i>n</i>)).<br />
+						
+							<br />
+							<i>Defined in: </i> <a href="../symbols/src/source_JKIL.sortings.array.insertionSort.js.html">JKIL.sortings.array.insertionSort.js</a>.
+						
+						
+					</div>
+					
+					
+					
+					<pre class="code">	<b>Syntax:</b>				JKIL.sortings.array.insertionSort ( pa_array, ph_options )</pre>
+					
+					<pre class="code">	<b>Example 1:</b>             var a = JKIL.sortings.array.insertionSort ( numberArray );</pre>
+					
+					<pre class="code">    <b>Example 2:</b>             var a = JKIL.sortings.array.insertionSort ( numberArray, {ascending: false} );</pre>
+					
+					<pre class="code">    <b>Example 3:</b>             var a = JKIL.sortings.array.insertionSort ( numberArray, {ascending: true, comparator: JKIL.comparators.compareNumbers} );</pre>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{Array}</span> <b>pa_array</b>
+									
+								</dt>
+								<dd>The array to be sorted.<br /><br /></dd>
+							
+								<dt>
+									<span class="light fixedFont">{hash}</span> <b>ph_options</b>
+									<i>Optional</i>
+								</dt>
+								<dd>A hash of options:<br /><br /></dd>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>ph_options.ascending</b>
+									<i>Optional, Default: true</i>
+								</dt>
+								<dd>If <code>true</code>, the array is sorted in an ascending manner. If <code>false</code>, the array is sorted in a descending manner.<br /><br /></dd>
+							
+								<dt>
+									<span class="light fixedFont">{Function}</span> <b>ph_options.comparator</b>
+									<i>Optional, Default: compareNumbers</i>
+								</dt>
+								<dd>A callback anonymous function or a reference to a function that manages the comparison between each pair of values. By default, comparison is made with the <code>&lt;</code> and <code>&gt;</code> operators.</dd>
+							
+							</dl>
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Throws:</dt>
+							
+								<dt>
+									 <b></b>
+								</dt>
+								<dd>TODO</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Array}</span> The sorted given array (that is, <code>pa_array</code> is modified).</dd>
+							
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd>Rohaut. S. (2007) "Algorithmique - Techniques fondamentales de programmation (avec des exemples en Java)", Eni éditions. c. Le tri par sélection p. 112<br /><br /></dd>
+							
+								<dd>http://en.wikipedia.org/wiki/Insertion_sort<br /><br />TODO clean- https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/sort- http://www.javascriptkit.com/javatutors/arraysort.shtml- http://www.javascriptkit.com/javatutors/arraysort2.shtml</dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name=".selectionSort"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Array}</span>
+					<span class="light">JKIL.sortings.array.</span><b>selectionSort</b>(pa_array, ph_options)
+					
+					</div>
+					<div class="description">
+						Performs an <b>in-place</b> comparison sort of the given array using a <b>selection sort algorithm</b> (worst, best and average performances equal O(<i>n</i><sup>2</sup>)).<br />
+						
+							<br />
+							<i>Defined in: </i> <a href="../symbols/src/source_JKIL.sortings.array.selectionSort.js.html">JKIL.sortings.array.selectionSort.js</a>.
+						
+						
+					</div>
+					
+					
+					
+					<pre class="code">	<b>Syntax:</b>				JKIL.sortings.array.selectionSort ( pa_array, ph_options )</pre>
+					
+					<pre class="code">	<b>Example 1:</b>             var a = JKIL.sortings.array.selectionSort ( numberArray );</pre>
+					
+					<pre class="code">    <b>Example 2:</b>             var a = JKIL.sortings.array.selectionSort ( numberArray, {ascending: false} );</pre>
+					
+					<pre class="code">    <b>Example 3:</b>             var a = JKIL.sortings.array.selectionSort ( numberArray, {ascending: true, comparator: JKIL.comparators.compareNumbers} );</pre>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{Array}</span> <b>pa_array</b>
+									
+								</dt>
+								<dd>The array to be sorted.<br /><br /></dd>
+							
+								<dt>
+									<span class="light fixedFont">{hash}</span> <b>ph_options</b>
+									<i>Optional</i>
+								</dt>
+								<dd>A hash of options:<br /><br /></dd>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>ph_options.ascending</b>
+									<i>Optional, Default: true</i>
+								</dt>
+								<dd>If <code>true</code>, the array is sorted in an ascending manner. If <code>false</code>, the array is sorted in a descending manner.<br /><br /></dd>
+							
+								<dt>
+									<span class="light fixedFont">{Function}</span> <b>ph_options.comparator</b>
+									<i>Optional, Default: compareNumbers</i>
+								</dt>
+								<dd>A callback anonymous function or a reference to a function that manages the comparison between each pair of values. By default, comparison is made with the <code>&lt;</code> and <code>&gt;</code> operators.</dd>
 							
 							</dl>
 						
@@ -400,6 +625,99 @@ ul.inheritsList
 							</dl>
 						
 
+					<hr />
+				
+					<a name=".shellSort"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Array|number}</span>
+					<span class="light">JKIL.sortings.array.</span><b>shellSort</b>(pa_array, ph_options)
+					
+					</div>
+					<div class="description">
+						Performs an <b>in-place</b> comparison sort of the given array using a <b>Shell sort algorithm</b> (worst performance equals O(<i>n</i><sup>2</sup>), best performance equals O(<i>n</i> log<sup>2</sup> <i>n</i>), average performance depends on gap sequence).<br />
+						
+							<br />
+							<i>Defined in: </i> <a href="../symbols/src/source_JKIL.sortings.array.shellSort.js.html">JKIL.sortings.array.shellSort.js</a>.
+						
+						
+					</div>
+					
+					
+					
+					<pre class="code">	<b>Syntax:</b>				JKIL.sortings.array.shellSort ( pa_array, ph_options )</pre>
+					
+					<pre class="code">	<b>Example 1:</b>             var a = JKIL.sortings.array.shellSort ( numberArray );</pre>
+					
+					<pre class="code">    <b>Example 2:</b>             var a = JKIL.sortings.array.shellSort ( numberArray, {ascending: false} );</pre>
+					
+					<pre class="code">    <b>Example 3:</b>             var a = JKIL.sortings.array.shellSort ( numberArray, {ascending: true, comparator: JKIL.comparators.compareNumbers} );</pre>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{Array}</span> <b>pa_array</b>
+									
+								</dt>
+								<dd>The array to be sorted.<br /><br /></dd>
+							
+								<dt>
+									<span class="light fixedFont">{hash}</span> <b>ph_options</b>
+									<i>Optional</i>
+								</dt>
+								<dd>A hash of options:<br /><br /></dd>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>ph_options.ascending</b>
+									<i>Optional, Default: true</i>
+								</dt>
+								<dd>If <code>true</code>, the array is sorted in an ascending manner. If <code>false</code>, the array is sorted in a descending manner.<br /><br /></dd>
+							
+								<dt>
+									<span class="light fixedFont">{Function}</span> <b>ph_options.comparator</b>
+									<i>Optional, Default: compareNumbers</i>
+								</dt>
+								<dd>A callback anonymous function or a reference to a function that manages the comparison between each pair of values. By default, comparison is made with the <code>&lt;</code> and <code>&gt;</code> operators. 				TODO				TODO</dd>
+							
+							</dl>
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Throws:</dt>
+							
+								<dt>
+									 <b></b>
+								</dt>
+								<dd>TODO</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Array|number}</span> The sorted given array (that is, <code>pa_array</code> is modified).</dd>
+							
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd>Rohaut. S. (2007) "Algorithmique - Techniques fondamentales de programmation (avec des exemples en Java)", Eni éditions. c. Le tri par sélection p. 113<br /><br /></dd>
+							
+								<dd>http://en.wikipedia.org/wiki/Shellsort<br /><br />TODO clean- https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/sort- http://www.javascriptkit.com/javatutors/arraysort.shtml- http://www.javascriptkit.com/javatutors/arraysort2.shtml</dd>
+							
+							</dl>
+						
+
 					
 				
 			
@@ -414,7 +732,7 @@ ul.inheritsList
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
 			
-			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Thu Mar 12 2015 23:36:55 GMT+0100 (CET)
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Mon Mar 16 2015 05:45:09 GMT+0100 (CET)
 		</div>
 	</body>
 </html>

@@ -3,19 +3,19 @@
 /**
  * @methodOf	JKIL.sortings.array
  * 
- * @description	Performs an <b>in-place</b> comparison sort of the given array using a <b>selection sort algorithm</b> (worst, best and average performances equal O(<i>n</i><sup>2</sup>)).<br />
+ * @description	Performs an <b>in-place</b> comparison sort of the given array using a <b>bubble sort algorithm</b> (worst and average performances equal O(<i>n</i><sup>2</sup>), best performance equals O(<i>n</i>)).<br />
  * 
  * @example		<b>Syntax:</b>
- * 				JKIL.sortings.array.selectionSort ( pa_array, ph_options )
+ * 				JKIL.sortings.array.bubbleSort ( pa_array, ph_options )
  * 
  * @example		<b>Example 1:</b>
- *              var a = JKIL.sortings.array.selectionSort ( numberArray );
+ *              var a = JKIL.sortings.array.bubbleSort ( numberArray );
  * 
  * @example     <b>Example 2:</b>
- *              var a = JKIL.sortings.array.selectionSort ( numberArray, {ascending: false} );
+ *              var a = JKIL.sortings.array.bubbleSort ( numberArray, {ascending: false} );
  * 
  * @example     <b>Example 3:</b>
- *              var a = JKIL.sortings.array.selectionSort ( numberArray, {ascending: true, comparator: JKIL.comparators.compareNumbers} );
+ *              var a = JKIL.sortings.array.bubbleSort ( numberArray, {ascending: true, comparator: JKIL.comparators.compareNumbers} );
  * 
  * @param       {Array}	    pa_array        The array to be sorted.<br /><br />
  * @param       {hash}      [ph_options]	A hash of options:<br /><br />
@@ -27,15 +27,15 @@
  * 
  * @throws      TODO
  * 
- * @see    		Rohaut. S. (2007) "Algorithmique - Techniques fondamentales de programmation (avec des exemples en Java)", Eni éditions. c. Le tri par sélection p. 108<br /><br />
- * @see    		http://en.wikipedia.org/wiki/Selection_sort<br /><br />
+ * @see    		Rohaut. S. (2007) "Algorithmique - Techniques fondamentales de programmation (avec des exemples en Java)", Eni éditions. c. Le tri par sélection p. 110<br /><br />
+ * @see    		http://en.wikipedia.org/wiki/Bubble_sort<br /><br />
  * 
  * TODO clean
  * - https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/sort
  * - http://www.javascriptkit.com/javatutors/arraysort.shtml
  * - http://www.javascriptkit.com/javatutors/arraysort2.shtml
  */
-JKIL.sortings.array.selectionSort = function (pa_array, ph_options) {
+JKIL.sortings.array.bubbleSort = function (pa_array, ph_options) {
     //TODO JKIL.types.isArray( pa_array )
     
     if (typeof ph_options !== "object" || ph_options === null) {ph_options = {};}
@@ -48,22 +48,21 @@ JKIL.sortings.array.selectionSort = function (pa_array, ph_options) {
         };
     }
     
-    var _i_arrayLength = pa_array.length;
-    var _i_iMin, _m_swap;
+    var _i_iMax = pa_array.length - 1;
+    var _b_permute = true;
     
-    for (i=0; i<_i_arrayLength - 1; ++i) {
-        _i_iMin = i;
-        for (j=i+1; j<_i_arrayLength; ++j) {
-            if (    ph_options.ascending === true && ph_options.comparator(pa_array[j], pa_array[_i_iMin]) < 0
-                ||	ph_options.ascending === false && ph_options.comparator(pa_array[j], pa_array[_i_iMin]) > 0) {
-                _i_iMin = j;
-            }
-        }
-        if (_i_iMin !== i) {
-            _m_swap = pa_array[_i_iMin];
-            pa_array[_i_iMin] = pa_array[i];
-            pa_array[i] = _m_swap;
-        }
+    while (_b_permute){
+    	_b_permute = false;
+    	for (i=0; i<_i_iMax; ++i) {
+    		if (	ph_options.ascending === true && ph_options.comparator(pa_array[i+1], pa_array[i]) < 0
+    			||	ph_options.ascending === false && ph_options.comparator(pa_array[i+1], pa_array[i]) > 0) {
+                _m_swap = pa_array[i];
+                pa_array[i] = pa_array[i+1];
+                pa_array[i+1] = _m_swap;
+                _b_permute = true;
+    		}
+    	}
+    	--_i_iMax;
     }
     
     return pa_array;
