@@ -216,7 +216,7 @@ ul.inheritsList
 				
 				
 			
-				TODO
+				
 				
 				
 					<br /><i>Defined in: </i> <a href="../symbols/src/source_JKIL.js.html">JKIL.js</a>.
@@ -240,7 +240,7 @@ ul.inheritsList
 							<div class="fixedFont">
 								<b><a href="../symbols/JKIL.comparators.html#constructor">JKIL.comparators</a></b>
 							</div>
-							<div class="description">A namespace for comparison methods TODO.</div>
+							<div class="description">A namespace for comparison methods.</div>
 						</td>
 					</tr>
 				</tbody>
@@ -375,7 +375,7 @@ ul.inheritsList
 				</div>
 				
 				<div class="description">
-					A namespace for comparison methods TODO.
+					A namespace for comparison methods.<br />
 					
 				</div>
 				
@@ -420,7 +420,7 @@ ul.inheritsList
 					
 					
 					
-					<pre class="code">    <b>Syntax:</b>             JKIL.comparators.compareArraysByLength ( pa_a, pa_b )</pre>
+					<pre class="code">       <b>Syntax:</b>                JKIL.comparators.compareArraysByLength ( pa_a, pa_b )</pre>
 					
 					
 					
@@ -476,7 +476,7 @@ ul.inheritsList
 					
 					</div>
 					<div class="description">
-						Performs a default comparison (<i>i&#46;e&#46;</i> using the <code>&lt;</code> and <code>&gt;</code> operators).<br />				It applies correctly to null, boolean, number and string types and across some of these types.<br />				TODO be more specific<br />
+						Performs a default comparison (<i>i&#46;e&#46;</i> using the <code>&lt;</code> and <code>&gt;</code> operators).<br />                It applies correctly to null, boolean, number and string types and across some of these types.<br />                TODO be more specific<br />
 						
 							<br />
 							<i>Defined in: </i> <a href="../symbols/src/source_JKIL.comparators.compareMixed.js.html">JKIL.comparators.compareMixed.js</a>.
@@ -486,7 +486,7 @@ ul.inheritsList
 					
 					
 					
-					<pre class="code">	<b>Syntax:</b>				JKIL.comparators.compareMixed ( pm_a, pm_b )</pre>
+					<pre class="code">       <b>Syntax:</b>                JKIL.comparators.compareMixed ( pm_a, pm_b )</pre>
 					
 					
 					
@@ -542,7 +542,7 @@ ul.inheritsList
 					
 					
 					
-					<pre class="code">	<b>Syntax:</b>				JKIL.comparators.compareNumbers ( pn_a, pn_b )</pre>
+					<pre class="code">       <b>Syntax:</b>                JKIL.comparators.compareNumbers ( pn_a, pn_b )</pre>
 					
 					
 					
@@ -598,7 +598,7 @@ ul.inheritsList
 					
 					</div>
 					<div class="description">
-						Compares two objects according to a property <strong>when</strong> it is present in both of them (as an own property).<br />				Notice: The array may thus be only partially sorted.<br />
+						Compares two objects according to a property <strong>when</strong> it is present in both of them (as an own property).<br />                Notice: The array may thus be only partially sorted.<br />
 						
 							<br />
 							<i>Defined in: </i> <a href="../symbols/src/source_JKIL.comparators.compareObjectsByKey.js.html">JKIL.comparators.compareObjectsByKey.js</a>.
@@ -608,11 +608,11 @@ ul.inheritsList
 					
 					
 					
-					<pre class="code">	<b>Syntax:</b>				JKIL.comparators.compareObjectsByKey ( pO_a, pO_b, ps_key, pf_comparator )</pre>
+					<pre class="code">       <b>Syntax:</b>                JKIL.comparators.compareObjectsByKey ( pO_a, pO_b, ps_key, pf_comparator )</pre>
 					
-					<pre class="code">	<b>Example 1:</b>				var a = {x: 12};				var b = {x: 13};				var n = JKIL.comparators.compareObjectsByKey(a, b, "x", JKIL.comparators.numbers); // n = -1</pre>
+					<pre class="code">       <b>Example 1:</b>                var a = {x: 12};                var b = {x: 13};                var n = JKIL.comparators.compareObjectsByKey(a, b, "x", JKIL.comparators.numbers); // n = -1</pre>
 					
-					<pre class="code">	<b>Example 2: As a callback of a sort method.</b>				objectArray = [{a: 45}, {b: -12}, {a: 5}, {a: 45}, {a: 0}, {c: 75}, {a: 69}, {d: 0}, {a: 145}, {a: 1000}, {a: -8}, {a: -565}];				var a = JKIL.sortings.array.selectionSort ( objectArray,				                                            {ascending: true,				                                             comparator: function(a, b) {				                                                 return JKIL.comparators.compareObjectsByKey(a, b, "a", JKIL.comparators.numbers);				                                             }				                                            }				                                          );</pre>
+					<pre class="code">       <b>Example 2: As a callback of a sort method.</b>                objectArray = [{a: 45}, {b: -12}, {a: 5}, {a: 45}, {a: 0}, {c: 75}, {a: 69}, {d: 0}, {a: 145}, {a: 1000}, {a: -8}, {a: -565}];                var a = JKIL.sortings.array.selectionSort ( objectArray,                                                            {ascending: true,                                                             comparator: function(a, b) {                                                                 return JKIL.comparators.compareObjectsByKey(a, b, "a", JKIL.comparators.numbers);                                                             }                                                            }                                                          );</pre>
 					
 					
 					
@@ -672,7 +672,7 @@ ul.inheritsList
 							<dl class="detailList">
 							<dt class="heading">See:</dt>
 							
-								<dd>http://speakingjs.com/es5/ch18.html	TODO</dd>
+								<dd>http://speakingjs.com/es5/ch18.html    TODO</dd>
 							
 							</dl>
 						
@@ -697,11 +697,11 @@ ul.inheritsList
 					
 					
 					
-					<pre class="code">	<b>Syntax:</b>				JKIL.comparators.compareObjectsByKeyStrictly ( pO_a, pO_b, ps_key, pf_comparator )</pre>
+					<pre class="code">       <b>Syntax:</b>                JKIL.comparators.compareObjectsByKeyStrictly ( pO_a, pO_b, ps_key, pf_comparator )</pre>
 					
-					<pre class="code">	<b>Example 1:</b>				var a = {x: 12};				var b = {x: 13};				var n = JKIL.comparators.compareObjectsByKeyStrictly(a, b, "x", JKIL.comparators.numbers); // n = -1</pre>
+					<pre class="code">       <b>Example 1:</b>                var a = {x: 12};                var b = {x: 13};                var n = JKIL.comparators.compareObjectsByKeyStrictly(a, b, "x", JKIL.comparators.numbers); // n = -1</pre>
 					
-					<pre class="code">	<b>Example 2: As a callback of a sort method.</b>				objectArray = [{a: 45}, {a: -12}, {a: 5}, {a: 45}, {a: 0}, {a: 75}, {a: 69}, {a: 0}, {a: 145}, {a: 1000}, {a: -8}, {a: -565}];				var a = JKIL.sortings.array.selectionSort ( objectArray,				                                            {ascending: true,				                                             comparator: function(a, b) {				                                                 return JKIL.comparators.compareObjectsByKeyStrictly(a, b, "a", JKIL.comparators.numbers);				                                             }				                                            }				                                          );</pre>
+					<pre class="code">       <b>Example 2: As a callback of a sort method.</b>                objectArray = [{a: 45}, {a: -12}, {a: 5}, {a: 45}, {a: 0}, {a: 75}, {a: 69}, {a: 0}, {a: 145}, {a: 1000}, {a: -8}, {a: -565}];                var a = JKIL.sortings.array.selectionSort ( objectArray,                                                            {ascending: true,                                                             comparator: function(a, b) {                                                                 return JKIL.comparators.compareObjectsByKeyStrictly(a, b, "a", JKIL.comparators.numbers);                                                             }                                                            }                                                          );</pre>
 					
 					
 					
@@ -761,7 +761,7 @@ ul.inheritsList
 							<dl class="detailList">
 							<dt class="heading">See:</dt>
 							
-								<dd>http://speakingjs.com/es5/ch18.html	TODO</dd>
+								<dd>http://speakingjs.com/es5/ch18.html    TODO</dd>
 							
 							</dl>
 						
@@ -786,7 +786,7 @@ ul.inheritsList
 					
 					
 					
-					<pre class="code">	<b>Syntax:</b>				JKIL.comparators.compareRandomly ()</pre>
+					<pre class="code">       <b>Syntax:</b>                JKIL.comparators.compareRandomly ()</pre>
 					
 					
 					
@@ -825,7 +825,7 @@ ul.inheritsList
 					
 					
 					
-					<pre class="code">	<b>Syntax:</b>				JKIL.comparators.compareStrings ( ps_a, ps_b )</pre>
+					<pre class="code">       <b>Syntax:</b>                JKIL.comparators.compareStrings ( ps_a, ps_b )</pre>
 					
 					
 					
@@ -898,7 +898,7 @@ ul.inheritsList
 					
 					
 					
-					<pre class="code">	<b>Syntax:</b>				JKIL.comparators.compareStringsByLength ( ps_a, ps_b )</pre>
+					<pre class="code">       <b>Syntax:</b>                JKIL.comparators.compareStringsByLength ( ps_a, ps_b )</pre>
 					
 					
 					
@@ -964,7 +964,7 @@ ul.inheritsList
 					
 					
 					
-					<pre class="code">	<b>Syntax:</b>				JKIL.comparators.compareStringsByLengthThenLocale ( ps_a, ps_b )</pre>
+					<pre class="code">       <b>Syntax:</b>                JKIL.comparators.compareStringsByLengthThenLocale ( ps_a, ps_b )</pre>
 					
 					
 					
@@ -1030,7 +1030,7 @@ ul.inheritsList
 					
 					
 					
-					<pre class="code">	<b>Syntax:</b>				JKIL.comparators.compareStringsLocale ( ps_a, ps_b )</pre>
+					<pre class="code">       <b>Syntax:</b>                JKIL.comparators.compareStringsLocale ( ps_a, ps_b )</pre>
 					
 					
 					
@@ -1099,7 +1099,7 @@ ul.inheritsList
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
 			
-			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Mon Mar 16 2015 05:45:09 GMT+0100 (CET)
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Wed Mar 25 2015 23:37:19 GMT+0100 (CET)
 		</div>
 	</body>
 </html>

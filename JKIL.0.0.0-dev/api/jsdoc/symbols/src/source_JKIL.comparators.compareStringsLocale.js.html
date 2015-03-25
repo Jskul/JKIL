@@ -8,34 +8,34 @@
 	</style></head><body><pre><span class='line'>  1</span> <span class="PUNC">;</span><span class="WHIT">
 <span class='line'>  2</span> 
 <span class='line'>  3</span> </span><span class="COMM">/**
-<span class='line'>  4</span>  * @methodOf	JKIL.comparators
+<span class='line'>  4</span>  * @methodOf       JKIL.comparators
 <span class='line'>  5</span>  * 
-<span class='line'>  6</span>  * @description	Compares two strings using the current locale.&lt;br />
+<span class='line'>  6</span>  * @description    Compares two strings using the current locale.&lt;br />
 <span class='line'>  7</span>  * 
-<span class='line'>  8</span>  * @example		&lt;b>Syntax:&lt;/b>
-<span class='line'>  9</span>  * 				JKIL.comparators.compareStringsLocale ( ps_a, ps_b )
+<span class='line'>  8</span>  * @example        &lt;b>Syntax:&lt;/b>
+<span class='line'>  9</span>  *                 JKIL.comparators.compareStringsLocale ( ps_a, ps_b )
 <span class='line'> 10</span>  * 
-<span class='line'> 11</span>  * @param		{string}	ps_a	The first string to be compared.&lt;br />&lt;br />
-<span class='line'> 12</span>  * @param		{string}	ps_b	The second string to be compared.
+<span class='line'> 11</span>  * @param          {string}    ps_a    The first string to be compared.&lt;br />&lt;br />
+<span class='line'> 12</span>  * @param          {string}    ps_b    The second string to be compared.
 <span class='line'> 13</span>  * 
-<span class='line'> 14</span>  * @returns		{number}	Returns a negative number if &lt;code>ps_a&lt;/code> occurs earlier in a sort than &lt;code>ps_b&lt;/code>, returns a positive number if &lt;code>ps_a&lt;/code> occurs afterwards in such a sort, and returns 0 if they occur at the same level.
+<span class='line'> 14</span>  * @returns        {number}    Returns a negative number if &lt;code>ps_a&lt;/code> occurs earlier in a sort than &lt;code>ps_b&lt;/code>, returns a positive number if &lt;code>ps_a&lt;/code> occurs afterwards in such a sort, and returns 0 if they occur at the same level.
 <span class='line'> 15</span>  * 
-<span class='line'> 16</span>  * @throws		TODO
+<span class='line'> 16</span>  * @throws         TODO
 <span class='line'> 17</span>  * 
-<span class='line'> 18</span>  * @see	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare&lt;br />&lt;br />
-<span class='line'> 19</span>  * @see	http://speakingjs.com/es5/ch18.html TODO&lt;br />&lt;br />
+<span class='line'> 18</span>  * @see            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare&lt;br />&lt;br />
+<span class='line'> 19</span>  * @see            http://speakingjs.com/es5/ch18.html TODO&lt;br />&lt;br />
 <span class='line'> 20</span>  * 
 <span class='line'> 21</span>  * TODO process string litterals AND String objects
 <span class='line'> 22</span>  */</span><span class="WHIT">
 <span class='line'> 23</span> </span><span class="NAME">JKIL.comparators.compareStringsLocale</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">ps_a</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">ps_b</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 24</span> </span><span class="WHIT">	</span><span class="COMM">/*
-<span class='line'> 25</span> 	 * TODO check that localeCompare() is supported
-<span class='line'> 26</span> 	 * TODO allow the use of localeCompare() own options
-<span class='line'> 27</span> 	 * 
-<span class='line'> 28</span> 	 */</span><span class="WHIT">
-<span class='line'> 29</span> </span><span class="WHIT">	</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ps_a</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"string"</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'> 30</span> </span><span class="WHIT">	</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ps_b</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"string"</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'> 31</span> </span><span class="WHIT">	</span><span class="WHIT">
-<span class='line'> 32</span> </span><span class="WHIT">	</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">ps_a.localeCompare</span><span class="PUNC">(</span><span class="NAME">ps_b</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 24</span> </span><span class="WHIT">    </span><span class="COMM">/*
+<span class='line'> 25</span>      * TODO check that localeCompare() is supported
+<span class='line'> 26</span>      * TODO allow the use of localeCompare() own options
+<span class='line'> 27</span>      * 
+<span class='line'> 28</span>      */</span><span class="WHIT">
+<span class='line'> 29</span> </span><span class="WHIT">    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ps_a</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"string"</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 30</span> </span><span class="WHIT">    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ps_b</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"string"</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 31</span> </span><span class="WHIT">    </span><span class="WHIT">
+<span class='line'> 32</span> </span><span class="WHIT">    </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">ps_a.localeCompare</span><span class="PUNC">(</span><span class="NAME">ps_b</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'> 33</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'> 34</span> </span></pre></body></html>

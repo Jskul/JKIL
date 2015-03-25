@@ -8,23 +8,23 @@
 	</style></head><body><pre><span class='line'>  1</span> <span class="PUNC">;</span><span class="WHIT">
 <span class='line'>  2</span> 
 <span class='line'>  3</span> </span><span class="COMM">/**
-<span class='line'>  4</span>  * @methodOf	JKIL.comparators
+<span class='line'>  4</span>  * @methodOf       JKIL.comparators
 <span class='line'>  5</span>  * 
-<span class='line'>  6</span>  * @description	Performs a default comparison (&lt;i>i&#46;e&#46;&lt;/i> using the &lt;code>&lt;&lt;/code> and &lt;code>&gt;&lt;/code> operators).&lt;br />
-<span class='line'>  7</span>  * 				It applies correctly to null, boolean, number and string types and across some of these types.&lt;br />
-<span class='line'>  8</span>  * 				TODO be more specific&lt;br />
+<span class='line'>  6</span>  * @description    Performs a default comparison (&lt;i>i&#46;e&#46;&lt;/i> using the &lt;code>&lt;&lt;/code> and &lt;code>&gt;&lt;/code> operators).&lt;br />
+<span class='line'>  7</span>  *                 It applies correctly to null, boolean, number and string types and across some of these types.&lt;br />
+<span class='line'>  8</span>  *                 TODO be more specific&lt;br />
 <span class='line'>  9</span>  * 
-<span class='line'> 10</span>  * @example		&lt;b>Syntax:&lt;/b>
-<span class='line'> 11</span>  * 				JKIL.comparators.compareMixed ( pm_a, pm_b )
+<span class='line'> 10</span>  * @example        &lt;b>Syntax:&lt;/b>
+<span class='line'> 11</span>  *                 JKIL.comparators.compareMixed ( pm_a, pm_b )
 <span class='line'> 12</span>  * 
-<span class='line'> 13</span>  * @param		{mixed}	pm_a	The first value to be compared.&lt;br />&lt;br />
-<span class='line'> 14</span>  * @param		{mixed}	pm_b	The second value to be compared.
+<span class='line'> 13</span>  * @param          {mixed}    pm_a    The first value to be compared.&lt;br />&lt;br />
+<span class='line'> 14</span>  * @param          {mixed}    pm_b    The second value to be compared.
 <span class='line'> 15</span>  * 
-<span class='line'> 16</span>  * @returns		{number}	Either -1 (when &lt;code>pm_a &lt; pm_b&lt;/code>), 1 (when &lt;code>pm_a > pm_b&lt;/code>) or 0 otherwise (&lt;code>pm_a == pm_b&lt;/code> or values could not be compared).
+<span class='line'> 16</span>  * @returns        {number}    Either -1 (when &lt;code>pm_a &lt; pm_b&lt;/code>), 1 (when &lt;code>pm_a > pm_b&lt;/code>) or 0 otherwise (&lt;code>pm_a == pm_b&lt;/code> or values could not be compared).
 <span class='line'> 17</span>  */</span><span class="WHIT">
 <span class='line'> 18</span> </span><span class="NAME">JKIL.comparators.compareMixed</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">pm_a</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">pm_b</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 19</span> </span><span class="WHIT">	</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">pm_a</span><span class="WHIT"> </span><span class="PUNC">&lt;</span><span class="WHIT"> </span><span class="NAME">pm_b</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="PUNC">-</span><span class="NUMB">1</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'> 20</span> </span><span class="WHIT">	</span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">pm_a</span><span class="WHIT"> </span><span class="PUNC">></span><span class="WHIT"> </span><span class="NAME">pm_b</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NUMB">1</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'> 21</span> </span><span class="WHIT">	</span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 19</span> </span><span class="WHIT">    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">pm_a</span><span class="WHIT"> </span><span class="PUNC">&lt;</span><span class="WHIT"> </span><span class="NAME">pm_b</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="PUNC">-</span><span class="NUMB">1</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 20</span> </span><span class="WHIT">    </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">pm_a</span><span class="WHIT"> </span><span class="PUNC">></span><span class="WHIT"> </span><span class="NAME">pm_b</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NUMB">1</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 21</span> </span><span class="WHIT">    </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
 <span class='line'> 22</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'> 23</span> </span></pre></body></html>
