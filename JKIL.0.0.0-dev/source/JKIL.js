@@ -350,7 +350,109 @@
          * 
          * @description    A namespace for utility methods.<br />
          */
-        JKIL.utilities = {};
+        JKIL.utilities = {
+        		
+        	/**
+             * @methodOf       JKIL.utilities
+             * 
+             * @description    TODO Checks whether the given value is a string litteral or a <code>String</code> object (<i>e&#46;g&#46;</i> "a string" or <code>new String( "a string" )</code>).<br />
+             * 
+             * @example        TODO <b>Syntax:</b>
+             *                 TODO JKIL.types.isStringObjectOrLitteral ( pm_value )
+             * 
+             * @param          TODO {mixed}      pm_value    The value whose type is to be checked.
+             * 
+             * @returns        TODO {boolean}    Returns <code>true</code> if the given value is a string litteral or a <code>String</code> object, <code>false</code> otherwise.
+             * 
+             * @requires       TODO JKIL.types.getClass ()
+             * 
+             * @see            TODO JKIL.types.isString()
+             * 
+             * https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest
+             * https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest/Utiliser_XMLHttpRequest
+             * https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest#open%28%29
+        	 */
+        	Ajax: function () {
+        		var _o_xhr = null;
+        		var _s_method = "GET";
+        		var _s_url = "";
+        		var _b_async = true;
+        		var _s_user = "";
+        		var _s_password = "";
+        		var _s_mimetype = "text/xml";
+        		
+        		if ( window.XMLHttpRequest ) {
+        			_o_xhr = new XMLHttpRequest();
+    			// IE
+        		} else if ( window.ActiveXObject ) { 
+        			try {
+        				_o_xhr = new ActiveXObject( "Msxml2.XMLHTTP" );
+        			} catch (e) {
+        				_o_xhr = new ActiveXObject( "Microsoft.XMLHTTP" );
+        			}
+        		}
+        		
+        		
+        		
+        		/**
+        		 * 
+        		 */
+        		var setMethod = function ( ps_method ) {
+        			if ( ps_method.match(/^(GET|POST|PUT|DELETE)$/i) ) { // TODO see other method names
+        				this._s_method = ps_method;
+        			} else {
+        				throw new Error("TODO");
+        			}
+        		};
+        		
+        		/**
+        		 * 
+        		 */
+        		var setURL = function ( ps_url ) {
+        			this._s_url = ps_method;
+        		};
+        		
+        		/**
+        		 * 
+        		 */
+        		var setAsync = function ( pb_async ) {
+        			if (typeof pb_async === "boolean") {
+        				this._b_async = pb_async;
+        			} else {
+        				throw new Error("TODO");
+        			}
+        		};
+        		
+        		/**
+        		 * 
+        		 */
+        		var setUser = function ( ps_user ) {
+        			this._s_user = ps_user;
+        		};
+        		
+        		/**
+        		 * 
+        		 */
+        		var setPassword = function ( ps_password ) {
+        			this._s_password = ps_password;
+        		};
+        		
+        		/**
+        		 * 
+        		 */
+        		var open = function ( ps_method, ps_url, pb_async, ps_user, ps_password ) {
+        			if (ps_method === undefined) { ps_method = this._s_method; }
+        			if (ps_url === undefined) { ps_method = this._s_method; }
+        			if (pb_async === undefined) { ps_method = this._s_method; }
+        			if (ps_method === undefined) { ps_method = this._s_method; }
+        			if (ps_method === undefined) { ps_method = this._s_method; }
+        			
+        			this._o_xhr.open ( ps_method, ps_url, pb_async, ps_user, ps_password );
+        		};
+        		
+        		
+        	}
+        };
     };
     
     /*
