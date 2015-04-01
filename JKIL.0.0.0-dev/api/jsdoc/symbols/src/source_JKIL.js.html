@@ -9,203 +9,423 @@
 <span class='line'>  2</span> </span><span class="COMM">/**
 <span class='line'>  3</span>  * TODO
 <span class='line'>  4</span>  * 
-<span class='line'>  5</span>  * @version		TODO
+<span class='line'>  5</span>  * @version        TODO
 <span class='line'>  6</span>  */</span><span class="WHIT">
-<span class='line'>  7</span> </span><span class="COMM">//( function ( undefined ) {</span><span class="WHIT">
-<span class='line'>  8</span> </span><span class="COMM">//	</span><span class="WHIT">
-<span class='line'>  9</span> </span><span class="COMM">//	/*</span><span class="WHIT">
-<span class='line'> 10</span> </span><span class="COMM">//	 * Private members.</span><span class="WHIT">
-<span class='line'> 11</span> </span><span class="COMM">//	 */</span><span class="WHIT">
-<span class='line'> 12</span> </span><span class="COMM">//	var</span><span class="WHIT">
-<span class='line'> 13</span> </span><span class="COMM">//	</span><span class="WHIT">
-<span class='line'> 14</span> </span><span class="COMM">//	/**</span><span class="WHIT">
-<span class='line'> 15</span> </span><span class="COMM">//	 * @namespace	JKIL</span><span class="WHIT">
-<span class='line'> 16</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 17</span> </span><span class="COMM">//	 * @description	A private property which holds the JKIL namespace itself.&lt;br /></span><span class="WHIT">
-<span class='line'> 18</span> </span><span class="COMM">//	 * 				It is referenced in the global scope after &lt;code>JKIL.js&lt;/code> has been loaded.&lt;br /></span><span class="WHIT">
-<span class='line'> 19</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 20</span> </span><span class="COMM">//	 * @type		null|hash</span><span class="WHIT">
-<span class='line'> 21</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 22</span> </span><span class="COMM">//	 * @since		TODO</span><span class="WHIT">
-<span class='line'> 23</span> </span><span class="COMM">//	 * @author		TODO</span><span class="WHIT">
-<span class='line'> 24</span> </span><span class="COMM">//	 */</span><span class="WHIT">
-<span class='line'> 25</span> </span><span class="COMM">//	JKIL = null,</span><span class="WHIT">
-<span class='line'> 26</span> </span><span class="COMM">//	</span><span class="WHIT">
-<span class='line'> 27</span> </span><span class="COMM">//	/**</span><span class="WHIT">
-<span class='line'> 28</span> </span><span class="COMM">//	 * @fieldOf		JKIL</span><span class="WHIT">
-<span class='line'> 29</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 30</span> </span><span class="COMM">//	 * @private</span><span class="WHIT">
-<span class='line'> 31</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 32</span> </span><span class="COMM">//	 * @description	A private property referencing the JKIL context (namely &lt;code>window&lt;/code>).&lt;br /></span><span class="WHIT">
-<span class='line'> 33</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 34</span> </span><span class="COMM">//	 * @type		Object</span><span class="WHIT">
-<span class='line'> 35</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 36</span> </span><span class="COMM">//	 * @since		TODO</span><span class="WHIT">
-<span class='line'> 37</span> </span><span class="COMM">//	 * @author		TODO</span><span class="WHIT">
-<span class='line'> 38</span> </span><span class="COMM">//	 */</span><span class="WHIT">
-<span class='line'> 39</span> </span><span class="COMM">//	_context = window,</span><span class="WHIT">
-<span class='line'> 40</span> </span><span class="COMM">//	</span><span class="WHIT">
-<span class='line'> 41</span> </span><span class="COMM">//	</span><span class="WHIT">
-<span class='line'> 42</span> </span><span class="COMM">//	/**</span><span class="WHIT">
-<span class='line'> 43</span> </span><span class="COMM">//	 * @fieldOf		JKIL</span><span class="WHIT">
-<span class='line'> 44</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 45</span> </span><span class="COMM">//	 * @private</span><span class="WHIT">
-<span class='line'> 46</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 47</span> </span><span class="COMM">//	 * @description	A private property that keeps the native name ("JKIL") of the plugin.&lt;br /></span><span class="WHIT">
-<span class='line'> 48</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 49</span> </span><span class="COMM">//	 * @type		string</span><span class="WHIT">
-<span class='line'> 50</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 51</span> </span><span class="COMM">//	 * @since		TODO</span><span class="WHIT">
-<span class='line'> 52</span> </span><span class="COMM">//	 * @author		TODO</span><span class="WHIT">
-<span class='line'> 53</span> </span><span class="COMM">//	 */</span><span class="WHIT">
-<span class='line'> 54</span> </span><span class="COMM">//	_nativeName = "JKIL",</span><span class="WHIT">
-<span class='line'> 55</span> </span><span class="COMM">//	</span><span class="WHIT">
-<span class='line'> 56</span> </span><span class="COMM">//	/**</span><span class="WHIT">
-<span class='line'> 57</span> </span><span class="COMM">//	 * @fieldOf		JKIL</span><span class="WHIT">
-<span class='line'> 58</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 59</span> </span><span class="COMM">//	 * @private</span><span class="WHIT">
-<span class='line'> 60</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 61</span> </span><span class="COMM">//	 * @description	A private property indicating the name of the namespace.&lt;br /></span><span class="WHIT">
-<span class='line'> 62</span> </span><span class="COMM">//	 * 				Without alternate name, it matches &lt;code>_nativeName&lt;/code> (that is, "JKIL"), TODO>>>otherwise its value is the alternate name given as first argument of &lt;code>JKIL.js&lt;/code> outermost anonymous function&lt;&lt;&lt;TODO.&lt;br /></span><span class="WHIT">
-<span class='line'> 63</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 64</span> </span><span class="COMM">//	 * @type		null|string</span><span class="WHIT">
-<span class='line'> 65</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 66</span> </span><span class="COMM">//	 * @since		TODO</span><span class="WHIT">
-<span class='line'> 67</span> </span><span class="COMM">//	 * @author		TODO</span><span class="WHIT">
-<span class='line'> 68</span> </span><span class="COMM">//	 */</span><span class="WHIT">
-<span class='line'> 69</span> </span><span class="COMM">//	_namespaceName = "JKIL", // TODO</span><span class="WHIT">
-<span class='line'> 70</span> </span><span class="COMM">//</span><span class="WHIT">
-<span class='line'> 71</span> </span><span class="COMM">//	/**</span><span class="WHIT">
-<span class='line'> 72</span> </span><span class="COMM">//	 * @fieldOf		JKIL</span><span class="WHIT">
-<span class='line'> 73</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 74</span> </span><span class="COMM">//	 * @private</span><span class="WHIT">
-<span class='line'> 75</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 76</span> </span><span class="COMM">//	 * @description	TODO</span><span class="WHIT">
-<span class='line'> 77</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 78</span> </span><span class="COMM">//	 * @type		array</span><span class="WHIT">
-<span class='line'> 79</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 80</span> </span><span class="COMM">//	 * @since		TODO</span><span class="WHIT">
-<span class='line'> 81</span> </span><span class="COMM">//	 * @author		TODO</span><span class="WHIT">
-<span class='line'> 82</span> </span><span class="COMM">//	 */</span><span class="WHIT">
-<span class='line'> 83</span> </span><span class="COMM">//	_aliases = [],</span><span class="WHIT">
-<span class='line'> 84</span> </span><span class="COMM">//	</span><span class="WHIT">
-<span class='line'> 85</span> </span><span class="COMM">//	/**</span><span class="WHIT">
-<span class='line'> 86</span> </span><span class="COMM">//	 * @fieldOf		JKIL</span><span class="WHIT">
-<span class='line'> 87</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 88</span> </span><span class="COMM">//	 * @private</span><span class="WHIT">
-<span class='line'> 89</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 90</span> </span><span class="COMM">//	 * @description	TODO</span><span class="WHIT">
-<span class='line'> 91</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 92</span> </span><span class="COMM">//	 * @type		hash</span><span class="WHIT">
-<span class='line'> 93</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'> 94</span> </span><span class="COMM">//	 * @since		TODO</span><span class="WHIT">
-<span class='line'> 95</span> </span><span class="COMM">//	 * @author		TODO</span><span class="WHIT">
-<span class='line'> 96</span> </span><span class="COMM">//	 */</span><span class="WHIT">
-<span class='line'> 97</span> </span><span class="COMM">//	_manifest = {</span><span class="WHIT">
-<span class='line'> 98</span> </span><span class="COMM">//		test: {a: false, b: false, c: false}</span><span class="WHIT">
-<span class='line'> 99</span> </span><span class="COMM">//	},</span><span class="WHIT">
-<span class='line'>100</span> </span><span class="COMM">//	</span><span class="WHIT">
-<span class='line'>101</span> </span><span class="COMM">//	/**</span><span class="WHIT">
-<span class='line'>102</span> </span><span class="COMM">//	 * @fieldOf		JKIL</span><span class="WHIT">
-<span class='line'>103</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'>104</span> </span><span class="COMM">//	 * @private</span><span class="WHIT">
-<span class='line'>105</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'>106</span> </span><span class="COMM">//	 * @description	A private property which keeps JKIL error codes and messages.&lt;br /></span><span class="WHIT">
-<span class='line'>107</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'>108</span> </span><span class="COMM">//	 * @type		hash</span><span class="WHIT">
-<span class='line'>109</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'>110</span> </span><span class="COMM">//	 * @since		TODO</span><span class="WHIT">
-<span class='line'>111</span> </span><span class="COMM">//	 * @author		TODO</span><span class="WHIT">
-<span class='line'>112</span> </span><span class="COMM">//	 */</span><span class="WHIT">
-<span class='line'>113</span> </span><span class="COMM">//	_errors = "TODO",</span><span class="WHIT">
-<span class='line'>114</span> </span><span class="COMM">//	</span><span class="WHIT">
-<span class='line'>115</span> </span><span class="COMM">//	/**</span><span class="WHIT">
-<span class='line'>116</span> </span><span class="COMM">//	 * @methodOf	JKIL</span><span class="WHIT">
-<span class='line'>117</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'>118</span> </span><span class="COMM">//	 * @private</span><span class="WHIT">
-<span class='line'>119</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'>120</span> </span><span class="COMM">//	 * @description	A private method that initializes the namespace itself.&lt;br /></span><span class="WHIT">
-<span class='line'>121</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'>122</span> </span><span class="COMM">//	 * @returns		{void}</span><span class="WHIT">
-<span class='line'>123</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'>124</span> </span><span class="COMM">//	 * @since		TODO</span><span class="WHIT">
-<span class='line'>125</span> </span><span class="COMM">//	 * @author		TODO</span><span class="WHIT">
-<span class='line'>126</span> </span><span class="COMM">//	 */</span><span class="WHIT">
-<span class='line'>127</span> </span><span class="COMM">//	_initNamespace = function () {</span><span class="WHIT">
-<span class='line'>128</span> </span><span class="COMM">//		JKIL.configuration = {};</span><span class="WHIT">
-<span class='line'>129</span> </span><span class="COMM">//		JKIL.types = {};</span><span class="WHIT">
-<span class='line'>130</span> </span><span class="COMM">//		JKIL.test = {};</span><span class="WHIT">
-<span class='line'>131</span> </span><span class="COMM">//		JKIL.test.a = 123;</span><span class="WHIT">
-<span class='line'>132</span> </span><span class="COMM">//		JKIL.utilities = {};</span><span class="WHIT">
-<span class='line'>133</span> </span><span class="COMM">//		return JKIL;</span><span class="WHIT">
-<span class='line'>134</span> </span><span class="COMM">//	};</span><span class="WHIT">
-<span class='line'>135</span> </span><span class="COMM">//	</span><span class="WHIT">
-<span class='line'>136</span> </span><span class="COMM">//	/*</span><span class="WHIT">
-<span class='line'>137</span> </span><span class="COMM">//	 * TODO</span><span class="WHIT">
-<span class='line'>138</span> </span><span class="COMM">//	 * </span><span class="WHIT">
-<span class='line'>139</span> </span><span class="COMM">//	 * Voir s'il est possible de packager JKIL et d'empêcher qu'on y accède de l'exterieur.</span><span class="WHIT">
-<span class='line'>140</span> </span><span class="COMM">//	 */</span><span class="WHIT">
-<span class='line'>141</span> </span><span class="COMM">//	( function () {</span><span class="WHIT">
-<span class='line'>142</span> </span><span class="COMM">//		</span><span class="WHIT">
-<span class='line'>143</span> </span><span class="COMM">//		console.log("la");</span><span class="WHIT">
-<span class='line'>144</span> </span><span class="COMM">//		</span><span class="WHIT">
-<span class='line'>145</span> </span><span class="COMM">//		if ( JKIL === null ) {</span><span class="WHIT">
-<span class='line'>146</span> </span><span class="COMM">//			</span><span class="WHIT">
-<span class='line'>147</span> </span><span class="COMM">//			/*</span><span class="WHIT">
-<span class='line'>148</span> </span><span class="COMM">//			 * Abort if the namespace name already exists in the global scope.</span><span class="WHIT">
-<span class='line'>149</span> </span><span class="COMM">//			 */</span><span class="WHIT">
-<span class='line'>150</span> </span><span class="COMM">//			if ( _context[_namespaceName] ) {</span><span class="WHIT">
-<span class='line'>151</span> </span><span class="COMM">//				throw new Error ("TODO");</span><span class="WHIT">
-<span class='line'>152</span> </span><span class="COMM">//			}</span><span class="WHIT">
-<span class='line'>153</span> </span><span class="COMM">//			</span><span class="WHIT">
-<span class='line'>154</span> </span><span class="COMM">//			/*</span><span class="WHIT">
-<span class='line'>155</span> </span><span class="COMM">//			 * Create namespace root in the global scope and reference it in the private JKIL property.</span><span class="WHIT">
-<span class='line'>156</span> </span><span class="COMM">//			 */</span><span class="WHIT">
-<span class='line'>157</span> </span><span class="COMM">//			_context[_namespaceName] = {};</span><span class="WHIT">
-<span class='line'>158</span> </span><span class="COMM">//			JKIL = _context[_namespaceName];</span><span class="WHIT">
-<span class='line'>159</span> </span><span class="COMM">//			</span><span class="WHIT">
-<span class='line'>160</span> </span><span class="COMM">//			/*</span><span class="WHIT">
-<span class='line'>161</span> </span><span class="COMM">//			 * Initialize the JKIL namespace with default members.</span><span class="WHIT">
-<span class='line'>162</span> </span><span class="COMM">//			 */</span><span class="WHIT">
-<span class='line'>163</span> </span><span class="COMM">//			_initNamespace();</span><span class="WHIT">
-<span class='line'>164</span> </span><span class="COMM">//			</span><span class="WHIT">
-<span class='line'>165</span> </span><span class="COMM">//		}</span><span class="WHIT">
-<span class='line'>166</span> </span><span class="COMM">//	} ) ();</span><span class="WHIT">
-<span class='line'>167</span> </span><span class="COMM">//</span><span class="WHIT">
-<span class='line'>168</span> </span><span class="COMM">//} )();</span><span class="WHIT">
-<span class='line'>169</span> 
-<span class='line'>170</span> 
-<span class='line'>171</span> 
-<span class='line'>172</span> 
-<span class='line'>173</span> </span><span class="COMM">/**
-<span class='line'>174</span>  * @namespace	A namespace for methods, objects and constructors.&lt;br />
-<span class='line'>175</span>  * 
-<span class='line'>176</span>  * @description	A library of methods, objects and constructors.&lt;br />
-<span class='line'>177</span>  */</span><span class="WHIT">
-<span class='line'>178</span> </span><span class="NAME">JKIL</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>179</span> 
-<span class='line'>180</span> </span><span class="COMM">/**
-<span class='line'>181</span>  * @memberof	JKIL
-<span class='line'>182</span>  * @namespace
-<span class='line'>183</span>  * 
-<span class='line'>184</span>  * @description	A namespace for methods related to sorting.&lt;br />
-<span class='line'>185</span>  */</span><span class="WHIT">
-<span class='line'>186</span> </span><span class="NAME">JKIL.sortings</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>187</span> 
-<span class='line'>188</span> </span><span class="COMM">/**
-<span class='line'>189</span>  * @memberof	JKIL.sortings
-<span class='line'>190</span>  * @namespace
-<span class='line'>191</span>  * 
-<span class='line'>192</span>  * @description	A namespace for methods related to sorting of arrays.&lt;br />
-<span class='line'>193</span>  */</span><span class="WHIT">
-<span class='line'>194</span> </span><span class="NAME">JKIL.sortings.array</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>195</span> 
-<span class='line'>196</span> </span><span class="COMM">/**
-<span class='line'>197</span>  * @memberof	JKIL
-<span class='line'>198</span>  * @namespace
-<span class='line'>199</span>  * 
-<span class='line'>200</span>  * @description	A namespace for comparison methods.&lt;br />
-<span class='line'>201</span>  */</span><span class="WHIT">
-<span class='line'>202</span> </span><span class="NAME">JKIL.comparators</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>203</span> 
-<span class='line'>204</span> </span></pre></body></html>
+<span class='line'>  7</span> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">undefined</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>  8</span> </span><span class="WHIT">    </span><span class="WHIT">
+<span class='line'>  9</span> </span><span class="WHIT">    </span><span class="COMM">/*
+<span class='line'> 10</span>      * Private members.
+<span class='line'> 11</span>      */</span><span class="WHIT">
+<span class='line'> 12</span> </span><span class="WHIT">    </span><span class="KEYW">var</span><span class="WHIT">
+<span class='line'> 13</span> </span><span class="WHIT">    </span><span class="WHIT">
+<span class='line'> 14</span> </span><span class="WHIT">    </span><span class="COMM">/**
+<span class='line'> 15</span>      * @namespace      JKIL
+<span class='line'> 16</span>      * 
+<span class='line'> 17</span>      * @description    A private property which holds the JKIL namespace itself.&lt;br />
+<span class='line'> 18</span>      *                 It is referenced in the global scope after &lt;code>JKIL.js&lt;/code> has been loaded.&lt;br />
+<span class='line'> 19</span>      * 
+<span class='line'> 20</span>      * @type           null|hash
+<span class='line'> 21</span>      * 
+<span class='line'> 22</span>      * @since          TODO
+<span class='line'> 23</span>      * @author         TODO
+<span class='line'> 24</span>      */</span><span class="WHIT">
+<span class='line'> 25</span> </span><span class="WHIT">    </span><span class="NAME">JKIL</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 26</span> </span><span class="WHIT">    </span><span class="WHIT">
+<span class='line'> 27</span> </span><span class="WHIT">    </span><span class="COMM">/**
+<span class='line'> 28</span>      * @fieldOf        JKIL
+<span class='line'> 29</span>      * 
+<span class='line'> 30</span>      * @private
+<span class='line'> 31</span>      * 
+<span class='line'> 32</span>      * @description    A private property referencing the JKIL context (namely &lt;code>window&lt;/code>).&lt;br />
+<span class='line'> 33</span>      * 
+<span class='line'> 34</span>      * @type           Object
+<span class='line'> 35</span>      * 
+<span class='line'> 36</span>      * @since          TODO
+<span class='line'> 37</span>      * @author         TODO
+<span class='line'> 38</span>      */</span><span class="WHIT">
+<span class='line'> 39</span> </span><span class="WHIT">    </span><span class="NAME">_context</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">window</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 40</span> </span><span class="WHIT">    </span><span class="WHIT">
+<span class='line'> 41</span> </span><span class="WHIT">    </span><span class="WHIT">
+<span class='line'> 42</span> </span><span class="WHIT">    </span><span class="COMM">/**
+<span class='line'> 43</span>      * @fieldOf        JKIL
+<span class='line'> 44</span>      * 
+<span class='line'> 45</span>      * @private
+<span class='line'> 46</span>      * 
+<span class='line'> 47</span>      * @description    A private property that keeps the native name ("JKIL") of the plugin.&lt;br />
+<span class='line'> 48</span>      * 
+<span class='line'> 49</span>      * @type           string
+<span class='line'> 50</span>      * 
+<span class='line'> 51</span>      * @since          TODO
+<span class='line'> 52</span>      * @author         TODO
+<span class='line'> 53</span>      */</span><span class="WHIT">
+<span class='line'> 54</span> </span><span class="WHIT">    </span><span class="NAME">_nativeName</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"JKIL"</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 55</span> </span><span class="WHIT">    </span><span class="WHIT">
+<span class='line'> 56</span> </span><span class="WHIT">    </span><span class="COMM">/**
+<span class='line'> 57</span>      * @fieldOf        JKIL
+<span class='line'> 58</span>      * 
+<span class='line'> 59</span>      * @private
+<span class='line'> 60</span>      * 
+<span class='line'> 61</span>      * @description    A private property indicating the name of the namespace.&lt;br />
+<span class='line'> 62</span>      *                 Without alternate name, it matches &lt;code>_nativeName&lt;/code> (that is, "JKIL"), TODO>>>otherwise its value is the alternate name given as first argument of &lt;code>JKIL.js&lt;/code> outermost anonymous function&lt;&lt;&lt;TODO.&lt;br />
+<span class='line'> 63</span>      * 
+<span class='line'> 64</span>      * @type           null|string
+<span class='line'> 65</span>      * 
+<span class='line'> 66</span>      * @since          TODO
+<span class='line'> 67</span>      * @author         TODO
+<span class='line'> 68</span>      */</span><span class="WHIT">
+<span class='line'> 69</span> </span><span class="WHIT">    </span><span class="NAME">_namespaceName</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"JKIL"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="COMM">// TODO</span><span class="WHIT">
+<span class='line'> 70</span> 
+<span class='line'> 71</span> </span><span class="WHIT">    </span><span class="COMM">/**
+<span class='line'> 72</span>      * @fieldOf        JKIL
+<span class='line'> 73</span>      * 
+<span class='line'> 74</span>      * @private
+<span class='line'> 75</span>      * 
+<span class='line'> 76</span>      * @description    TODO
+<span class='line'> 77</span>      * 
+<span class='line'> 78</span>      * @type           array
+<span class='line'> 79</span>      * 
+<span class='line'> 80</span>      * @since          TODO
+<span class='line'> 81</span>      * @author         TODO
+<span class='line'> 82</span>      */</span><span class="WHIT">
+<span class='line'> 83</span> </span><span class="WHIT">    </span><span class="NAME">_aliases</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 84</span> </span><span class="WHIT">    </span><span class="WHIT">
+<span class='line'> 85</span> </span><span class="WHIT">    </span><span class="COMM">/**
+<span class='line'> 86</span>      * @fieldOf        JKIL
+<span class='line'> 87</span>      * 
+<span class='line'> 88</span>      * @private
+<span class='line'> 89</span>      * 
+<span class='line'> 90</span>      * @description    TODO
+<span class='line'> 91</span>      * 
+<span class='line'> 92</span>      * @type           hash
+<span class='line'> 93</span>      * 
+<span class='line'> 94</span>      * @since          TODO
+<span class='line'> 95</span>      * @author         TODO
+<span class='line'> 96</span>      */</span><span class="WHIT">
+<span class='line'> 97</span> </span><span class="WHIT">    </span><span class="NAME">_manifest</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 98</span> </span><span class="WHIT">        </span><span class="NAME">test</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="NAME">a</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">b</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">c</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 99</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>100</span> </span><span class="WHIT">    </span><span class="WHIT">
+<span class='line'>101</span> </span><span class="WHIT">    </span><span class="COMM">/**
+<span class='line'>102</span>      * @fieldOf        JKIL
+<span class='line'>103</span>      * 
+<span class='line'>104</span>      * @private
+<span class='line'>105</span>      * 
+<span class='line'>106</span>      * @description    A private property which keeps JKIL error codes and messages.&lt;br />
+<span class='line'>107</span>      * 
+<span class='line'>108</span>      * @type           hash
+<span class='line'>109</span>      * 
+<span class='line'>110</span>      * @since          TODO
+<span class='line'>111</span>      * @author         TODO
+<span class='line'>112</span>      */</span><span class="WHIT">
+<span class='line'>113</span> </span><span class="WHIT">    </span><span class="NAME">_errors</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"TODO"</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>114</span> </span><span class="WHIT">    </span><span class="WHIT">
+<span class='line'>115</span> </span><span class="WHIT">    </span><span class="COMM">/**
+<span class='line'>116</span>      * @methodOf    JKIL
+<span class='line'>117</span>      * 
+<span class='line'>118</span>      * @private
+<span class='line'>119</span>      * 
+<span class='line'>120</span>      * @description    A private method that initializes the namespace itself.&lt;br />
+<span class='line'>121</span>      * 
+<span class='line'>122</span>      * @returns        {void}
+<span class='line'>123</span>      * 
+<span class='line'>124</span>      * @since          TODO
+<span class='line'>125</span>      * @author         TODO
+<span class='line'>126</span>      */</span><span class="WHIT">
+<span class='line'>127</span> </span><span class="WHIT">    </span><span class="NAME">_initNamespace</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>128</span> </span><span class="WHIT">    	</span><span class="WHIT">
+<span class='line'>129</span> </span><span class="WHIT">        </span><span class="COMM">/**
+<span class='line'>130</span>          * @memberof       JKIL
+<span class='line'>131</span>          * @namespace
+<span class='line'>132</span>          * 
+<span class='line'>133</span>          * @description    A namespace for configuration properties and methods.&lt;br />
+<span class='line'>134</span>          */</span><span class="WHIT">
+<span class='line'>135</span> </span><span class="WHIT">        </span><span class="NAME">JKIL.configuration</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>136</span> </span><span class="WHIT">        </span><span class="WHIT">
+<span class='line'>137</span> </span><span class="WHIT">        </span><span class="COMM">/**
+<span class='line'>138</span>          * @memberof       JKIL
+<span class='line'>139</span>          * @namespace
+<span class='line'>140</span>          * 
+<span class='line'>141</span>          * @description    A namespace for methods related to types.&lt;br />
+<span class='line'>142</span>          */</span><span class="WHIT">
+<span class='line'>143</span> </span><span class="WHIT">        </span><span class="NAME">JKIL.types</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>144</span> </span><span class="WHIT">                </span><span class="WHIT">
+<span class='line'>145</span> </span><span class="WHIT">                </span><span class="WHIT">
+<span class='line'>146</span> </span><span class="WHIT">            </span><span class="COMM">/**
+<span class='line'>147</span>              * @methodOf       JKIL.types
+<span class='line'>148</span>              * 
+<span class='line'>149</span>              * @description    Gets the value of the hidden [[Class]] property for the given value.&lt;br />
+<span class='line'>150</span>              * 
+<span class='line'>151</span>              * @example        &lt;b>Syntax:&lt;/b>
+<span class='line'>152</span>              *                 JKIL.types.getClass ( pm_value )
+<span class='line'>153</span>              * 
+<span class='line'>154</span>              * @param          {mixed}     pm_value    The value whose "class" is to be determined.
+<span class='line'>155</span>              * 
+<span class='line'>156</span>              * @returns        {string}    A string describing the [[Class]] property (for instance "Object", "Array", "String", "Boolean" and so on).&lt;br />
+<span class='line'>157</span>              *                             Notice: &lt;code>window&lt;/code> returns "Window" even for Google Chrome.
+<span class='line'>158</span>              * 
+<span class='line'>159</span>              * @see            TODO récupérer références
+<span class='line'>160</span>              */</span><span class="WHIT">
+<span class='line'>161</span> </span><span class="WHIT">            </span><span class="NAME">getClass</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">pm_value</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>162</span> </span><span class="WHIT">                </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">_s_class</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Object.prototype.toString.call</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">pm_value</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">match</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="REGX">/^\[object\s(.*)\]$/</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="PUNC">[</span><span class="NUMB">1</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>163</span> </span><span class="WHIT">                </span><span class="WHIT">
+<span class='line'>164</span> </span><span class="COMM">//                // TODO statuer sur l'utilisé de ça et sur la façon dont ça doit fonctionner</span><span class="WHIT">
+<span class='line'>165</span> </span><span class="COMM">//                //if ( ph_options.override === true ) {</span><span class="WHIT">
+<span class='line'>166</span> </span><span class="COMM">//                    var s_constructor = "";</span><span class="WHIT">
+<span class='line'>167</span> </span><span class="COMM">//                    if ( /*JSS.isEmpty ( pm_value ) === false && plante sur constructeurs vides */ typeof pm_value !== "undefined" && pm_value !== null && typeof pm_value.constructor === "function" ) { // TODO check</span><span class="WHIT">
+<span class='line'>168</span> </span><span class="COMM">//                        s_constructor = pm_value.constructor.toString().match(/^function\s(.*)\(.*/)[1];</span><span class="WHIT">
+<span class='line'>169</span> </span><span class="COMM">//                    } else if ( JSS.isPlainObject ( pm_value ) === true ) {</span><span class="WHIT">
+<span class='line'>170</span> </span><span class="COMM">//                        s_constructor = pm_value.constructor.toString().match(/^\[object\s(.*)\]$/)[1];</span><span class="WHIT">
+<span class='line'>171</span> </span><span class="COMM">//                    }</span><span class="WHIT">
+<span class='line'>172</span> </span><span class="COMM">//                //}</span><span class="WHIT">
+<span class='line'>173</span> </span><span class="WHIT">                </span><span class="WHIT">
+<span class='line'>174</span> </span><span class="WHIT">                </span><span class="KEYW">switch</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">_s_class</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>175</span> </span><span class="WHIT">                    </span><span class="COMM">// Google Chrome returns "global" instead of "Window".</span><span class="WHIT">
+<span class='line'>176</span> </span><span class="WHIT">                    </span><span class="KEYW">case</span><span class="WHIT"> </span><span class="STRN">"global"</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>177</span> </span><span class="WHIT">                        </span><span class="NAME">_s_class</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"Window"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>178</span> </span><span class="WHIT">                    </span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>179</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>180</span> </span><span class="WHIT">                </span><span class="WHIT">
+<span class='line'>181</span> </span><span class="WHIT">                </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">_s_class</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>182</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>183</span> </span><span class="WHIT">            </span><span class="WHIT">
+<span class='line'>184</span> </span><span class="WHIT">            </span><span class="COMM">/**
+<span class='line'>185</span>              * @methodOf       JKIL.types
+<span class='line'>186</span>              * 
+<span class='line'>187</span>              * @description    Checks whether the given value is an array.&lt;br />
+<span class='line'>188</span>              * 
+<span class='line'>189</span>              * @example        &lt;b>Syntax:&lt;/b>
+<span class='line'>190</span>              *                 JKIL.types.isArray ( pm_value )
+<span class='line'>191</span>              * 
+<span class='line'>192</span>              * @param          {mixed}      pm_value    The value whose type is to be checked.
+<span class='line'>193</span>              * 
+<span class='line'>194</span>              * @returns        {boolean}    Returns &lt;code>true&lt;/code> if the given value is an array, &lt;code>false&lt;/code> otherwise.
+<span class='line'>195</span>              * 
+<span class='line'>196</span>              * @requires       JKIL.types.getClass ()
+<span class='line'>197</span>              * 
+<span class='line'>198</span>              * @see            TODO récupérer références
+<span class='line'>199</span>              */</span><span class="WHIT">
+<span class='line'>200</span> </span><span class="WHIT">            </span><span class="NAME">isArray</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">pm_value</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>201</span> </span><span class="WHIT">                </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">JKIL.types.getClass</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">pm_value</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="STRN">"Array"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>202</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>203</span> </span><span class="WHIT">            </span><span class="WHIT">
+<span class='line'>204</span> </span><span class="WHIT">            </span><span class="COMM">/**
+<span class='line'>205</span>              * @methodOf       JKIL.types
+<span class='line'>206</span>              * 
+<span class='line'>207</span>              * @description    Checks whether the given value is an object (can be &lt;code>null&lt;/code>).&lt;br />
+<span class='line'>208</span>              * 
+<span class='line'>209</span>              * @example        &lt;b>Syntax:&lt;/b>
+<span class='line'>210</span>              *                 JKIL.types.isObject ( pm_value )
+<span class='line'>211</span>              * 
+<span class='line'>212</span>              * @param          {mixed}      pm_value    The value whose type is to be checked.
+<span class='line'>213</span>              * 
+<span class='line'>214</span>              * @returns        {boolean}    Returns &lt;code>true&lt;/code> if the given value is an object or &lt;code>null&lt;/code>, &lt;code>false&lt;/code> otherwise.
+<span class='line'>215</span>              */</span><span class="WHIT">
+<span class='line'>216</span> </span><span class="WHIT">            </span><span class="NAME">isObject</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">pm_value</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>217</span> </span><span class="WHIT">                </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">pm_value</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="STRN">"object"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>218</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>219</span> </span><span class="WHIT">            </span><span class="WHIT">
+<span class='line'>220</span> </span><span class="WHIT">            </span><span class="COMM">/**
+<span class='line'>221</span>              * @methodOf       JKIL.types
+<span class='line'>222</span>              * 
+<span class='line'>223</span>              * @description    Checks whether the given value is a plain object (cannot be &lt;code>null&lt;/code>).&lt;br />
+<span class='line'>224</span>              * 
+<span class='line'>225</span>              * @example        &lt;b>Syntax:&lt;/b>
+<span class='line'>226</span>              *                 JKIL.types.isPlainObject ( pm_value )
+<span class='line'>227</span>              * 
+<span class='line'>228</span>              * @param          {mixed}      pm_value    The value whose type is to be checked.
+<span class='line'>229</span>              * 
+<span class='line'>230</span>              * @returns        {boolean}    Returns &lt;code>true&lt;/code> if the given value is an object and is &lt;strong>not&lt;/strong> &lt;code>null&lt;/code>, &lt;code>false&lt;/code> otherwise.
+<span class='line'>231</span>              */</span><span class="WHIT">
+<span class='line'>232</span> </span><span class="WHIT">            </span><span class="NAME">isPlainObject</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">pm_value</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>233</span> </span><span class="WHIT">                </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">pm_value</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="STRN">"object"</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">pm_value</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>234</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>235</span> </span><span class="WHIT">    </span><span class="WHIT">
+<span class='line'>236</span> </span><span class="WHIT">            </span><span class="COMM">/**
+<span class='line'>237</span>              * @methodOf       JKIL.types
+<span class='line'>238</span>              * 
+<span class='line'>239</span>              * @description    Checks whether the given value is a string litteral, a &lt;code>String&lt;/code> object, or either a string litteral or a &lt;code>String&lt;/code> object.&lt;br />
+<span class='line'>240</span>              * 
+<span class='line'>241</span>              * @example        &lt;b>Syntax:&lt;/b>
+<span class='line'>242</span>              *                 JKIL.types.isString ( pm_value[, ph_options] )
+<span class='line'>243</span>              * 
+<span class='line'>244</span>              * @example        &lt;b>Example 1 - Synonym of JKIL.types.isStringLitteral(): &lt;/b>
+<span class='line'>245</span>              *                 var v = "a string";
+<span class='line'>246</span>              *                 var b = JKIL.types.isStringLitteral ( v, {litteral: true, object: false} ); // true
+<span class='line'>247</span>              * 
+<span class='line'>248</span>              * @example        &lt;b>Example 2 - Synonym of JKIL.types.isStringObject(): &lt;/b>
+<span class='line'>249</span>              *                 var v = new String("a string");
+<span class='line'>250</span>              *                 var b = JKIL.types.isStringLitteral ( v, {litteral: false, object: true} ); // true
+<span class='line'>251</span>              * 
+<span class='line'>252</span>              * @example        &lt;b>Example 3 - Synonym of JKIL.types.isStringObjectOrLitteral(): &lt;/b>
+<span class='line'>253</span>              *                 var v1 = "a string";
+<span class='line'>254</span>              *                 var b = JKIL.types.isStringLitteral ( v1, {litteral: true, object: true} ); // true
+<span class='line'>255</span>              *                 var v2 = new String("a string");
+<span class='line'>256</span>              *                 var b = JKIL.types.isStringLitteral ( v2, {litteral: true, object: true} ); // true
+<span class='line'>257</span>              * 
+<span class='line'>258</span>              * @param          {mixed}      pm_value        The value whose type is to be checked.&lt;br />&lt;br />
+<span class='line'>259</span>              * 
+<span class='line'>260</span>              * @param          {hash}       [ph_options]    A hash of options:&lt;br />&lt;br />
+<span class='line'>261</span>              * 
+<span class='line'>262</span>              * @param          {boolean}    [ph_options.litteral=true]  If &lt;code>true&lt;/code>, the method returns &lt;code>true&lt;/code> for string litterals. &lt;code>ph_options.litteral&lt;/code> and &lt;code>ph_options.object&lt;/code> cannot be both &lt;code>false&lt;/code>.&lt;br />&lt;br />
+<span class='line'>263</span>              * @param          {boolean}    [ph_options.object=true]    If &lt;code>true&lt;/code>, the method returns &lt;code>true&lt;/code> for &lt;code>String&lt;/code> objects. &lt;code>ph_options.litteral&lt;/code> and &lt;code>ph_options.object&lt;/code> cannot be both &lt;code>false&lt;/code>.
+<span class='line'>264</span>              * 
+<span class='line'>265</span>              * @returns        {boolean}    Returns &lt;code>true&lt;/code> if the given value is strictly a string litteral, or strictly a &lt;code>String&lt;/code> object, or either a string litteral or a &lt;code>String&lt;/code> object. Returns &lt;code>false&lt;/code> otherwise.
+<span class='line'>266</span>              * 
+<span class='line'>267</span>              * @requires       JKIL.types.getClass()
+<span class='line'>268</span>              * 
+<span class='line'>269</span>              * @see            JKIL.types.isStringLitteral()
+<span class='line'>270</span>              * @see            JKIL.types.isStringObject()
+<span class='line'>271</span>              * @see            JKIL.types.isStringObjectOrLitteral()
+<span class='line'>272</span>              */</span><span class="WHIT">
+<span class='line'>273</span> </span><span class="WHIT">            </span><span class="NAME">isString</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">pm_value</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">ph_options</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>274</span> </span><span class="WHIT">                </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ph_options</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"object"</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">ph_options</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="NAME">ph_options</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>275</span> </span><span class="WHIT">                </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ph_options.litteral</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"boolean"</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="NAME">ph_options.litteral</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>276</span> </span><span class="WHIT">                </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ph_options.object</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"boolean"</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="NAME">ph_options.object</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>277</span> </span><span class="WHIT">                </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">ph_options.litteral</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">ph_options.object</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>278</span> </span><span class="WHIT">                    </span><span class="NAME">ph_options.litteral</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>279</span> </span><span class="WHIT">                    </span><span class="NAME">ph_options.object</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>280</span> </span><span class="WHIT">                </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>281</span> 
+<span class='line'>282</span> </span><span class="WHIT">                </span><span class="KEYW">return</span><span class="WHIT">     </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">ph_options.litteral</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">pm_value</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="STRN">"string"</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT">
+<span class='line'>283</span> </span><span class="WHIT">                        </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">ph_options.object</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">pm_value</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"string"</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">JKIL.types.getClass</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">pm_value</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="STRN">"String"</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>284</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>285</span> </span><span class="WHIT">            </span><span class="WHIT">
+<span class='line'>286</span> </span><span class="WHIT">            </span><span class="COMM">/**
+<span class='line'>287</span>              * @methodOf       JKIL.types
+<span class='line'>288</span>              * 
+<span class='line'>289</span>              * @description    Checks whether the given value is a string litteral (&lt;i>e&#46;g&#46;&lt;/i> "a string").&lt;br />
+<span class='line'>290</span>              * 
+<span class='line'>291</span>              * @example        &lt;b>Syntax:&lt;/b>
+<span class='line'>292</span>              *                 JKIL.types.isStringLitteral ( pm_value )
+<span class='line'>293</span>              * 
+<span class='line'>294</span>              * @param          {mixed}      pm_value    The value whose type is to be checked.
+<span class='line'>295</span>              * 
+<span class='line'>296</span>              * @returns        {boolean}    Returns &lt;code>true&lt;/code> if the given value is a string litteral, &lt;code>false&lt;/code> otherwise.
+<span class='line'>297</span>              * 
+<span class='line'>298</span>              * @see            JKIL.types.isString()
+<span class='line'>299</span>              */</span><span class="WHIT">
+<span class='line'>300</span> </span><span class="WHIT">            </span><span class="NAME">isStringLitteral</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">pm_value</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>301</span> </span><span class="WHIT">                </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">pm_value</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="STRN">"string"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>302</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>303</span> </span><span class="WHIT">            </span><span class="WHIT">
+<span class='line'>304</span> </span><span class="WHIT">            </span><span class="COMM">/**
+<span class='line'>305</span>              * @methodOf       JKIL.types
+<span class='line'>306</span>              * 
+<span class='line'>307</span>              * @description    Checks whether the given value is a &lt;code>String&lt;/code> object (&lt;i>e&#46;g&#46;&lt;/i> &lt;code>new String( "a string" )&lt;/code>).&lt;br />
+<span class='line'>308</span>              * 
+<span class='line'>309</span>              * @example        &lt;b>Syntax:&lt;/b>
+<span class='line'>310</span>              *                 JKIL.types.isStringObject ( pm_value )
+<span class='line'>311</span>              * 
+<span class='line'>312</span>              * @param          {mixed}      pm_value    The value whose type is to be checked.
+<span class='line'>313</span>              * 
+<span class='line'>314</span>              * @returns        {boolean}    Returns &lt;code>true&lt;/code> if the given value is a &lt;code>String&lt;/code> object, &lt;code>false&lt;/code> otherwise.
+<span class='line'>315</span>              * 
+<span class='line'>316</span>              * @requires       JKIL.types.getClass ()
+<span class='line'>317</span>              * 
+<span class='line'>318</span>              * @see            JKIL.types.isString()
+<span class='line'>319</span>              */</span><span class="WHIT">
+<span class='line'>320</span> </span><span class="WHIT">            </span><span class="NAME">isStringObject</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">pm_value</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>321</span> </span><span class="WHIT">                </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">pm_value</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"string"</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">JKIL.types.getClass</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">pm_value</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="STRN">"String"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>322</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>323</span> </span><span class="WHIT">            </span><span class="WHIT">
+<span class='line'>324</span> </span><span class="WHIT">            </span><span class="COMM">/**
+<span class='line'>325</span>              * @methodOf       JKIL.types
+<span class='line'>326</span>              * 
+<span class='line'>327</span>              * @description    Checks whether the given value is a string litteral or a &lt;code>String&lt;/code> object (&lt;i>e&#46;g&#46;&lt;/i> "a string" or &lt;code>new String( "a string" )&lt;/code>).&lt;br />
+<span class='line'>328</span>              * 
+<span class='line'>329</span>              * @example        &lt;b>Syntax:&lt;/b>
+<span class='line'>330</span>              *                 JKIL.types.isStringObjectOrLitteral ( pm_value )
+<span class='line'>331</span>              * 
+<span class='line'>332</span>              * @param          {mixed}      pm_value    The value whose type is to be checked.
+<span class='line'>333</span>              * 
+<span class='line'>334</span>              * @returns        {boolean}    Returns &lt;code>true&lt;/code> if the given value is a string litteral or a &lt;code>String&lt;/code> object, &lt;code>false&lt;/code> otherwise.
+<span class='line'>335</span>              * 
+<span class='line'>336</span>              * @requires       JKIL.types.getClass ()
+<span class='line'>337</span>              * 
+<span class='line'>338</span>              * @see            JKIL.types.isString()
+<span class='line'>339</span>              */</span><span class="WHIT">
+<span class='line'>340</span> </span><span class="WHIT">            </span><span class="NAME">isStringObjectOrLitteral</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">pm_value</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>341</span> </span><span class="WHIT">                </span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">pm_value</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="STRN">"string"</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">JKIL.types.getClass</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">pm_value</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="STRN">"String"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>342</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>343</span> </span><span class="WHIT">                </span><span class="WHIT">
+<span class='line'>344</span> </span><span class="WHIT">                </span><span class="WHIT">
+<span class='line'>345</span> </span><span class="WHIT">        </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>346</span> 
+<span class='line'>347</span> </span><span class="WHIT">        </span><span class="COMM">/**
+<span class='line'>348</span>          * @memberof       JKIL
+<span class='line'>349</span>          * @namespace
+<span class='line'>350</span>          * 
+<span class='line'>351</span>          * @description    A namespace for utility methods.&lt;br />
+<span class='line'>352</span>          */</span><span class="WHIT">
+<span class='line'>353</span> </span><span class="WHIT">        </span><span class="NAME">JKIL.utilities</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>354</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>355</span> </span><span class="WHIT">    </span><span class="WHIT">
+<span class='line'>356</span> </span><span class="WHIT">    </span><span class="COMM">/*
+<span class='line'>357</span>      * TODO
+<span class='line'>358</span>      * 
+<span class='line'>359</span>      * Voir s'il est possible de packager JKIL et d'empêcher qu'on y accède de l'exterieur.
+<span class='line'>360</span>      */</span><span class="WHIT">
+<span class='line'>361</span> </span><span class="WHIT">    </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>362</span> </span><span class="WHIT">        </span><span class="WHIT">
+<span class='line'>363</span> </span><span class="WHIT">        </span><span class="NAME">console.log</span><span class="PUNC">(</span><span class="STRN">"la"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>364</span> </span><span class="WHIT">        </span><span class="WHIT">
+<span class='line'>365</span> </span><span class="WHIT">        </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">JKIL</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>366</span> </span><span class="WHIT">            </span><span class="WHIT">
+<span class='line'>367</span> </span><span class="WHIT">            </span><span class="COMM">/*
+<span class='line'>368</span>              * Abort if the namespace name already exists in the global scope.
+<span class='line'>369</span>              */</span><span class="WHIT">
+<span class='line'>370</span> </span><span class="WHIT">            </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">_context</span><span class="PUNC">[</span><span class="NAME">_namespaceName</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>371</span> </span><span class="WHIT">                </span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="STRN">"TODO"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>372</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>373</span> </span><span class="WHIT">            </span><span class="WHIT">
+<span class='line'>374</span> </span><span class="WHIT">            </span><span class="COMM">/*
+<span class='line'>375</span>              * Create namespace root in the global scope and reference it in the private JKIL property.
+<span class='line'>376</span>              */</span><span class="WHIT">
+<span class='line'>377</span> </span><span class="WHIT">            </span><span class="NAME">_context</span><span class="PUNC">[</span><span class="NAME">_namespaceName</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>378</span> </span><span class="WHIT">            </span><span class="NAME">JKIL</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_context</span><span class="PUNC">[</span><span class="NAME">_namespaceName</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>379</span> </span><span class="WHIT">            </span><span class="WHIT">
+<span class='line'>380</span> </span><span class="WHIT">            </span><span class="COMM">/*
+<span class='line'>381</span>              * Initialize the JKIL namespace with default members.
+<span class='line'>382</span>              */</span><span class="WHIT">
+<span class='line'>383</span> </span><span class="WHIT">            </span><span class="NAME">_initNamespace</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>384</span> </span><span class="WHIT">            </span><span class="WHIT">
+<span class='line'>385</span> </span><span class="WHIT">        </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>386</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>387</span> 
+<span class='line'>388</span> </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>389</span> 
+<span class='line'>390</span> 
+<span class='line'>391</span> 
+<span class='line'>392</span> 
+<span class='line'>393</span> </span><span class="COMM">/**
+<span class='line'>394</span>  * @namespace    A namespace for methods, objects and constructors.&lt;br />
+<span class='line'>395</span>  * 
+<span class='line'>396</span>  * @description    A library of methods, objects and constructors.&lt;br />
+<span class='line'>397</span>  */</span><span class="WHIT">
+<span class='line'>398</span> </span><span class="COMM">//JKIL = {};</span><span class="WHIT">
+<span class='line'>399</span> 
+<span class='line'>400</span> </span><span class="COMM">/**
+<span class='line'>401</span>  * @memberof    JKIL
+<span class='line'>402</span>  * @namespace
+<span class='line'>403</span>  * 
+<span class='line'>404</span>  * @description    A namespace for methods related to sorting.&lt;br />
+<span class='line'>405</span>  */</span><span class="WHIT">
+<span class='line'>406</span> </span><span class="NAME">JKIL.sortings</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>407</span> 
+<span class='line'>408</span> </span><span class="COMM">/**
+<span class='line'>409</span>  * @memberof    JKIL.sortings
+<span class='line'>410</span>  * @namespace
+<span class='line'>411</span>  * 
+<span class='line'>412</span>  * @description    A namespace for methods related to sorting of arrays.&lt;br />
+<span class='line'>413</span>  */</span><span class="WHIT">
+<span class='line'>414</span> </span><span class="NAME">JKIL.sortings.array</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>415</span> 
+<span class='line'>416</span> </span><span class="COMM">/**
+<span class='line'>417</span>  * @memberof    JKIL
+<span class='line'>418</span>  * @namespace
+<span class='line'>419</span>  * 
+<span class='line'>420</span>  * @description    A namespace for comparison methods.&lt;br />
+<span class='line'>421</span>  */</span><span class="WHIT">
+<span class='line'>422</span> </span><span class="NAME">JKIL.comparators</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>423</span> 
+<span class='line'>424</span> </span></pre></body></html>
