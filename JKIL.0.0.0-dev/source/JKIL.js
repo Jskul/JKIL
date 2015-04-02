@@ -392,7 +392,7 @@
 	             * @memberOf       JKIL.utilities.Ajax
 	             * @private
 	             * 
-	             * @description    Holds exposable settings.<br />
+	             * @description    Holds exposable XHR settings and custom settings.<br />
 	             *                 TODO give settings description.<br />
 	             * 
 	             * @type           hash
@@ -413,7 +413,7 @@
         			/*
         			 * XMLHttpRequest properties.
         			 */
-        			//onreadystatechange: function () {}, // TODO
+        			onreadystatechange: null, // TODO
         			responsetype: "", // Is an enumerated value that defines the response type. DOMString is the default value. Note: Starting with Gecko 11.0 (Firefox 11.0 / Thunderbird 11.0 / SeaMonkey 2.8), as well as WebKit build 528, these browsers no longer let you use the responseType attribute when performing synchronous requests. Attempting to do so throws an NS_ERROR_DOM_INVALID_ACCESS_ERR exception. This change has been proposed to the W3C for standardization.
         			timeout: 0, // Is an unsigned long representing the number of milliseconds a request can take before automatically being terminated. A value of 0 (which is the default) means there is no timeout. Note: You may not use a timeout for synchronous requests with an owning window.
         			//ontimeout: null, // Is an EventHandler that is called whenever the request times out.
@@ -421,17 +421,51 @@
         			/*
         			 * Custom properties.
         			 */
-        			//data: null,
-        			onsuccess: function ( ps_responseText, pi_status, ps_statusText ) {console.log( "TODO onSuccess " +  ps_responseText + " " + pi_status + " " + ps_statusText);},
-        			onerror: function ( ps_error, pi_status, ps_statusText ) {console.log( "TODO onError " +  ps_error + " " + pi_status + " " + ps_statusText );},
-        			oncomplete: function ( pi_status, ps_statusText ) {console.log( "TODO onComplete " +  pi_status + " " + ps_statusText  );}
+        			data: null,
+        			onbeforesend: function ( ph_xhr ) {},
+        			onsuccess: function ( ph_xhr ) {},
+        			onerror: function ( ph_xhr ) {},
+        			oncomplete: function ( ph_xhr ) {}
         		};
         		
-        		/*
-        		 * TODO
+        		/**
+	             * @memberOf       JKIL.utilities.Ajax
+	             * @private
+	             * 
+	             * @description    Holds exposable XHR methods.<br />
+	             *                 TODO give settings description.<br />
+	             * 
+	             * @type           hash
         		 */
-        		var _h_privateSettings = {
-
+        		var _h_exposableMethods = {
+        				
+        			readyState: function() {
+                		return _o_xhr.readyState;
+                	},
+                	
+                	response: function() {
+            			return _o_xhr.response;
+            		},
+            		
+            		responseText: function() {
+            			return _o_xhr.responseText;
+            		},
+            		
+            		responseXML: function() {
+            			return _o_xhr.responseXML;
+            		},
+            		
+            		status: function() {
+            			return _o_xhr.status;
+            		},
+            		
+            		statusText: function() {
+            			return _o_xhr.statusText;
+            		},
+            		
+            		upload: function() {
+            			return _o_xhr.upload;
+            		}
             	};
 
         		/*
@@ -505,6 +539,11 @@
         		                    	throw new Error("TODO JKIL.utilities.Ajax._mergeSettings mimetype must be a string"); // TODO
         		                    }
         						break;
+        						case "onreadystatechange":
+        							if ( typeof ph_settings[k] !== "function" && ph_settings[k] !== null ) {
+        		                    	throw new Error("TODO JKIL.utilities.Ajax._mergeSettings onreadystatechange must be a function or null"); // TODO
+        		                    }
+        						break;
         						case "responsetype":
         							if (   typeof ph_settings[k] !== "string"
         								|| typeof ph_settings[k] === "string" && ph_settings[k].match(/^(|arraybuffer|blob|document|json|text)$/i) === null) {
@@ -525,6 +564,16 @@
         						case "withcredentials":
         							if ( typeof ph_settings[k] !== "boolean" ) {
         		                    	throw new Error("TODO JKIL.utilities.Ajax._mergeSettings withcredentials must be a boolean"); // TODO
+        		                    }
+        						break;
+        						case "data":
+        							if ( typeof ph_settings[k] !== "object" ) {
+        		                    	throw new Error("TODO JKIL.utilities.Ajax._mergeSettings data must be an object or null"); // TODO
+        		                    }
+        						break;
+        						case "onbeforesend":
+        							if ( typeof ph_settings[k] !== "function") {
+        		                    	throw new Error("TODO JKIL.utilities.Ajax._mergeSettings onbeforesend must be a function"); // TODO
         		                    }
         						break;
         						case "onsuccess":
@@ -593,14 +642,36 @@
         		var _setOnReadyStateChange = function () {
         			if( _o_xhr.readyState == 4 ){
         				if ( _o_xhr.status == 200 ) {
-        					_h_exposableSettings.onsuccess( _o_xhr.responseText, _o_xhr.status, _o_xhr.statusText  );
+        					_h_exposableSettings.onsuccess( _h_exposableMethods );
         				} else if ( _o_xhr.status == 0 || _o_xhr.status >= 400 || _o_xhr.status < 600 ) {
-        					_h_exposableSettings.onerror( _o_xhr.responseText, _o_xhr.status, _o_xhr.statusText );
+        					_h_exposableSettings.onerror( _h_exposableMethods );
         				}
         				
-        				_h_exposableSettings.oncomplete( _o_xhr.status, _o_xhr.statusText );
+        				_h_exposableSettings.oncomplete( _h_exposableMethods );
         			}
         		};
+
+        		
+        		var _mergeParameters = function () {
+        			
+        			
+//        			var _s_params = decodeURIComponent(window.location.search.substr(1));
+//        			var _a_params = null;
+//        			var _a_tmp = null;
+//        			var _h_out = {};
+//
+//        			if (_s_params != null && _s_params != "") {
+//        				_a_params = _s_params.split("&");
+//        				
+//        				for (var i=0; i<_a_params.length; ++i) {
+//        					_a_tmp = _a_params[i].split("=");
+//        					_h_out[_a_tmp[0]] = _a_tmp[1];
+//        				}
+//        			}
+        			
+        			
+        		};
+        		
         		
         		/**
 	             * @methodOf       JKIL.utilities.Ajax
@@ -669,7 +740,8 @@
 	             * @methodOf       JKIL.utilities.Ajax
 	             * @public
 	             * 
-	             * @description    TODO.<br />
+	             * @description    Performs a HTTP GET request.<br />
+	             * 				   TODO.<br />
         		 */
         		this.GET = function ( ph_settings ) {
                     if (typeof ph_settings !== "object" || ph_settings === null) {ph_settings = {};}
@@ -680,13 +752,17 @@
                     // TODO apply settings.
 
         			_o_xhr.open( _h_exposableSettings.method, _h_exposableSettings.url, _h_exposableSettings.async, _h_exposableSettings.user, _h_exposableSettings.password);
-        			_o_xhr.onreadystatechange = _setOnReadyStateChange;
+        			_o_xhr.onreadystatechange = _h_exposableSettings.onreadystatechange ? function () {return _h_exposableSettings.onreadystatechange( _h_exposableMethods );} : _setOnReadyStateChange;
+        			_h_exposableSettings.onbeforesend( _h_exposableMethods );
         			_o_xhr.send( null );
         		};
         		
            		/**
 	             * @methodOf       JKIL.utilities.Ajax
 	             * @public
+	             * 
+	             * @description    Performs a HTTP POST request.<br />
+	             * 				   TODO.<br />
         		 */
         		this.POST = function ( ph_settings ) {
         			console.log("TODO");
@@ -695,6 +771,9 @@
            		/**
 	             * @methodOf       JKIL.utilities.Ajax
 	             * @public
+	             * 
+	             * @description    Performs a custom HTTP request.<br />
+	             * 				   TODO.<br />
         		 */
         		this.DO = function ( ph_settings ) {
         			console.log("TODO");
