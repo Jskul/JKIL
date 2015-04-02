@@ -348,109 +348,433 @@
          * @memberof       JKIL
          * @namespace
          * 
-         * @description    A namespace for utility methods.<br />
+         * @description    A namespace for utility methods and constructors.<br />
          */
         JKIL.utilities = {
         		
         	/**
-             * @methodOf       JKIL.utilities
+             * @memberOf       JKIL.utilities
+             * @class
              * 
-             * @description    TODO Checks whether the given value is a string litteral or a <code>String</code> object (<i>e&#46;g&#46;</i> "a string" or <code>new String( "a string" )</code>).<br />
+             * @description    A JKIL&#46;utilities&#46;Ajax object constructor.<br />
              * 
-             * @example        TODO <b>Syntax:</b>
-             *                 TODO JKIL.types.isStringObjectOrLitteral ( pm_value )
+             * @example        <b>Syntax:</b>
+             *                 new JKIL.utilities.Ajax ()
              * 
-             * @param          TODO {mixed}      pm_value    The value whose type is to be checked.
+             * @example        <b>Example:</b>
+             *                 var ajax = new JKIL.utilities.Ajax ();
+             *                 
+             * @see            JKIL.utilities.getXHR()
              * 
-             * @returns        TODO {boolean}    Returns <code>true</code> if the given value is a string litteral or a <code>String</code> object, <code>false</code> otherwise.
+             * @see            https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest
+             * @see            https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest/Utiliser_XMLHttpRequest
+             * @see            https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest#open%28%29
              * 
-             * @requires       TODO JKIL.types.getClass ()
-             * 
-             * @see            TODO JKIL.types.isString()
-             * 
-             * https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest
-             * https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest/Utiliser_XMLHttpRequest
-             * https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest#open%28%29
+             * @see            http://openclassrooms.com/courses/ajax-et-l-echange-de-donnees-en-javascript
+             * @see            http://siddh.developpez.com/articles/ajax/
+             * @see            http://api.jquery.com/jquery.ajax/
+             * @see            http://stackoverflow.com/questions/3825581/does-an-http-status-code-of-0-have-any-meaning/26451773#26451773
+             * @see            http://www.w3.org/TR/XMLHttpRequest/#the-status-attribute
+             * @see            http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
         	 */
         	Ajax: function () {
+        		/**
+	             * @memberOf       JKIL.utilities.Ajax
+	             * @private
+	             * 
+	             * @description    Holds a <code>XMLHttpRequest</code> / <code>ActiveXObject</code> XHR object.<br />
+	             * 
+	             * @type           XMLHttpRequest|ActiveXObject|null
+        		 */
         		var _o_xhr = null;
-        		var _s_method = "GET";
-        		var _s_url = "";
-        		var _b_async = true;
-        		var _s_user = "";
-        		var _s_password = "";
-        		var _s_mimetype = "text/xml";
         		
-        		if ( window.XMLHttpRequest ) {
-        			_o_xhr = new XMLHttpRequest();
-    			// IE
-        		} else if ( window.ActiveXObject ) { 
-        			try {
-        				_o_xhr = new ActiveXObject( "Msxml2.XMLHTTP" );
-        			} catch (e) {
-        				_o_xhr = new ActiveXObject( "Microsoft.XMLHTTP" );
+        		/**
+	             * @memberOf       JKIL.utilities.Ajax
+	             * @private
+	             * 
+	             * @description    Holds exposable settings.<br />
+	             *                 TODO give settings description.<br />
+	             * 
+	             * @type           hash
+        		 */
+        		var _h_exposableSettings = {
+        			/*
+        			 * XMLHttpRequest.open() parameters.
+        			 */
+        			method: "GET",
+        			url: "",
+        			async: true,
+        			user: "",
+        			password: "",
+        			/*
+        			 * XMLHttpRequest.overrideMimeType() parameters.
+        			 */
+        			mimetype: "text/xml",
+        			/*
+        			 * XMLHttpRequest properties.
+        			 */
+        			//onreadystatechange: function () {}, // TODO
+        			responsetype: "", // Is an enumerated value that defines the response type. DOMString is the default value. Note: Starting with Gecko 11.0 (Firefox 11.0 / Thunderbird 11.0 / SeaMonkey 2.8), as well as WebKit build 528, these browsers no longer let you use the responseType attribute when performing synchronous requests. Attempting to do so throws an NS_ERROR_DOM_INVALID_ACCESS_ERR exception. This change has been proposed to the W3C for standardization.
+        			timeout: 0, // Is an unsigned long representing the number of milliseconds a request can take before automatically being terminated. A value of 0 (which is the default) means there is no timeout. Note: You may not use a timeout for synchronous requests with an owning window.
+        			//ontimeout: null, // Is an EventHandler that is called whenever the request times out.
+        			withcredentials: false, // Is a Boolean that indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies or authorization headers. The default is false. Note: This never affects same-site requests. Note: Starting with Gecko 11.0 (Firefox 11.0 / Thunderbird 11.0 / SeaMonkey 2.8), Gecko no longer lets you use the withCredentials attribute when performing synchronous requests. Attempting to do so throws an NS_ERROR_DOM_INVALID_ACCESS_ERR exception.
+        			/*
+        			 * Custom properties.
+        			 */
+        			//data: null,
+        			onsuccess: function ( ps_responseText, pi_status, ps_statusText ) {console.log( "TODO onSuccess " +  ps_responseText + " " + pi_status + " " + ps_statusText);},
+        			onerror: function ( ps_error, pi_status, ps_statusText ) {console.log( "TODO onError " +  ps_error + " " + pi_status + " " + ps_statusText );},
+        			oncomplete: function ( pi_status, ps_statusText ) {console.log( "TODO onComplete " +  pi_status + " " + ps_statusText  );}
+        		};
+        		
+        		/*
+        		 * TODO
+        		 */
+        		var _h_privateSettings = {
+
+            	};
+
+        		/*
+        		 * Instanciate the _o_xhr private property.
+        		 */
+        		if ( window.XMLHttpRequest || window.ActiveXObject ) {        			
+        			if ( window.XMLHttpRequest ) {
+        				_o_xhr = new XMLHttpRequest();
+        				// IE
+        			} else if ( window.ActiveXObject ) { 
+        				try {
+        					_o_xhr = new ActiveXObject( "Msxml2.XMLHTTP" );
+        				} catch (e) {
+        					_o_xhr = new ActiveXObject( "Microsoft.XMLHTTP" );
+        				}
         			}
+        		} else {
+        			throw new Error("TODO JKIL.utilities.Ajax XMLHttpRequest and ActiveXObject not supported"); // TODO
+        			return;
         		}
         		
-        		
-        		
         		/**
-        		 * 
+	             * @methodOf       JKIL.utilities.Ajax
+	             * @private
+	             * 
+	             * @description    Merges given settings and exposable settings.<br />
+	             *                 TODO be more specific.<br />
+	             * 
+	             * @example        <b>Syntax:</b>
+	             *                 JKIL.utilities.Ajax._mergeSettings ( ph_settings )
+	             *                 
+	             * @param          {hash}    ph_settings    A hash of settings.
+	             * 
+	             * @returns        {void}
         		 */
-        		var setMethod = function ( ps_method ) {
-        			if ( ps_method.match(/^(GET|POST|PUT|DELETE)$/i) ) { // TODO see other method names
-        				this._s_method = ps_method;
-        			} else {
-        				throw new Error("TODO");
+        		var _mergeSettings = function ( ph_settings ) {
+        			for ( k in ph_settings ) {
+        				if ( _h_exposableSettings.hasOwnProperty( k ) ) {
+        					
+        					// Block invalid inputs.
+        					switch ( k ) {
+        						case "method":
+        							if (   typeof ph_settings[k] !== "string"
+        								|| typeof ph_settings[k] === "string" && ph_settings[k].match(/^(GET|POST|PUT|DELETE)$/i) === null) { // TODO see other method names
+        								throw new Error("TODO JKIL.utilities.Ajax._mergeSettings method must be a string and match /^(GET|POST|PUT|DELETE)$/i"); // TODO
+        							}
+        						break;
+        						case "url":
+        							if (   typeof ph_settings[k] !== "string"
+        								|| typeof ph_settings[k] === "string" && ph_settings[k].replace(/\s+/g, "").length === 0 ) {
+        		                    	throw new Error("TODO JKIL.utilities.Ajax._mergeSettings url must be a non empty string"); // TODO
+        		                    }
+        						break;
+        						case "async":
+        							if ( typeof ph_settings[k] !== "boolean" ) {
+        		                    	throw new Error("TODO JKIL.utilities.Ajax._mergeSettings async must be a boolean"); // TODO
+        		                    }
+        						break;
+        						case "user":
+        							if ( typeof ph_settings[k] !== "string" ) {
+        		                    	throw new Error("TODO JKIL.utilities.Ajax._mergeSettings user must be a string"); // TODO
+        		                    }
+        						break;
+        						case "password":
+        							if ( typeof ph_settings[k] !== "string" ) {
+        		                    	throw new Error("TODO JKIL.utilities.Ajax._mergeSettings password must be a string"); // TODO
+        		                    }
+        						break;
+        						case "mimetype":
+        							if ( typeof ph_settings[k] !== "string" /* TODO check valid mimetypes*/) {
+        		                    	throw new Error("TODO JKIL.utilities.Ajax._mergeSettings mimetype must be a string"); // TODO
+        		                    }
+        						break;
+        						case "responsetype":
+        							if (   typeof ph_settings[k] !== "string"
+        								|| typeof ph_settings[k] === "string" && ph_settings[k].match(/^(|arraybuffer|blob|document|json|text)$/i) === null) {
+        		                    	throw new Error("TODO JKIL.utilities.Ajax._mergeSettings responsetype must be a string and match /^(|arraybuffer|blob|document|json|text)$/i"); // TODO
+        		                    }
+        						break;
+        						case "timeout":
+        							if (   typeof ph_settings[k] !== "number"
+        								|| typeof ph_settings[k] === "number" && ph_settings[k] < 0) {
+        		                    	throw new Error("TODO JKIL.utilities.Ajax._mergeSettings timeout must be a positive number"); // TODO
+        		                    }
+        						break;
+        						case "ontimeout":
+        							if ( typeof ph_settings[k] !== "function" ) {
+        		                    	throw new Error("TODO JKIL.utilities.Ajax._mergeSettings ontimeout must be a function"); // TODO
+        		                    }
+        						break;
+        						case "withcredentials":
+        							if ( typeof ph_settings[k] !== "boolean" ) {
+        		                    	throw new Error("TODO JKIL.utilities.Ajax._mergeSettings withcredentials must be a boolean"); // TODO
+        		                    }
+        						break;
+        						case "onsuccess":
+        							if ( typeof ph_settings[k] !== "function") {
+        		                    	throw new Error("TODO JKIL.utilities.Ajax._mergeSettings onsuccess must be a function"); // TODO
+        		                    }
+        						break;
+        						case "onerror":
+        							if ( typeof ph_settings[k] !== "function") {
+        		                    	throw new Error("TODO JKIL.utilities.Ajax._mergeSettings onerror must be a function"); // TODO
+        		                    }
+        						break;
+        						case "oncomplete":
+        							if ( typeof ph_settings[k] !== "function") {
+        		                    	throw new Error("TODO JKIL.utilities.Ajax._mergeSettings oncomplete must be a function"); // TODO
+        		                    }
+        						break;
+        						
+        					}
+        					
+        					// Process settings that need to be trimmed.
+							switch ( k ) {
+								case "url":
+								case "user":
+								case "password":
+									ph_settings[k] = ph_settings[k].replace(/^\s*([^\s]+)\s*$/g, "$1");
+								break;
+							}
+							
+        					// To uppercase.
+							switch ( k ) {
+								case "method":
+									ph_settings[k] = ph_settings[k].toUpperCase();
+								break;
+							}
+							
+							/* 
+							 * XMLHttpRequest.responseType
+							 * 
+							 * Note: Starting with Gecko 11.0 (Firefox 11.0 / Thunderbird 11.0 / SeaMonkey 2.8),
+							 * as well as WebKit build 528, these browsers no longer let you use the responseType attribute when performing synchronous requests.
+							 * Attempting to do so throws an NS_ERROR_DOM_INVALID_ACCESS_ERR exception. This change has been proposed to the W3C for standardization.
+							 */
+							
+							/*
+							 * TODO do further setting depend processing about here...
+							 */
+							
+							// Assign passed settings to exposable settings.
+							_h_exposableSettings[k] = ph_settings[k];
+        				}
+        			}
+        		};
+
+        		/**
+	             * @methodOf       JKIL.utilities.Ajax
+	             * @private
+	             * 
+	             * @description    TODO.<br />
+	             * 
+	             * @example        <b>Syntax:</b>
+	             *                 JKIL.utilities.Ajax._setOnReadyStateChange ()
+	             * 
+	             * @returns        {void}
+        		 */
+        		var _setOnReadyStateChange = function () {
+        			if( _o_xhr.readyState == 4 ){
+        				if ( _o_xhr.status == 200 ) {
+        					_h_exposableSettings.onsuccess( _o_xhr.responseText, _o_xhr.status, _o_xhr.statusText  );
+        				} else if ( _o_xhr.status == 0 || _o_xhr.status >= 400 || _o_xhr.status < 600 ) {
+        					_h_exposableSettings.onerror( _o_xhr.responseText, _o_xhr.status, _o_xhr.statusText );
+        				}
+        				
+        				_h_exposableSettings.oncomplete( _o_xhr.status, _o_xhr.statusText );
         			}
         		};
         		
         		/**
-        		 * 
+	             * @methodOf       JKIL.utilities.Ajax
+	             * @public
+	             * 
+                 * @description    Gets an array of exposable setting names.<br />
+                 * 
+ 	             * @example        <b>Syntax:</b>
+	             *                 JKIL.utilities.Ajax.getSettingNames ()
+	             * 
+	             * @returns        {Array}     Returns a an array of exposable setting names.
         		 */
-        		var setURL = function ( ps_url ) {
-        			this._s_url = ps_method;
-        		};
-        		
-        		/**
-        		 * 
-        		 */
-        		var setAsync = function ( pb_async ) {
-        			if (typeof pb_async === "boolean") {
-        				this._b_async = pb_async;
-        			} else {
-        				throw new Error("TODO");
-        			}
-        		};
-        		
-        		/**
-        		 * 
-        		 */
-        		var setUser = function ( ps_user ) {
-        			this._s_user = ps_user;
-        		};
-        		
-        		/**
-        		 * 
-        		 */
-        		var setPassword = function ( ps_password ) {
-        			this._s_password = ps_password;
-        		};
-        		
-        		/**
-        		 * 
-        		 */
-        		var open = function ( ps_method, ps_url, pb_async, ps_user, ps_password ) {
-        			if (ps_method === undefined) { ps_method = this._s_method; }
-        			if (ps_url === undefined) { ps_method = this._s_method; }
-        			if (pb_async === undefined) { ps_method = this._s_method; }
-        			if (ps_method === undefined) { ps_method = this._s_method; }
-        			if (ps_method === undefined) { ps_method = this._s_method; }
+        		this.getSettingNames = function () {
+        			var _a_settingNames = [];
         			
-        			this._o_xhr.open ( ps_method, ps_url, pb_async, ps_user, ps_password );
+        			for ( k in _h_exposableSettings ) {
+        				if ( _h_exposableSettings.hasOwnProperty( k ) ) {
+        					_a_settingNames.push( k );
+        				}
+        			}
+        			
+        			return _a_settingNames;
+        		};
+
+        		/**
+	             * @methodOf       JKIL.utilities.Ajax
+	             * @public
+	             * 
+                 * @description    Exposes the exposable setting whose name is given as parameter.<br />
+                 * 
+ 	             * @example        <b>Syntax:</b>
+	             *                 JKIL.utilities.Ajax.getSetting ( ps_settingName )
+	             *                 
+	             * @param          {string}    ps_settingName    A setting name.
+	             * 
+	             * @returns        {Mixed}     Returns a setting value or <code>undefined</code> if the given setting name does not exist.
+        		 */
+        		this.getSetting = function ( ps_settingName ) {
+        			return _h_exposableSettings[ps_settingName.toLowerCase()];
+        		};
+
+        		/**
+	             * @methodOf       JKIL.utilities.Ajax
+	             * @public
+	             * 
+                 * @description    Exposes exposable settings.<br />
+                 * 
+ 	             * @example        <b>Syntax:</b>
+	             *                 JKIL.utilities.Ajax.getSettings ()
+	             * 
+	             * @returns        {hash}    Returns a hash of exposable settings.
+        		 */
+        		this.getSettings = function () {
+        			var _h_settings = {};
+        			
+        			for ( k in _h_exposableSettings ) {
+        				if ( _h_exposableSettings.hasOwnProperty( k ) ) {
+        					_h_settings[k] = _h_exposableSettings[k];
+        				}
+        			}
+        			
+        			return _h_settings;
+        		};
+
+        		/**
+	             * @methodOf       JKIL.utilities.Ajax
+	             * @public
+	             * 
+	             * @description    TODO.<br />
+        		 */
+        		this.GET = function ( ph_settings ) {
+                    if (typeof ph_settings !== "object" || ph_settings === null) {ph_settings = {};}
+                    ph_settings["method"] = "GET"; // Force to GET
+
+                    _mergeSettings( ph_settings );
+                    
+                    // TODO apply settings.
+
+        			_o_xhr.open( _h_exposableSettings.method, _h_exposableSettings.url, _h_exposableSettings.async, _h_exposableSettings.user, _h_exposableSettings.password);
+        			_o_xhr.onreadystatechange = _setOnReadyStateChange;
+        			_o_xhr.send( null );
+        		};
+        		
+           		/**
+	             * @methodOf       JKIL.utilities.Ajax
+	             * @public
+        		 */
+        		this.POST = function ( ph_settings ) {
+        			console.log("TODO");
+        		};
+        		
+           		/**
+	             * @methodOf       JKIL.utilities.Ajax
+	             * @public
+        		 */
+        		this.DO = function ( ph_settings ) {
+        			console.log("TODO");
         		};
         		
         		
+        		
+
+//        		var _s_mimetype = "text/xml";
+        		/*
+        		 *Si vous utilisez la méthode POST, vous devez absolument changer le type MIME de la requête avec la méthode setRequestHeader , sinon le serveur ignorera la requête :
+        		 *	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        		 *
+        		 * ----
+        		 *  xhr.open("POST", "handlingData.php", true);
+				 *  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                 *  xhr.send("variable1=truc&variable2=bidule");
+                 *  
+                 * ----
+                 * 
+                 * Avant de passer des variables, il est important de les protéger pour conserver les caractères spéciaux et les espaces. Pour cela, utilisez la fonction globale encodeURIComponent , comme ceci :
+                 * 
+                 * var sVar1 = encodeURIComponent("contenu avec des espaces");
+                 * var sVar2 = encodeURIComponent("je vois que vous êtes un bon élève... oopa !");
+                 * xhr.open("GET", "handlingData.php?variable1=" + sVar1 + "&variable2= " + sVar2, true);
+                 * xhr.send(null);
+        		 */
+
+        		//var _h_onStatusCode = {}; // TODO implement?
+        		//var _h_data = {}; // TODO implement?
+        		/*var _h_onReadyState = [ // TODO implement?
+        		    function () {console.log( "TODO readyState 0" )},
+        		    function () {console.log( "TODO readyState 1" )},
+        		    function () {console.log( "TODO readyState 2" )},
+        		    function () {console.log( "TODO readyState 3" )},
+        		    function () {console.log( "TODO readyState 4" )}
+        		];*/
+        		
+        	},
+        	
+            /**
+             * @methodOf       JKIL.utilities
+             * 
+             * @description    Gets a <code>XMLHttpRequest</code> / <code>ActiveXObject</code> XHR object allowing the standard use of AJAX methods.<br />
+             * 
+             * @example        <b>Syntax:</b>
+             *                 JKIL.utilities.getXHR ()
+             *                 
+             * @example        <b>Example:</b>
+             *                 var xhr = JKIL.utilities.getXHR ();
+             *                 xhr.open("GET", "http://someUrl.net", true);
+             *                 xhr.onreadystatechange = function()  {
+             *                     // Some code here.
+             *                 };
+             *                 xhr.send(null);
+             * 
+             * @returns        {Object|null}    Returns a <code>XMLHttpRequest</code> / <code>ActiveXObject</code> XHR instance or <code>null</code> if the instanciation failed.
+             * 
+             * @throws         TODO
+             * 
+             * @see            JKIL.utilities.Ajax()
+             */
+        	getXHR: function () {
+        		var _o_xhr = null;
+	    		if ( window.XMLHttpRequest || window.ActiveXObject ) {        			
+	    			if ( window.XMLHttpRequest ) {
+	    				_o_xhr = new XMLHttpRequest();
+	    			// IE
+	    			} else if ( window.ActiveXObject ) { 
+	    				try {
+	    					_o_xhr = new ActiveXObject( "Msxml2.XMLHTTP" );
+	    				} catch (e) {
+	    					_o_xhr = new ActiveXObject( "Microsoft.XMLHTTP" );
+	    				}
+	    			}
+	    		} else {
+	    			throw new Error("TODO JKIL.utilities.getXHR XMLHttpRequest and ActiveXObject not supported"); // TODO
+	    		}
+	    		
+	    		return _o_xhr;
         	}
         };
     };
@@ -461,9 +785,7 @@
      * Voir s'il est possible de packager JKIL et d'empêcher qu'on y accède de l'exterieur.
      */
     ( function () {
-        
-        console.log("la");
-        
+
         if ( JKIL === null ) {
             
             /*

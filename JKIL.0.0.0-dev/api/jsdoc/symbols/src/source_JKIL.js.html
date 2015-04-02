@@ -355,77 +355,501 @@
 <span class='line'>348</span>          * @memberof       JKIL
 <span class='line'>349</span>          * @namespace
 <span class='line'>350</span>          * 
-<span class='line'>351</span>          * @description    A namespace for utility methods.&lt;br />
+<span class='line'>351</span>          * @description    A namespace for utility methods and constructors.&lt;br />
 <span class='line'>352</span>          */</span><span class="WHIT">
-<span class='line'>353</span> </span><span class="WHIT">        </span><span class="NAME">JKIL.utilities</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>354</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>355</span> </span><span class="WHIT">    </span><span class="WHIT">
-<span class='line'>356</span> </span><span class="WHIT">    </span><span class="COMM">/*
-<span class='line'>357</span>      * TODO
-<span class='line'>358</span>      * 
-<span class='line'>359</span>      * Voir s'il est possible de packager JKIL et d'empêcher qu'on y accède de l'exterieur.
-<span class='line'>360</span>      */</span><span class="WHIT">
-<span class='line'>361</span> </span><span class="WHIT">    </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>362</span> </span><span class="WHIT">        </span><span class="WHIT">
-<span class='line'>363</span> </span><span class="WHIT">        </span><span class="NAME">console.log</span><span class="PUNC">(</span><span class="STRN">"la"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>364</span> </span><span class="WHIT">        </span><span class="WHIT">
-<span class='line'>365</span> </span><span class="WHIT">        </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">JKIL</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>366</span> </span><span class="WHIT">            </span><span class="WHIT">
-<span class='line'>367</span> </span><span class="WHIT">            </span><span class="COMM">/*
-<span class='line'>368</span>              * Abort if the namespace name already exists in the global scope.
-<span class='line'>369</span>              */</span><span class="WHIT">
-<span class='line'>370</span> </span><span class="WHIT">            </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">_context</span><span class="PUNC">[</span><span class="NAME">_namespaceName</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>371</span> </span><span class="WHIT">                </span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="STRN">"TODO"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>372</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>373</span> </span><span class="WHIT">            </span><span class="WHIT">
-<span class='line'>374</span> </span><span class="WHIT">            </span><span class="COMM">/*
-<span class='line'>375</span>              * Create namespace root in the global scope and reference it in the private JKIL property.
-<span class='line'>376</span>              */</span><span class="WHIT">
-<span class='line'>377</span> </span><span class="WHIT">            </span><span class="NAME">_context</span><span class="PUNC">[</span><span class="NAME">_namespaceName</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>378</span> </span><span class="WHIT">            </span><span class="NAME">JKIL</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_context</span><span class="PUNC">[</span><span class="NAME">_namespaceName</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>379</span> </span><span class="WHIT">            </span><span class="WHIT">
-<span class='line'>380</span> </span><span class="WHIT">            </span><span class="COMM">/*
-<span class='line'>381</span>              * Initialize the JKIL namespace with default members.
-<span class='line'>382</span>              */</span><span class="WHIT">
-<span class='line'>383</span> </span><span class="WHIT">            </span><span class="NAME">_initNamespace</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>384</span> </span><span class="WHIT">            </span><span class="WHIT">
-<span class='line'>385</span> </span><span class="WHIT">        </span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>386</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>387</span> 
-<span class='line'>388</span> </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>389</span> 
-<span class='line'>390</span> 
-<span class='line'>391</span> 
-<span class='line'>392</span> 
-<span class='line'>393</span> </span><span class="COMM">/**
-<span class='line'>394</span>  * @namespace    A namespace for methods, objects and constructors.&lt;br />
-<span class='line'>395</span>  * 
-<span class='line'>396</span>  * @description    A library of methods, objects and constructors.&lt;br />
-<span class='line'>397</span>  */</span><span class="WHIT">
-<span class='line'>398</span> </span><span class="COMM">//JKIL = {};</span><span class="WHIT">
-<span class='line'>399</span> 
-<span class='line'>400</span> </span><span class="COMM">/**
-<span class='line'>401</span>  * @memberof    JKIL
-<span class='line'>402</span>  * @namespace
-<span class='line'>403</span>  * 
-<span class='line'>404</span>  * @description    A namespace for methods related to sorting.&lt;br />
-<span class='line'>405</span>  */</span><span class="WHIT">
-<span class='line'>406</span> </span><span class="NAME">JKIL.sortings</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>407</span> 
-<span class='line'>408</span> </span><span class="COMM">/**
-<span class='line'>409</span>  * @memberof    JKIL.sortings
-<span class='line'>410</span>  * @namespace
-<span class='line'>411</span>  * 
-<span class='line'>412</span>  * @description    A namespace for methods related to sorting of arrays.&lt;br />
-<span class='line'>413</span>  */</span><span class="WHIT">
-<span class='line'>414</span> </span><span class="NAME">JKIL.sortings.array</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>415</span> 
-<span class='line'>416</span> </span><span class="COMM">/**
-<span class='line'>417</span>  * @memberof    JKIL
-<span class='line'>418</span>  * @namespace
-<span class='line'>419</span>  * 
-<span class='line'>420</span>  * @description    A namespace for comparison methods.&lt;br />
-<span class='line'>421</span>  */</span><span class="WHIT">
-<span class='line'>422</span> </span><span class="NAME">JKIL.comparators</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>423</span> 
-<span class='line'>424</span> </span></pre></body></html>
+<span class='line'>353</span> </span><span class="WHIT">        </span><span class="NAME">JKIL.utilities</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>354</span> </span><span class="WHIT">        		</span><span class="WHIT">
+<span class='line'>355</span> </span><span class="WHIT">        	</span><span class="COMM">/**
+<span class='line'>356</span>              * @memberOf       JKIL.utilities
+<span class='line'>357</span>              * @class
+<span class='line'>358</span>              * 
+<span class='line'>359</span>              * @description    A JKIL&#46;utilities&#46;Ajax object constructor.&lt;br />
+<span class='line'>360</span>              * 
+<span class='line'>361</span>              * @example        &lt;b>Syntax:&lt;/b>
+<span class='line'>362</span>              *                 new JKIL.utilities.Ajax ()
+<span class='line'>363</span>              * 
+<span class='line'>364</span>              * @example        &lt;b>Example:&lt;/b>
+<span class='line'>365</span>              *                 var ajax = new JKIL.utilities.Ajax ();
+<span class='line'>366</span>              *                 
+<span class='line'>367</span>              * @see            JKIL.utilities.getXHR()
+<span class='line'>368</span>              * 
+<span class='line'>369</span>              * @see            https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest
+<span class='line'>370</span>              * @see            https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest/Utiliser_XMLHttpRequest
+<span class='line'>371</span>              * @see            https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest#open%28%29
+<span class='line'>372</span>              * 
+<span class='line'>373</span>              * @see            http://openclassrooms.com/courses/ajax-et-l-echange-de-donnees-en-javascript
+<span class='line'>374</span>              * @see            http://siddh.developpez.com/articles/ajax/
+<span class='line'>375</span>              * @see            http://api.jquery.com/jquery.ajax/
+<span class='line'>376</span>              * @see            http://stackoverflow.com/questions/3825581/does-an-http-status-code-of-0-have-any-meaning/26451773#26451773
+<span class='line'>377</span>              * @see            http://www.w3.org/TR/XMLHttpRequest/#the-status-attribute
+<span class='line'>378</span>              * @see            http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+<span class='line'>379</span>         	 */</span><span class="WHIT">
+<span class='line'>380</span> </span><span class="WHIT">        	</span><span class="NAME">Ajax</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>381</span> </span><span class="WHIT">        		</span><span class="COMM">/**
+<span class='line'>382</span> 	             * @memberOf       JKIL.utilities.Ajax
+<span class='line'>383</span> 	             * @private
+<span class='line'>384</span> 	             * 
+<span class='line'>385</span> 	             * @description    Holds a &lt;code>XMLHttpRequest&lt;/code> / &lt;code>ActiveXObject&lt;/code> XHR object.&lt;br />
+<span class='line'>386</span> 	             * 
+<span class='line'>387</span> 	             * @type           XMLHttpRequest|ActiveXObject|null
+<span class='line'>388</span>         		 */</span><span class="WHIT">
+<span class='line'>389</span> </span><span class="WHIT">        		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">_o_xhr</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>390</span> </span><span class="WHIT">        		</span><span class="WHIT">
+<span class='line'>391</span> </span><span class="WHIT">        		</span><span class="COMM">/**
+<span class='line'>392</span> 	             * @memberOf       JKIL.utilities.Ajax
+<span class='line'>393</span> 	             * @private
+<span class='line'>394</span> 	             * 
+<span class='line'>395</span> 	             * @description    Holds exposable settings.&lt;br />
+<span class='line'>396</span> 	             *                 TODO give settings description.&lt;br />
+<span class='line'>397</span> 	             * 
+<span class='line'>398</span> 	             * @type           hash
+<span class='line'>399</span>         		 */</span><span class="WHIT">
+<span class='line'>400</span> </span><span class="WHIT">        		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">_h_exposableSettings</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>401</span> </span><span class="WHIT">        			</span><span class="COMM">/*
+<span class='line'>402</span>         			 * XMLHttpRequest.open() parameters.
+<span class='line'>403</span>         			 */</span><span class="WHIT">
+<span class='line'>404</span> </span><span class="WHIT">        			</span><span class="NAME">method</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">"GET"</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>405</span> </span><span class="WHIT">        			</span><span class="NAME">url</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>406</span> </span><span class="WHIT">        			</span><span class="NAME">async</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>407</span> </span><span class="WHIT">        			</span><span class="NAME">user</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>408</span> </span><span class="WHIT">        			</span><span class="NAME">password</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>409</span> </span><span class="WHIT">        			</span><span class="COMM">/*
+<span class='line'>410</span>         			 * XMLHttpRequest.overrideMimeType() parameters.
+<span class='line'>411</span>         			 */</span><span class="WHIT">
+<span class='line'>412</span> </span><span class="WHIT">        			</span><span class="NAME">mimetype</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">"text/xml"</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>413</span> </span><span class="WHIT">        			</span><span class="COMM">/*
+<span class='line'>414</span>         			 * XMLHttpRequest properties.
+<span class='line'>415</span>         			 */</span><span class="WHIT">
+<span class='line'>416</span> </span><span class="WHIT">        			</span><span class="COMM">//onreadystatechange: function () {}, // TODO</span><span class="WHIT">
+<span class='line'>417</span> </span><span class="WHIT">        			</span><span class="NAME">responsetype</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="COMM">// Is an enumerated value that defines the response type. DOMString is the default value. Note: Starting with Gecko 11.0 (Firefox 11.0 / Thunderbird 11.0 / SeaMonkey 2.8), as well as WebKit build 528, these browsers no longer let you use the responseType attribute when performing synchronous requests. Attempting to do so throws an NS_ERROR_DOM_INVALID_ACCESS_ERR exception. This change has been proposed to the W3C for standardization.</span><span class="WHIT">
+<span class='line'>418</span> </span><span class="WHIT">        			</span><span class="NAME">timeout</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="COMM">// Is an unsigned long representing the number of milliseconds a request can take before automatically being terminated. A value of 0 (which is the default) means there is no timeout. Note: You may not use a timeout for synchronous requests with an owning window.</span><span class="WHIT">
+<span class='line'>419</span> </span><span class="WHIT">        			</span><span class="COMM">//ontimeout: null, // Is an EventHandler that is called whenever the request times out.</span><span class="WHIT">
+<span class='line'>420</span> </span><span class="WHIT">        			</span><span class="NAME">withcredentials</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="COMM">// Is a Boolean that indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies or authorization headers. The default is false. Note: This never affects same-site requests. Note: Starting with Gecko 11.0 (Firefox 11.0 / Thunderbird 11.0 / SeaMonkey 2.8), Gecko no longer lets you use the withCredentials attribute when performing synchronous requests. Attempting to do so throws an NS_ERROR_DOM_INVALID_ACCESS_ERR exception.</span><span class="WHIT">
+<span class='line'>421</span> </span><span class="WHIT">        			</span><span class="COMM">/*
+<span class='line'>422</span>         			 * Custom properties.
+<span class='line'>423</span>         			 */</span><span class="WHIT">
+<span class='line'>424</span> </span><span class="WHIT">        			</span><span class="COMM">//data: null,</span><span class="WHIT">
+<span class='line'>425</span> </span><span class="WHIT">        			</span><span class="NAME">onsuccess</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">ps_responseText</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">pi_status</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">ps_statusText</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="NAME">console.log</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="STRN">"TODO onSuccess "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT">  </span><span class="NAME">ps_responseText</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">" "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">pi_status</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">" "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">ps_statusText</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>426</span> </span><span class="WHIT">        			</span><span class="NAME">onerror</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">ps_error</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">pi_status</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">ps_statusText</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="NAME">console.log</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="STRN">"TODO onError "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT">  </span><span class="NAME">ps_error</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">" "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">pi_status</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">" "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">ps_statusText</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>427</span> </span><span class="WHIT">        			</span><span class="NAME">oncomplete</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">pi_status</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">ps_statusText</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="NAME">console.log</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="STRN">"TODO onComplete "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT">  </span><span class="NAME">pi_status</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">" "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">ps_statusText</span><span class="WHIT">  </span><span class="PUNC">)</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>428</span> </span><span class="WHIT">        		</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>429</span> </span><span class="WHIT">        		</span><span class="WHIT">
+<span class='line'>430</span> </span><span class="WHIT">        		</span><span class="COMM">/*
+<span class='line'>431</span>         		 * TODO
+<span class='line'>432</span>         		 */</span><span class="WHIT">
+<span class='line'>433</span> </span><span class="WHIT">        		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">_h_privateSettings</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>434</span> 
+<span class='line'>435</span> </span><span class="WHIT">            	</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>436</span> 
+<span class='line'>437</span> </span><span class="WHIT">        		</span><span class="COMM">/*
+<span class='line'>438</span>         		 * Instanciate the _o_xhr private property.
+<span class='line'>439</span>         		 */</span><span class="WHIT">
+<span class='line'>440</span> </span><span class="WHIT">        		</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">window.XMLHttpRequest</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">window.ActiveXObject</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">        			</span><span class="WHIT">
+<span class='line'>441</span> </span><span class="WHIT">        			</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">window.XMLHttpRequest</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>442</span> </span><span class="WHIT">        				</span><span class="NAME">_o_xhr</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">XMLHttpRequest</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>443</span> </span><span class="WHIT">        				</span><span class="COMM">// IE</span><span class="WHIT">
+<span class='line'>444</span> </span><span class="WHIT">        			</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">window.ActiveXObject</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="WHIT">
+<span class='line'>445</span> </span><span class="WHIT">        				</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>446</span> </span><span class="WHIT">        					</span><span class="NAME">_o_xhr</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">ActiveXObject</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="STRN">"Msxml2.XMLHTTP"</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>447</span> </span><span class="WHIT">        				</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>448</span> </span><span class="WHIT">        					</span><span class="NAME">_o_xhr</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">ActiveXObject</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="STRN">"Microsoft.XMLHTTP"</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>449</span> </span><span class="WHIT">        				</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>450</span> </span><span class="WHIT">        			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>451</span> </span><span class="WHIT">        		</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>452</span> </span><span class="WHIT">        			</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO JKIL.utilities.Ajax XMLHttpRequest and ActiveXObject not supported"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// TODO</span><span class="WHIT">
+<span class='line'>453</span> </span><span class="WHIT">        			</span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>454</span> </span><span class="WHIT">        		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>455</span> </span><span class="WHIT">        		</span><span class="WHIT">
+<span class='line'>456</span> </span><span class="WHIT">        		</span><span class="COMM">/**
+<span class='line'>457</span> 	             * @methodOf       JKIL.utilities.Ajax
+<span class='line'>458</span> 	             * @private
+<span class='line'>459</span> 	             * 
+<span class='line'>460</span> 	             * @description    Merges given settings and exposable settings.&lt;br />
+<span class='line'>461</span> 	             *                 TODO be more specific.&lt;br />
+<span class='line'>462</span> 	             * 
+<span class='line'>463</span> 	             * @example        &lt;b>Syntax:&lt;/b>
+<span class='line'>464</span> 	             *                 JKIL.utilities.Ajax._mergeSettings ( ph_settings )
+<span class='line'>465</span> 	             *                 
+<span class='line'>466</span> 	             * @param          {hash}    ph_settings    A hash of settings.
+<span class='line'>467</span> 	             * 
+<span class='line'>468</span> 	             * @returns        {void}
+<span class='line'>469</span>         		 */</span><span class="WHIT">
+<span class='line'>470</span> </span><span class="WHIT">        		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">_mergeSettings</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>471</span> </span><span class="WHIT">        			</span><span class="KEYW">for</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">k</span><span class="WHIT"> </span><span class="KEYW">in</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>472</span> </span><span class="WHIT">        				</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">_h_exposableSettings.hasOwnProperty</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">k</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>473</span> </span><span class="WHIT">        					</span><span class="WHIT">
+<span class='line'>474</span> </span><span class="WHIT">        					</span><span class="COMM">// Block invalid inputs.</span><span class="WHIT">
+<span class='line'>475</span> </span><span class="WHIT">        					</span><span class="KEYW">switch</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">k</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>476</span> </span><span class="WHIT">        						</span><span class="KEYW">case</span><span class="WHIT"> </span><span class="STRN">"method"</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>477</span> </span><span class="WHIT">        							</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT">   </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"string"</span><span class="WHIT">
+<span class='line'>478</span> </span><span class="WHIT">        								</span><span class="PUNC">||</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="STRN">"string"</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="PUNC">.</span><span class="NAME">match</span><span class="PUNC">(</span><span class="REGX">/^(GET|POST|PUT|DELETE)$/i</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="COMM">// TODO see other method names</span><span class="WHIT">
+<span class='line'>479</span> </span><span class="WHIT">        								</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO JKIL.utilities.Ajax._mergeSettings method must be a string and match /^(GET|POST|PUT|DELETE)$/i"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// TODO</span><span class="WHIT">
+<span class='line'>480</span> </span><span class="WHIT">        							</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>481</span> </span><span class="WHIT">        						</span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>482</span> </span><span class="WHIT">        						</span><span class="KEYW">case</span><span class="WHIT"> </span><span class="STRN">"url"</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>483</span> </span><span class="WHIT">        							</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT">   </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"string"</span><span class="WHIT">
+<span class='line'>484</span> </span><span class="WHIT">        								</span><span class="PUNC">||</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="STRN">"string"</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="PUNC">.</span><span class="NAME">replace</span><span class="PUNC">(</span><span class="REGX">/\s+/g</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">length</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>485</span> </span><span class="WHIT">        		                    	</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO JKIL.utilities.Ajax._mergeSettings url must be a non empty string"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// TODO</span><span class="WHIT">
+<span class='line'>486</span> </span><span class="WHIT">        		                    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>487</span> </span><span class="WHIT">        						</span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>488</span> </span><span class="WHIT">        						</span><span class="KEYW">case</span><span class="WHIT"> </span><span class="STRN">"async"</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>489</span> </span><span class="WHIT">        							</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"boolean"</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>490</span> </span><span class="WHIT">        		                    	</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO JKIL.utilities.Ajax._mergeSettings async must be a boolean"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// TODO</span><span class="WHIT">
+<span class='line'>491</span> </span><span class="WHIT">        		                    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>492</span> </span><span class="WHIT">        						</span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>493</span> </span><span class="WHIT">        						</span><span class="KEYW">case</span><span class="WHIT"> </span><span class="STRN">"user"</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>494</span> </span><span class="WHIT">        							</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"string"</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>495</span> </span><span class="WHIT">        		                    	</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO JKIL.utilities.Ajax._mergeSettings user must be a string"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// TODO</span><span class="WHIT">
+<span class='line'>496</span> </span><span class="WHIT">        		                    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>497</span> </span><span class="WHIT">        						</span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>498</span> </span><span class="WHIT">        						</span><span class="KEYW">case</span><span class="WHIT"> </span><span class="STRN">"password"</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>499</span> </span><span class="WHIT">        							</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"string"</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>500</span> </span><span class="WHIT">        		                    	</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO JKIL.utilities.Ajax._mergeSettings password must be a string"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// TODO</span><span class="WHIT">
+<span class='line'>501</span> </span><span class="WHIT">        		                    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>502</span> </span><span class="WHIT">        						</span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>503</span> </span><span class="WHIT">        						</span><span class="KEYW">case</span><span class="WHIT"> </span><span class="STRN">"mimetype"</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>504</span> </span><span class="WHIT">        							</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"string"</span><span class="WHIT"> </span><span class="COMM">/* TODO check valid mimetypes*/</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>505</span> </span><span class="WHIT">        		                    	</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO JKIL.utilities.Ajax._mergeSettings mimetype must be a string"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// TODO</span><span class="WHIT">
+<span class='line'>506</span> </span><span class="WHIT">        		                    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>507</span> </span><span class="WHIT">        						</span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>508</span> </span><span class="WHIT">        						</span><span class="KEYW">case</span><span class="WHIT"> </span><span class="STRN">"responsetype"</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>509</span> </span><span class="WHIT">        							</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT">   </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"string"</span><span class="WHIT">
+<span class='line'>510</span> </span><span class="WHIT">        								</span><span class="PUNC">||</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="STRN">"string"</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="PUNC">.</span><span class="NAME">match</span><span class="PUNC">(</span><span class="REGX">/^(|arraybuffer|blob|document|json|text)$/i</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>511</span> </span><span class="WHIT">        		                    	</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO JKIL.utilities.Ajax._mergeSettings responsetype must be a string and match /^(|arraybuffer|blob|document|json|text)$/i"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// TODO</span><span class="WHIT">
+<span class='line'>512</span> </span><span class="WHIT">        		                    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>513</span> </span><span class="WHIT">        						</span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>514</span> </span><span class="WHIT">        						</span><span class="KEYW">case</span><span class="WHIT"> </span><span class="STRN">"timeout"</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>515</span> </span><span class="WHIT">        							</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT">   </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"number"</span><span class="WHIT">
+<span class='line'>516</span> </span><span class="WHIT">        								</span><span class="PUNC">||</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="STRN">"number"</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">&lt;</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>517</span> </span><span class="WHIT">        		                    	</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO JKIL.utilities.Ajax._mergeSettings timeout must be a positive number"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// TODO</span><span class="WHIT">
+<span class='line'>518</span> </span><span class="WHIT">        		                    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>519</span> </span><span class="WHIT">        						</span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>520</span> </span><span class="WHIT">        						</span><span class="KEYW">case</span><span class="WHIT"> </span><span class="STRN">"ontimeout"</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>521</span> </span><span class="WHIT">        							</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"function"</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>522</span> </span><span class="WHIT">        		                    	</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO JKIL.utilities.Ajax._mergeSettings ontimeout must be a function"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// TODO</span><span class="WHIT">
+<span class='line'>523</span> </span><span class="WHIT">        		                    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>524</span> </span><span class="WHIT">        						</span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>525</span> </span><span class="WHIT">        						</span><span class="KEYW">case</span><span class="WHIT"> </span><span class="STRN">"withcredentials"</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>526</span> </span><span class="WHIT">        							</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"boolean"</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>527</span> </span><span class="WHIT">        		                    	</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO JKIL.utilities.Ajax._mergeSettings withcredentials must be a boolean"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// TODO</span><span class="WHIT">
+<span class='line'>528</span> </span><span class="WHIT">        		                    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>529</span> </span><span class="WHIT">        						</span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>530</span> </span><span class="WHIT">        						</span><span class="KEYW">case</span><span class="WHIT"> </span><span class="STRN">"onsuccess"</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>531</span> </span><span class="WHIT">        							</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"function"</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>532</span> </span><span class="WHIT">        		                    	</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO JKIL.utilities.Ajax._mergeSettings onsuccess must be a function"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// TODO</span><span class="WHIT">
+<span class='line'>533</span> </span><span class="WHIT">        		                    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>534</span> </span><span class="WHIT">        						</span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>535</span> </span><span class="WHIT">        						</span><span class="KEYW">case</span><span class="WHIT"> </span><span class="STRN">"onerror"</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>536</span> </span><span class="WHIT">        							</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"function"</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>537</span> </span><span class="WHIT">        		                    	</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO JKIL.utilities.Ajax._mergeSettings onerror must be a function"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// TODO</span><span class="WHIT">
+<span class='line'>538</span> </span><span class="WHIT">        		                    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>539</span> </span><span class="WHIT">        						</span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>540</span> </span><span class="WHIT">        						</span><span class="KEYW">case</span><span class="WHIT"> </span><span class="STRN">"oncomplete"</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>541</span> </span><span class="WHIT">        							</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"function"</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>542</span> </span><span class="WHIT">        		                    	</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO JKIL.utilities.Ajax._mergeSettings oncomplete must be a function"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// TODO</span><span class="WHIT">
+<span class='line'>543</span> </span><span class="WHIT">        		                    </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>544</span> </span><span class="WHIT">        						</span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>545</span> </span><span class="WHIT">        						</span><span class="WHIT">
+<span class='line'>546</span> </span><span class="WHIT">        					</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>547</span> </span><span class="WHIT">        					</span><span class="WHIT">
+<span class='line'>548</span> </span><span class="WHIT">        					</span><span class="COMM">// Process settings that need to be trimmed.</span><span class="WHIT">
+<span class='line'>549</span> </span><span class="WHIT">							</span><span class="KEYW">switch</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">k</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>550</span> </span><span class="WHIT">								</span><span class="KEYW">case</span><span class="WHIT"> </span><span class="STRN">"url"</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>551</span> </span><span class="WHIT">								</span><span class="KEYW">case</span><span class="WHIT"> </span><span class="STRN">"user"</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>552</span> </span><span class="WHIT">								</span><span class="KEYW">case</span><span class="WHIT"> </span><span class="STRN">"password"</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>553</span> </span><span class="WHIT">									</span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="PUNC">.</span><span class="NAME">replace</span><span class="PUNC">(</span><span class="REGX">/^\s*([^\s]+)\s*$/g</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">"$1"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>554</span> </span><span class="WHIT">								</span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>555</span> </span><span class="WHIT">							</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>556</span> </span><span class="WHIT">							</span><span class="WHIT">
+<span class='line'>557</span> </span><span class="WHIT">        					</span><span class="COMM">// To uppercase.</span><span class="WHIT">
+<span class='line'>558</span> </span><span class="WHIT">							</span><span class="KEYW">switch</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">k</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>559</span> </span><span class="WHIT">								</span><span class="KEYW">case</span><span class="WHIT"> </span><span class="STRN">"method"</span><span class="PUNC">:</span><span class="WHIT">
+<span class='line'>560</span> </span><span class="WHIT">									</span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="PUNC">.</span><span class="NAME">toUpperCase</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>561</span> </span><span class="WHIT">								</span><span class="KEYW">break</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>562</span> </span><span class="WHIT">							</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>563</span> </span><span class="WHIT">							</span><span class="WHIT">
+<span class='line'>564</span> </span><span class="WHIT">							</span><span class="COMM">/* 
+<span class='line'>565</span> 							 * XMLHttpRequest.responseType
+<span class='line'>566</span> 							 * 
+<span class='line'>567</span> 							 * Note: Starting with Gecko 11.0 (Firefox 11.0 / Thunderbird 11.0 / SeaMonkey 2.8),
+<span class='line'>568</span> 							 * as well as WebKit build 528, these browsers no longer let you use the responseType attribute when performing synchronous requests.
+<span class='line'>569</span> 							 * Attempting to do so throws an NS_ERROR_DOM_INVALID_ACCESS_ERR exception. This change has been proposed to the W3C for standardization.
+<span class='line'>570</span> 							 */</span><span class="WHIT">
+<span class='line'>571</span> </span><span class="WHIT">							</span><span class="WHIT">
+<span class='line'>572</span> </span><span class="WHIT">							</span><span class="COMM">/*
+<span class='line'>573</span> 							 * TODO do further setting depend processing about here...
+<span class='line'>574</span> 							 */</span><span class="WHIT">
+<span class='line'>575</span> </span><span class="WHIT">							</span><span class="WHIT">
+<span class='line'>576</span> </span><span class="WHIT">							</span><span class="COMM">// Assign passed settings to exposable settings.</span><span class="WHIT">
+<span class='line'>577</span> </span><span class="WHIT">							</span><span class="NAME">_h_exposableSettings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>578</span> </span><span class="WHIT">        				</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>579</span> </span><span class="WHIT">        			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>580</span> </span><span class="WHIT">        		</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>581</span> 
+<span class='line'>582</span> </span><span class="WHIT">        		</span><span class="COMM">/**
+<span class='line'>583</span> 	             * @methodOf       JKIL.utilities.Ajax
+<span class='line'>584</span> 	             * @private
+<span class='line'>585</span> 	             * 
+<span class='line'>586</span> 	             * @description    TODO.&lt;br />
+<span class='line'>587</span> 	             * 
+<span class='line'>588</span> 	             * @example        &lt;b>Syntax:&lt;/b>
+<span class='line'>589</span> 	             *                 JKIL.utilities.Ajax._setOnReadyStateChange ()
+<span class='line'>590</span> 	             * 
+<span class='line'>591</span> 	             * @returns        {void}
+<span class='line'>592</span>         		 */</span><span class="WHIT">
+<span class='line'>593</span> </span><span class="WHIT">        		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">_setOnReadyStateChange</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>594</span> </span><span class="WHIT">        			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">_o_xhr.readyState</span><span class="WHIT"> </span><span class="PUNC">==</span><span class="WHIT"> </span><span class="NUMB">4</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>595</span> </span><span class="WHIT">        				</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">_o_xhr.status</span><span class="WHIT"> </span><span class="PUNC">==</span><span class="WHIT"> </span><span class="NUMB">200</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>596</span> </span><span class="WHIT">        					</span><span class="NAME">_h_exposableSettings.onsuccess</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">_o_xhr.responseText</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_o_xhr.status</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_o_xhr.statusText</span><span class="WHIT">  </span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>597</span> </span><span class="WHIT">        				</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">_o_xhr.status</span><span class="WHIT"> </span><span class="PUNC">==</span><span class="WHIT"> </span><span class="NUMB">0</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">_o_xhr.status</span><span class="WHIT"> </span><span class="PUNC">>=</span><span class="WHIT"> </span><span class="NUMB">400</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">_o_xhr.status</span><span class="WHIT"> </span><span class="PUNC">&lt;</span><span class="WHIT"> </span><span class="NUMB">600</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>598</span> </span><span class="WHIT">        					</span><span class="NAME">_h_exposableSettings.onerror</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">_o_xhr.responseText</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_o_xhr.status</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_o_xhr.statusText</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>599</span> </span><span class="WHIT">        				</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>600</span> </span><span class="WHIT">        				</span><span class="WHIT">
+<span class='line'>601</span> </span><span class="WHIT">        				</span><span class="NAME">_h_exposableSettings.oncomplete</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">_o_xhr.status</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_o_xhr.statusText</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>602</span> </span><span class="WHIT">        			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>603</span> </span><span class="WHIT">        		</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>604</span> </span><span class="WHIT">        		</span><span class="WHIT">
+<span class='line'>605</span> </span><span class="WHIT">        		</span><span class="COMM">/**
+<span class='line'>606</span> 	             * @methodOf       JKIL.utilities.Ajax
+<span class='line'>607</span> 	             * @public
+<span class='line'>608</span> 	             * 
+<span class='line'>609</span>                  * @description    Gets an array of exposable setting names.&lt;br />
+<span class='line'>610</span>                  * 
+<span class='line'>611</span>  	             * @example        &lt;b>Syntax:&lt;/b>
+<span class='line'>612</span> 	             *                 JKIL.utilities.Ajax.getSettingNames ()
+<span class='line'>613</span> 	             * 
+<span class='line'>614</span> 	             * @returns        {Array}     Returns a an array of exposable setting names.
+<span class='line'>615</span>         		 */</span><span class="WHIT">
+<span class='line'>616</span> </span><span class="WHIT">        		</span><span class="NAME">this.getSettingNames</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>617</span> </span><span class="WHIT">        			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">_a_settingNames</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>618</span> </span><span class="WHIT">        			</span><span class="WHIT">
+<span class='line'>619</span> </span><span class="WHIT">        			</span><span class="KEYW">for</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">k</span><span class="WHIT"> </span><span class="KEYW">in</span><span class="WHIT"> </span><span class="NAME">_h_exposableSettings</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>620</span> </span><span class="WHIT">        				</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">_h_exposableSettings.hasOwnProperty</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">k</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>621</span> </span><span class="WHIT">        					</span><span class="NAME">_a_settingNames.push</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">k</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>622</span> </span><span class="WHIT">        				</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>623</span> </span><span class="WHIT">        			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>624</span> </span><span class="WHIT">        			</span><span class="WHIT">
+<span class='line'>625</span> </span><span class="WHIT">        			</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">_a_settingNames</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>626</span> </span><span class="WHIT">        		</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>627</span> 
+<span class='line'>628</span> </span><span class="WHIT">        		</span><span class="COMM">/**
+<span class='line'>629</span> 	             * @methodOf       JKIL.utilities.Ajax
+<span class='line'>630</span> 	             * @public
+<span class='line'>631</span> 	             * 
+<span class='line'>632</span>                  * @description    Exposes the exposable setting whose name is given as parameter.&lt;br />
+<span class='line'>633</span>                  * 
+<span class='line'>634</span>  	             * @example        &lt;b>Syntax:&lt;/b>
+<span class='line'>635</span> 	             *                 JKIL.utilities.Ajax.getSetting ( ps_settingName )
+<span class='line'>636</span> 	             *                 
+<span class='line'>637</span> 	             * @param          {string}    ps_settingName    A setting name.
+<span class='line'>638</span> 	             * 
+<span class='line'>639</span> 	             * @returns        {Mixed}     Returns a setting value or &lt;code>undefined&lt;/code> if the given setting name does not exist.
+<span class='line'>640</span>         		 */</span><span class="WHIT">
+<span class='line'>641</span> </span><span class="WHIT">        		</span><span class="NAME">this.getSetting</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">ps_settingName</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>642</span> </span><span class="WHIT">        			</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">_h_exposableSettings</span><span class="PUNC">[</span><span class="NAME">ps_settingName.toLowerCase</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>643</span> </span><span class="WHIT">        		</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>644</span> 
+<span class='line'>645</span> </span><span class="WHIT">        		</span><span class="COMM">/**
+<span class='line'>646</span> 	             * @methodOf       JKIL.utilities.Ajax
+<span class='line'>647</span> 	             * @public
+<span class='line'>648</span> 	             * 
+<span class='line'>649</span>                  * @description    Exposes exposable settings.&lt;br />
+<span class='line'>650</span>                  * 
+<span class='line'>651</span>  	             * @example        &lt;b>Syntax:&lt;/b>
+<span class='line'>652</span> 	             *                 JKIL.utilities.Ajax.getSettings ()
+<span class='line'>653</span> 	             * 
+<span class='line'>654</span> 	             * @returns        {hash}    Returns a hash of exposable settings.
+<span class='line'>655</span>         		 */</span><span class="WHIT">
+<span class='line'>656</span> </span><span class="WHIT">        		</span><span class="NAME">this.getSettings</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>657</span> </span><span class="WHIT">        			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">_h_settings</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>658</span> </span><span class="WHIT">        			</span><span class="WHIT">
+<span class='line'>659</span> </span><span class="WHIT">        			</span><span class="KEYW">for</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">k</span><span class="WHIT"> </span><span class="KEYW">in</span><span class="WHIT"> </span><span class="NAME">_h_exposableSettings</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>660</span> </span><span class="WHIT">        				</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">_h_exposableSettings.hasOwnProperty</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">k</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>661</span> </span><span class="WHIT">        					</span><span class="NAME">_h_settings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_h_exposableSettings</span><span class="PUNC">[</span><span class="NAME">k</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>662</span> </span><span class="WHIT">        				</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>663</span> </span><span class="WHIT">        			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>664</span> </span><span class="WHIT">        			</span><span class="WHIT">
+<span class='line'>665</span> </span><span class="WHIT">        			</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">_h_settings</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>666</span> </span><span class="WHIT">        		</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>667</span> 
+<span class='line'>668</span> </span><span class="WHIT">        		</span><span class="COMM">/**
+<span class='line'>669</span> 	             * @methodOf       JKIL.utilities.Ajax
+<span class='line'>670</span> 	             * @public
+<span class='line'>671</span> 	             * 
+<span class='line'>672</span> 	             * @description    TODO.&lt;br />
+<span class='line'>673</span>         		 */</span><span class="WHIT">
+<span class='line'>674</span> </span><span class="WHIT">        		</span><span class="NAME">this.GET</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>675</span> </span><span class="WHIT">                    </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="KEYW">typeof</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="WHIT"> </span><span class="PUNC">!==</span><span class="WHIT"> </span><span class="STRN">"object"</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="NAME">ph_settings</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>676</span> </span><span class="WHIT">                    </span><span class="NAME">ph_settings</span><span class="PUNC">[</span><span class="STRN">"method"</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"GET"</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// Force to GET</span><span class="WHIT">
+<span class='line'>677</span> 
+<span class='line'>678</span> </span><span class="WHIT">                    </span><span class="NAME">_mergeSettings</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>679</span> </span><span class="WHIT">                    </span><span class="WHIT">
+<span class='line'>680</span> </span><span class="WHIT">                    </span><span class="COMM">// TODO apply settings.</span><span class="WHIT">
+<span class='line'>681</span> 
+<span class='line'>682</span> </span><span class="WHIT">        			</span><span class="NAME">_o_xhr.open</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">_h_exposableSettings.method</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_h_exposableSettings.url</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_h_exposableSettings.async</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_h_exposableSettings.user</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">_h_exposableSettings.password</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>683</span> </span><span class="WHIT">        			</span><span class="NAME">_o_xhr.onreadystatechange</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_setOnReadyStateChange</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>684</span> </span><span class="WHIT">        			</span><span class="NAME">_o_xhr.send</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>685</span> </span><span class="WHIT">        		</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>686</span> </span><span class="WHIT">        		</span><span class="WHIT">
+<span class='line'>687</span> </span><span class="WHIT">           		</span><span class="COMM">/**
+<span class='line'>688</span> 	             * @methodOf       JKIL.utilities.Ajax
+<span class='line'>689</span> 	             * @public
+<span class='line'>690</span>         		 */</span><span class="WHIT">
+<span class='line'>691</span> </span><span class="WHIT">        		</span><span class="NAME">this.POST</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>692</span> </span><span class="WHIT">        			</span><span class="NAME">console.log</span><span class="PUNC">(</span><span class="STRN">"TODO"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>693</span> </span><span class="WHIT">        		</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>694</span> </span><span class="WHIT">        		</span><span class="WHIT">
+<span class='line'>695</span> </span><span class="WHIT">           		</span><span class="COMM">/**
+<span class='line'>696</span> 	             * @methodOf       JKIL.utilities.Ajax
+<span class='line'>697</span> 	             * @public
+<span class='line'>698</span>         		 */</span><span class="WHIT">
+<span class='line'>699</span> </span><span class="WHIT">        		</span><span class="NAME">this.DO</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">ph_settings</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>700</span> </span><span class="WHIT">        			</span><span class="NAME">console.log</span><span class="PUNC">(</span><span class="STRN">"TODO"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>701</span> </span><span class="WHIT">        		</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>702</span> </span><span class="WHIT">        		</span><span class="WHIT">
+<span class='line'>703</span> </span><span class="WHIT">        		</span><span class="WHIT">
+<span class='line'>704</span> </span><span class="WHIT">        		</span><span class="WHIT">
+<span class='line'>705</span> 
+<span class='line'>706</span> </span><span class="COMM">//        		var _s_mimetype = "text/xml";</span><span class="WHIT">
+<span class='line'>707</span> </span><span class="WHIT">        		</span><span class="COMM">/*
+<span class='line'>708</span>         		 *Si vous utilisez la méthode POST, vous devez absolument changer le type MIME de la requête avec la méthode setRequestHeader , sinon le serveur ignorera la requête :
+<span class='line'>709</span>         		 *	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+<span class='line'>710</span>         		 *
+<span class='line'>711</span>         		 * ----
+<span class='line'>712</span>         		 *  xhr.open("POST", "handlingData.php", true);
+<span class='line'>713</span> 				 *  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+<span class='line'>714</span>                  *  xhr.send("variable1=truc&variable2=bidule");
+<span class='line'>715</span>                  *  
+<span class='line'>716</span>                  * ----
+<span class='line'>717</span>                  * 
+<span class='line'>718</span>                  * Avant de passer des variables, il est important de les protéger pour conserver les caractères spéciaux et les espaces. Pour cela, utilisez la fonction globale encodeURIComponent , comme ceci :
+<span class='line'>719</span>                  * 
+<span class='line'>720</span>                  * var sVar1 = encodeURIComponent("contenu avec des espaces");
+<span class='line'>721</span>                  * var sVar2 = encodeURIComponent("je vois que vous êtes un bon élève... oopa !");
+<span class='line'>722</span>                  * xhr.open("GET", "handlingData.php?variable1=" + sVar1 + "&variable2= " + sVar2, true);
+<span class='line'>723</span>                  * xhr.send(null);
+<span class='line'>724</span>         		 */</span><span class="WHIT">
+<span class='line'>725</span> 
+<span class='line'>726</span> </span><span class="WHIT">        		</span><span class="COMM">//var _h_onStatusCode = {}; // TODO implement?</span><span class="WHIT">
+<span class='line'>727</span> </span><span class="WHIT">        		</span><span class="COMM">//var _h_data = {}; // TODO implement?</span><span class="WHIT">
+<span class='line'>728</span> </span><span class="WHIT">        		</span><span class="COMM">/*var _h_onReadyState = [ // TODO implement?
+<span class='line'>729</span>         		    function () {console.log( "TODO readyState 0" )},
+<span class='line'>730</span>         		    function () {console.log( "TODO readyState 1" )},
+<span class='line'>731</span>         		    function () {console.log( "TODO readyState 2" )},
+<span class='line'>732</span>         		    function () {console.log( "TODO readyState 3" )},
+<span class='line'>733</span>         		    function () {console.log( "TODO readyState 4" )}
+<span class='line'>734</span>         		];*/</span><span class="WHIT">
+<span class='line'>735</span> </span><span class="WHIT">        		</span><span class="WHIT">
+<span class='line'>736</span> </span><span class="WHIT">        	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>737</span> </span><span class="WHIT">        	</span><span class="WHIT">
+<span class='line'>738</span> </span><span class="WHIT">            </span><span class="COMM">/**
+<span class='line'>739</span>              * @methodOf       JKIL.utilities
+<span class='line'>740</span>              * 
+<span class='line'>741</span>              * @description    Gets a &lt;code>XMLHttpRequest&lt;/code> / &lt;code>ActiveXObject&lt;/code> XHR object allowing the standard use of AJAX methods.&lt;br />
+<span class='line'>742</span>              * 
+<span class='line'>743</span>              * @example        &lt;b>Syntax:&lt;/b>
+<span class='line'>744</span>              *                 JKIL.utilities.getXHR ()
+<span class='line'>745</span>              *                 
+<span class='line'>746</span>              * @example        &lt;b>Example:&lt;/b>
+<span class='line'>747</span>              *                 var xhr = JKIL.utilities.getXHR ();
+<span class='line'>748</span>              *                 xhr.open("GET", "http://someUrl.net", true);
+<span class='line'>749</span>              *                 xhr.onreadystatechange = function()  {
+<span class='line'>750</span>              *                     // Some code here.
+<span class='line'>751</span>              *                 };
+<span class='line'>752</span>              *                 xhr.send(null);
+<span class='line'>753</span>              * 
+<span class='line'>754</span>              * @returns        {Object|null}    Returns a &lt;code>XMLHttpRequest&lt;/code> / &lt;code>ActiveXObject&lt;/code> XHR instance or &lt;code>null&lt;/code> if the instanciation failed.
+<span class='line'>755</span>              * 
+<span class='line'>756</span>              * @throws         TODO
+<span class='line'>757</span>              * 
+<span class='line'>758</span>              * @see            JKIL.utilities.Ajax()
+<span class='line'>759</span>              */</span><span class="WHIT">
+<span class='line'>760</span> </span><span class="WHIT">        	</span><span class="NAME">getXHR</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>761</span> </span><span class="WHIT">        		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">_o_xhr</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>762</span> </span><span class="WHIT">	    		</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">window.XMLHttpRequest</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">window.ActiveXObject</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">        			</span><span class="WHIT">
+<span class='line'>763</span> </span><span class="WHIT">	    			</span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">window.XMLHttpRequest</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>764</span> </span><span class="WHIT">	    				</span><span class="NAME">_o_xhr</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">XMLHttpRequest</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>765</span> </span><span class="WHIT">	    			</span><span class="COMM">// IE</span><span class="WHIT">
+<span class='line'>766</span> </span><span class="WHIT">	    			</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">window.ActiveXObject</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="WHIT">
+<span class='line'>767</span> </span><span class="WHIT">	    				</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>768</span> </span><span class="WHIT">	    					</span><span class="NAME">_o_xhr</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">ActiveXObject</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="STRN">"Msxml2.XMLHTTP"</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>769</span> </span><span class="WHIT">	    				</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>770</span> </span><span class="WHIT">	    					</span><span class="NAME">_o_xhr</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">ActiveXObject</span><span class="PUNC">(</span><span class="WHIT"> </span><span class="STRN">"Microsoft.XMLHTTP"</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>771</span> </span><span class="WHIT">	    				</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>772</span> </span><span class="WHIT">	    			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>773</span> </span><span class="WHIT">	    		</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>774</span> </span><span class="WHIT">	    			</span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="PUNC">(</span><span class="STRN">"TODO JKIL.utilities.getXHR XMLHttpRequest and ActiveXObject not supported"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT"> </span><span class="COMM">// TODO</span><span class="WHIT">
+<span class='line'>775</span> </span><span class="WHIT">	    		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>776</span> </span><span class="WHIT">	    		</span><span class="WHIT">
+<span class='line'>777</span> </span><span class="WHIT">	    		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">_o_xhr</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>778</span> </span><span class="WHIT">        	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>779</span> </span><span class="WHIT">        </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>780</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>781</span> </span><span class="WHIT">    </span><span class="WHIT">
+<span class='line'>782</span> </span><span class="WHIT">    </span><span class="COMM">/*
+<span class='line'>783</span>      * TODO
+<span class='line'>784</span>      * 
+<span class='line'>785</span>      * Voir s'il est possible de packager JKIL et d'empêcher qu'on y accède de l'exterieur.
+<span class='line'>786</span>      */</span><span class="WHIT">
+<span class='line'>787</span> </span><span class="WHIT">    </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>788</span> 
+<span class='line'>789</span> </span><span class="WHIT">        </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">JKIL</span><span class="WHIT"> </span><span class="PUNC">===</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>790</span> </span><span class="WHIT">            </span><span class="WHIT">
+<span class='line'>791</span> </span><span class="WHIT">            </span><span class="COMM">/*
+<span class='line'>792</span>              * Abort if the namespace name already exists in the global scope.
+<span class='line'>793</span>              */</span><span class="WHIT">
+<span class='line'>794</span> </span><span class="WHIT">            </span><span class="KEYW">if</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="WHIT"> </span><span class="NAME">_context</span><span class="PUNC">[</span><span class="NAME">_namespaceName</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>795</span> </span><span class="WHIT">                </span><span class="KEYW">throw</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Error</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="STRN">"TODO"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>796</span> </span><span class="WHIT">            </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>797</span> </span><span class="WHIT">            </span><span class="WHIT">
+<span class='line'>798</span> </span><span class="WHIT">            </span><span class="COMM">/*
+<span class='line'>799</span>              * Create namespace root in the global scope and reference it in the private JKIL property.
+<span class='line'>800</span>              */</span><span class="WHIT">
+<span class='line'>801</span> </span><span class="WHIT">            </span><span class="NAME">_context</span><span class="PUNC">[</span><span class="NAME">_namespaceName</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>802</span> </span><span class="WHIT">            </span><span class="NAME">JKIL</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">_context</span><span class="PUNC">[</span><span class="NAME">_namespaceName</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>803</span> </span><span class="WHIT">            </span><span class="WHIT">
+<span class='line'>804</span> </span><span class="WHIT">            </span><span class="COMM">/*
+<span class='line'>805</span>              * Initialize the JKIL namespace with default members.
+<span class='line'>806</span>              */</span><span class="WHIT">
+<span class='line'>807</span> </span><span class="WHIT">            </span><span class="NAME">_initNamespace</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>808</span> </span><span class="WHIT">            </span><span class="WHIT">
+<span class='line'>809</span> </span><span class="WHIT">        </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>810</span> </span><span class="WHIT">    </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>811</span> 
+<span class='line'>812</span> </span><span class="PUNC">}</span><span class="WHIT"> </span><span class="PUNC">)</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>813</span> 
+<span class='line'>814</span> 
+<span class='line'>815</span> 
+<span class='line'>816</span> 
+<span class='line'>817</span> </span><span class="COMM">/**
+<span class='line'>818</span>  * @namespace    A namespace for methods, objects and constructors.&lt;br />
+<span class='line'>819</span>  * 
+<span class='line'>820</span>  * @description    A library of methods, objects and constructors.&lt;br />
+<span class='line'>821</span>  */</span><span class="WHIT">
+<span class='line'>822</span> </span><span class="COMM">//JKIL = {};</span><span class="WHIT">
+<span class='line'>823</span> 
+<span class='line'>824</span> </span><span class="COMM">/**
+<span class='line'>825</span>  * @memberof    JKIL
+<span class='line'>826</span>  * @namespace
+<span class='line'>827</span>  * 
+<span class='line'>828</span>  * @description    A namespace for methods related to sorting.&lt;br />
+<span class='line'>829</span>  */</span><span class="WHIT">
+<span class='line'>830</span> </span><span class="NAME">JKIL.sortings</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>831</span> 
+<span class='line'>832</span> </span><span class="COMM">/**
+<span class='line'>833</span>  * @memberof    JKIL.sortings
+<span class='line'>834</span>  * @namespace
+<span class='line'>835</span>  * 
+<span class='line'>836</span>  * @description    A namespace for methods related to sorting of arrays.&lt;br />
+<span class='line'>837</span>  */</span><span class="WHIT">
+<span class='line'>838</span> </span><span class="NAME">JKIL.sortings.array</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>839</span> 
+<span class='line'>840</span> </span><span class="COMM">/**
+<span class='line'>841</span>  * @memberof    JKIL
+<span class='line'>842</span>  * @namespace
+<span class='line'>843</span>  * 
+<span class='line'>844</span>  * @description    A namespace for comparison methods.&lt;br />
+<span class='line'>845</span>  */</span><span class="WHIT">
+<span class='line'>846</span> </span><span class="NAME">JKIL.comparators</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>847</span> 
+<span class='line'>848</span> </span></pre></body></html>
