@@ -132,7 +132,9 @@
          * 
          * @description    A namespace for configuration properties and methods.<br />
          */
-        JKIL.configuration = {};
+        JKIL.configuration = {
+        		
+        };
         
         /**
          * @memberof       JKIL
@@ -141,15 +143,37 @@
          * @description    A namespace for methods related to types.<br />
          */
         JKIL.types = {
-                
-                
+
             /**
              * @methodOf       JKIL.types
              * 
-             * @description    Gets the value of the hidden [[Class]] property for the given value.<br />
+             * @description    TODO
+             */
+            evalsTo: function ( pm_value, ph_options ) {
+            	// TODO check
+            	var _b_status = false;
+            	
+            	// TODO
+            	
+            	return _b_status;
+            },
+        		
+        	/**
+        	 * @methodOf       JKIL.types
+        	 * 
+        	 * @description    Gets a reference to the class to which <code>pm_value</code> belongs.
+        	 */	
+    		getClass: function ( pm_value ) {
+    			return undefined;
+    		},
+        		
+            /**
+             * @methodOf       JKIL.types
+             * 
+             * @description    Gets the value of the hidden [[Class]] property for the given value, <i>i&#46;e&#46;</i> the &ldquo;class&rdquo; name.<br />
              * 
              * @example        <b>Syntax:</b>
-             *                 JKIL.types.getClass ( pm_value )
+             *                 JKIL.types.getClassName ( pm_value )
              * 
              * @param          {mixed}     pm_value    The value whose "class" is to be determined.
              * 
@@ -158,7 +182,7 @@
              * 
              * @see            TODO récupérer références
              */
-            getClass: function ( pm_value ) {
+            getClassName: function ( pm_value ) {
                 var _s_class = Object.prototype.toString.call ( pm_value ).match( /^\[object\s(.*)\]$/ )[1];
                 
 //                // TODO statuer sur l'utilisé de ça et sur la façon dont ça doit fonctionner
@@ -184,6 +208,20 @@
             /**
              * @methodOf       JKIL.types
              * 
+             * @description    TODO
+             */
+            hasClass: function ( pm_value, ps_className ) {
+            	// TODO check
+            	var _b_status = false;
+            	
+            	// TODO
+            	
+            	return _b_status;
+            },
+            
+            /**
+             * @methodOf       JKIL.types
+             * 
              * @description    Checks whether the given value is an array.<br />
              * 
              * @example        <b>Syntax:</b>
@@ -193,14 +231,322 @@
              * 
              * @returns        {boolean}    Returns <code>true</code> if the given value is an array, <code>false</code> otherwise.
              * 
-             * @requires       JKIL.types.getClass ()
+             * @requires       JKIL.types.getClassName ()
              * 
              * @see            TODO récupérer références
              */
             isArray: function ( pm_value ) {
-                return JKIL.types.getClass ( pm_value ) === "Array";
+                return JKIL.types.getClassName ( pm_value ) === "Array";
+            },
+
+            /**
+             * @methodOf       JKIL.types
+             * 
+             * @description    Checks whether the given value is a boolean litteral, a <code>Boolean</code> object, or either a boolean litteral or a <code>Boolean</code> object.<br />
+             * 
+             * @example        <b>Syntax:</b>
+             *                 JKIL.types.isBoolean ( pm_value[, ph_options] )
+             * 
+             * @example        <b>Example 1 - Synonym of JKIL.types.isBooleanLitteral(): </b>
+             *                 var v = true;
+             *                 var b = JKIL.types.isBooleanLitteral ( v, {litteral: true, object: false} ); // true
+             * 
+             * @example        <b>Example 2 - Synonym of JKIL.types.isBooleanObject(): </b>
+             *                 var v = new Boolean(true);
+             *                 var b = JKIL.types.isBooleanLitteral ( v, {litteral: false, object: true} ); // true
+             * 
+             * @example        <b>Example 3 - Synonym of JKIL.types.isBooleanObjectOrLitteral(): </b>
+             *                 var v1 = true;
+             *                 var b = JKIL.types.isBooleanLitteral ( v1, {litteral: true, object: true} ); // true
+             *                 var v2 = new Boolean(true);
+             *                 var b = JKIL.types.isBooleanLitteral ( v2, {litteral: true, object: true} ); // true
+             * 
+             * @param          {mixed}      pm_value        The value whose type is to be checked.<br /><br />
+             * 
+             * @param          {hash}       [ph_options]    A hash of options:<br /><br />
+             * 
+             * @param          {boolean}    [ph_options.litteral=true]  If <code>true</code>, the method returns <code>true</code> for boolean litterals. <code>ph_options.litteral</code> and <code>ph_options.object</code> cannot be both <code>false</code>.<br /><br />
+             * @param          {boolean}    [ph_options.object=true]    If <code>true</code>, the method returns <code>true</code> for <code>Boolean</code> objects. <code>ph_options.litteral</code> and <code>ph_options.object</code> cannot be both <code>false</code>.
+             * 
+             * @returns        {boolean}    Returns <code>true</code> if the given value is strictly a boolean litteral, or strictly a <code>Boolean</code> object, or either a boolean litteral or a <code>Boolean</code> object. Returns <code>false</code> otherwise.
+             * 
+             * @requires       JKIL.types.getClassName()
+             * 
+             * @see            JKIL.types.isBooleanLitteral()
+             * @see            JKIL.types.isBooleanObject()
+             * @see            JKIL.types.isBooleanObjectOrLitteral()
+             */
+            isBoolean: function ( pm_value, ph_options ) {
+                if (typeof ph_options !== "object" || ph_options === null) {ph_options = {};}
+                if (typeof ph_options.litteral !== "boolean") {ph_options.litteral = true;}
+                if (typeof ph_options.object !== "boolean") {ph_options.object = true;}
+                if (ph_options.litteral === false && ph_options.object === false ) {
+                    ph_options.litteral = true;
+                    ph_options.object = true;
+                }
+
+                return     ( ph_options.litteral === true && typeof pm_value === "boolean" )
+                        || ( ph_options.object === true && typeof pm_value !== "boolean" && JKIL.types.getClassName ( pm_value ) === "boolean" );
             },
             
+            /**
+             * @methodOf       JKIL.types
+             * 
+             * @description    Checks whether the given value is a boolean litteral (<i>e&#46;g&#46;</i> <code>true</code>).<br />
+             * 
+             * @example        <b>Syntax:</b>
+             *                 JKIL.types.isBooleanLitteral ( pm_value )
+             * 
+             * @param          {mixed}      pm_value    The value whose type is to be checked.
+             * 
+             * @returns        {boolean}    Returns <code>true</code> if the given value is a boolean litteral, <code>false</code> otherwise.
+             * 
+             * @see            JKIL.types.isBoolean()
+             */
+            isBooleanLitteral: function ( pm_value ) {
+                return typeof pm_value === "boolean";
+            },
+            
+            /**
+             * @methodOf       JKIL.types
+             * 
+             * @description    Checks whether the given value is a <code>Boolean</code> object (<i>e&#46;g&#46;</i> <code>new Boolean( true )</code>).<br />
+             * 
+             * @example        <b>Syntax:</b>
+             *                 JKIL.types.isBooleanObject ( pm_value )
+             * 
+             * @param          {mixed}      pm_value    The value whose type is to be checked.
+             * 
+             * @returns        {boolean}    Returns <code>true</code> if the given value is a <code>Boolean</code> object, <code>false</code> otherwise.
+             * 
+             * @requires       JKIL.types.getClassName ()
+             * 
+             * @see            JKIL.types.isBoolean()
+             */
+            isBooleanObject: function ( pm_value ) {
+                return typeof pm_value !== "boolean" && JKIL.types.getClassName ( pm_value ) === "boolean";
+            },
+            
+            /**
+             * @methodOf       JKIL.types
+             * 
+             * @description    Checks whether the given value is a boolean litteral or a <code>Boolean</code> object (<i>e&#46;g&#46;</i> <code>true</code> or <code>new Boolean( true )</code>).<br />
+             * 
+             * @example        <b>Syntax:</b>
+             *                 JKIL.types.isBooleanObjectOrLitteral ( pm_value )
+             * 
+             * @param          {mixed}      pm_value    The value whose type is to be checked.
+             * 
+             * @returns        {boolean}    Returns <code>true</code> if the given value is a boolean litteral or a <code>Boolean</code> object, <code>false</code> otherwise.
+             * 
+             * @requires       JKIL.types.getClassName ()
+             * 
+             * @see            JKIL.types.isBoolean()
+             */
+            isBooleanObjectOrLitteral: function ( pm_value ) {
+                return typeof pm_value === "boolean" || JKIL.types.getClassName ( pm_value ) === "boolean";
+            },
+
+            /**
+             * @methodOf       JKIL.types
+             * 
+             * @description    TODO
+             */
+            isEmpty: function ( pm_value, ph_options ) {
+            	// TODO check
+            	var _b_status = false;
+            	
+            	// TODO
+            	
+            	return _b_status;
+            },
+            
+            /**
+             * @methodOf       JKIL.types
+             * 
+             * @description    TODO
+             */
+            isFloat: function ( pm_value, ph_options ) {
+            	// TODO check
+            	var _b_status = false;
+            	
+            	// TODO
+            	
+            	return _b_status;
+            },
+            
+            /**
+             * @methodOf       JKIL.types
+             * 
+             * @description    Checks whether the given value is a function.<br />
+             * 
+             * @example        <b>Syntax:</b>
+             *                 JKIL.types.isFunction ( pm_value )
+             * 
+             * @param          {mixed}      pm_value    The value whose type is to be checked.
+             * 
+             * @returns        {boolean}    Returns <code>true</code> if the given value is a function, <code>false</code> otherwise.
+             */
+            isFunction: function ( pm_value ) {
+            	return typeof pm_value === "function";
+            },
+
+            /**
+             * @methodOf       JKIL.types
+             * 
+             * @description    TODO
+             */
+            isInteger: function ( pm_value, ph_options ) {
+            	// TODO check
+            	var _b_status = false;
+            	
+            	// TODO
+            	
+            	return _b_status;
+            },
+            
+            /**
+             * @methodOf       JKIL.types
+             * 
+             * @description    Checks whether the given value is <code>null</code>.<br />
+             * 
+             * @example        <b>Syntax:</b>
+             *                 JKIL.types.isNull ( pm_value )
+             * 
+             * @param          {mixed}      pm_value    The value whose type is to be checked.
+             * 
+             * @returns        {boolean}    Returns <code>true</code> if the given value is <code>null</code>, <code>false</code> otherwise.
+             */
+            isNull: function ( pm_value ) {
+            	return pm_value === null;
+            },
+            
+            /**
+             * @methodOf       JKIL.types
+             * 
+             * @description    Checks whether the given value is <code>null</code> or <code>undefined</code>.<br />
+             * 
+             * @example        <b>Syntax:</b>
+             *                 JKIL.types.isNullOrUndefined ( pm_value )
+             * 
+             * @param          {mixed}      pm_value    The value whose type is to be checked.
+             * 
+             * @returns        {boolean}    Returns <code>true</code> if the given value is <code>null</code> or <code>undefined</code>, <code>false</code> otherwise.
+             * 
+             * @see            JKIL.types.isVoid()
+             */
+            isNullOrUndefined: function ( pm_value ) {
+            	return pm_value == null;
+            },
+            
+            /**
+             * @methodOf       JKIL.types
+             * 
+             * @description    Checks whether the given value is a number litteral, a <code>Number</code> object, or either a number litteral or a <code>Number</code> object.<br />
+             * 
+             * @example        <b>Syntax:</b>
+             *                 JKIL.types.isNumber ( pm_value[, ph_options] )
+             * 
+             * @example        <b>Example 1 - Synonym of JKIL.types.isNumberLitteral(): </b>
+             *                 var v = 12;
+             *                 var b = JKIL.types.isNumberLitteral ( v, {litteral: true, object: false} ); // true
+             * 
+             * @example        <b>Example 2 - Synonym of JKIL.types.isNumberObject(): </b>
+             *                 var v = new Number(12);
+             *                 var b = JKIL.types.isNumberLitteral ( v, {litteral: false, object: true} ); // true
+             * 
+             * @example        <b>Example 3 - Synonym of JKIL.types.isNumberObjectOrLitteral(): </b>
+             *                 var v1 = 12;
+             *                 var b = JKIL.types.isNumberLitteral ( v1, {litteral: true, object: true} ); // true
+             *                 var v2 = new Number(12);
+             *                 var b = JKIL.types.isNumberLitteral ( v2, {litteral: true, object: true} ); // true
+             * 
+             * @param          {mixed}      pm_value        The value whose type is to be checked.<br /><br />
+             * 
+             * @param          {hash}       [ph_options]    A hash of options:<br /><br />
+             * 
+             * @param          {boolean}    [ph_options.litteral=true]  If <code>true</code>, the method returns <code>true</code> for number litterals. <code>ph_options.litteral</code> and <code>ph_options.object</code> cannot be both <code>false</code>.<br /><br />
+             * @param          {boolean}    [ph_options.object=true]    If <code>true</code>, the method returns <code>true</code> for <code>Number</code> objects. <code>ph_options.litteral</code> and <code>ph_options.object</code> cannot be both <code>false</code>.
+             * 
+             * @returns        {boolean}    Returns <code>true</code> if the given value is strictly a number litteral, or strictly a <code>Number</code> object, or either a number litteral or a <code>Number</code> object. Returns <code>false</code> otherwise.
+             * 
+             * @requires       JKIL.types.getClassName()
+             * 
+             * @see            JKIL.types.isNumberLitteral()
+             * @see            JKIL.types.isNumberObject()
+             * @see            JKIL.types.isNumberObjectOrLitteral()
+             */
+            isNumber: function ( pm_value, ph_options ) {
+                if (typeof ph_options !== "object" || ph_options === null) {ph_options = {};}
+                if (typeof ph_options.litteral !== "boolean") {ph_options.litteral = true;}
+                if (typeof ph_options.object !== "boolean") {ph_options.object = true;}
+                if (ph_options.litteral === false && ph_options.object === false ) {
+                    ph_options.litteral = true;
+                    ph_options.object = true;
+                }
+
+                return     ( ph_options.litteral === true && typeof pm_value === "number" )
+                        || ( ph_options.object === true && typeof pm_value !== "number" && JKIL.types.getClassName ( pm_value ) === "number" );
+            },
+            
+            /**
+             * @methodOf       JKIL.types
+             * 
+             * @description    Checks whether the given value is a number litteral (<i>e&#46;g&#46;</i> <code>12</code>).<br />
+             * 
+             * @example        <b>Syntax:</b>
+             *                 JKIL.types.isNumberLitteral ( pm_value )
+             * 
+             * @param          {mixed}      pm_value    The value whose type is to be checked.
+             * 
+             * @returns        {boolean}    Returns <code>true</code> if the given value is a number litteral, <code>false</code> otherwise.
+             * 
+             * @see            JKIL.types.isNumber()
+             */
+            isNumberLitteral: function ( pm_value ) {
+                return typeof pm_value === "number";
+            },
+            
+            /**
+             * @methodOf       JKIL.types
+             * 
+             * @description    Checks whether the given value is a <code>Number</code> object (<i>e&#46;g&#46;</i> <code>new Number( 12 )</code>).<br />
+             * 
+             * @example        <b>Syntax:</b>
+             *                 JKIL.types.isNumberObject ( pm_value )
+             * 
+             * @param          {mixed}      pm_value    The value whose type is to be checked.
+             * 
+             * @returns        {boolean}    Returns <code>true</code> if the given value is a <code>Number</code> object, <code>false</code> otherwise.
+             * 
+             * @requires       JKIL.types.getClassName ()
+             * 
+             * @see            JKIL.types.isNumber()
+             */
+            isNumberObject: function ( pm_value ) {
+                return typeof pm_value !== "number" && JKIL.types.getClassName ( pm_value ) === "number";
+            },
+            
+            /**
+             * @methodOf       JKIL.types
+             * 
+             * @description    Checks whether the given value is a number litteral or a <code>Number</code> object (<i>e&#46;g&#46;</i> <code>12</code> or <code>new Number( 12 )</code>).<br />
+             * 
+             * @example        <b>Syntax:</b>
+             *                 JKIL.types.isNumberObjectOrLitteral ( pm_value )
+             * 
+             * @param          {mixed}      pm_value    The value whose type is to be checked.
+             * 
+             * @returns        {boolean}    Returns <code>true</code> if the given value is a number litteral or a <code>Number</code> object, <code>false</code> otherwise.
+             * 
+             * @requires       JKIL.types.getClassName ()
+             * 
+             * @see            JKIL.types.isNumber()
+             */
+            isNumberObjectOrLitteral: function ( pm_value ) {
+                return typeof pm_value === "number" || JKIL.types.getClassName ( pm_value ) === "number";
+            },
+
             /**
              * @methodOf       JKIL.types
              * 
@@ -264,7 +610,7 @@
              * 
              * @returns        {boolean}    Returns <code>true</code> if the given value is strictly a string litteral, or strictly a <code>String</code> object, or either a string litteral or a <code>String</code> object. Returns <code>false</code> otherwise.
              * 
-             * @requires       JKIL.types.getClass()
+             * @requires       JKIL.types.getClassName()
              * 
              * @see            JKIL.types.isStringLitteral()
              * @see            JKIL.types.isStringObject()
@@ -280,7 +626,7 @@
                 }
 
                 return     ( ph_options.litteral === true && typeof pm_value === "string" )
-                        || ( ph_options.object === true && typeof pm_value !== "string" && JKIL.types.getClass ( pm_value ) === "String" );
+                        || ( ph_options.object === true && typeof pm_value !== "string" && JKIL.types.getClassName ( pm_value ) === "String" );
             },
             
             /**
@@ -313,18 +659,18 @@
              * 
              * @returns        {boolean}    Returns <code>true</code> if the given value is a <code>String</code> object, <code>false</code> otherwise.
              * 
-             * @requires       JKIL.types.getClass ()
+             * @requires       JKIL.types.getClassName ()
              * 
              * @see            JKIL.types.isString()
              */
             isStringObject: function ( pm_value ) {
-                return typeof pm_value !== "string" && JKIL.types.getClass ( pm_value ) === "String";
+                return typeof pm_value !== "string" && JKIL.types.getClassName ( pm_value ) === "String";
             },
             
             /**
              * @methodOf       JKIL.types
              * 
-             * @description    Checks whether the given value is a string litteral or a <code>String</code> object (<i>e&#46;g&#46;</i> "a string" or <code>new String( "a string" )</code>).<br />
+             * @description    Checks whether the given value is a string litteral or a <code>String</code> object (<i>e&#46;g&#46;</i> <code>"a string"</code> or <code>new String( "a string" )</code>).<br />
              * 
              * @example        <b>Syntax:</b>
              *                 JKIL.types.isStringObjectOrLitteral ( pm_value )
@@ -333,15 +679,32 @@
              * 
              * @returns        {boolean}    Returns <code>true</code> if the given value is a string litteral or a <code>String</code> object, <code>false</code> otherwise.
              * 
-             * @requires       JKIL.types.getClass ()
+             * @requires       JKIL.types.getClassName ()
              * 
              * @see            JKIL.types.isString()
              */
             isStringObjectOrLitteral: function ( pm_value ) {
-                return typeof pm_value === "string" || JKIL.types.getClass ( pm_value ) === "String";
+                return typeof pm_value === "string" || JKIL.types.getClassName ( pm_value ) === "String";
+            },
+            
+            /**
+             * @methodOf       JKIL.types
+             * 
+             * @description    Checks whether the given value is <code>null</code> or <code>undefined</code> (this method is an alias for <code>JKIL.types.isNullOrUndefined()</code>).<br />
+             * 
+             * @example        <b>Syntax:</b>
+             *                 JKIL.types.isVoid ( pm_value )
+             * 
+             * @param          {mixed}      pm_value    The value whose type is to be checked.
+             * 
+             * @returns        {boolean}    Returns <code>true</code> if the given value is <code>null</code> or <code>undefined</code>, <code>false</code> otherwise.
+             * 
+             * @see            JKIL.types.isNullOrUndefined()
+             */
+            isVoid: function ( pm_value ) {
+            	return pm_value == null;
             }
-                
-                
+ 
         };
 
         /**
@@ -671,8 +1034,7 @@
         			
         			
         		};
-        		
-        		
+
         		/**
 	             * @methodOf       JKIL.utilities.Ajax
 	             * @public
@@ -814,6 +1176,20 @@
         		
         	},
         	
+        	/**
+             * @methodOf       JKIL.utilities
+             * 
+             * @description    TODO
+        	 */
+        	clone: function ( pm_value, ph_options ) {
+        		// TODO check
+        		var _m_cloned;
+        		
+        		// TODO
+        		
+        		return _m_cloned;
+        	},
+        	
             /**
              * @methodOf       JKIL.utilities
              * 
@@ -854,6 +1230,20 @@
 	    		}
 	    		
 	    		return _o_xhr;
+        	},
+        	
+        	/**
+             * @methodOf       JKIL.utilities
+             * 
+             * @description    TODO
+        	 */
+        	toSource: function ( pm_value, ph_options ) {
+        		// TODO check
+        		var _s_source = "";
+        		
+        		// TODO
+        		
+        		return _s_source;
         	}
         };
     };
@@ -923,4 +1313,12 @@ JKIL.sortings.array = {};
  * @description    A namespace for comparison methods.<br />
  */
 JKIL.comparators = {};
+
+/**
+ * @memberof    JKIL
+ * @namespace
+ * 
+ * @description    A namespace for URI methods.<br />
+ */
+JKIL.uri = {};
 

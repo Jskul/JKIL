@@ -5,7 +5,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="generator" content="JsDoc Toolkit" />
 		
-		<title>JsDoc Reference - _JKIL</title>
+		<title>JsDoc Reference - JKIL.uri</title>
 
 		<style type="text/css">
 			/* default.css */
@@ -191,7 +191,23 @@ ul.inheritsList
 	
 	<li><i><a href="../symbols/_global_.html">_global_</a></i></li>
 	
-	<li><a href="../symbols/_JKIL.html">_JKIL</a></li>
+	<li><a href="../symbols/JKIL.html">JKIL</a></li>
+	
+	<li><a href="../symbols/JKIL.comparators.html">JKIL.comparators</a></li>
+	
+	<li><a href="../symbols/JKIL.configuration.html">JKIL.configuration</a></li>
+	
+	<li><a href="../symbols/JKIL.sortings.html">JKIL.sortings</a></li>
+	
+	<li><a href="../symbols/JKIL.sortings.array.html">JKIL.sortings.array</a></li>
+	
+	<li><a href="../symbols/JKIL.types.html">JKIL.types</a></li>
+	
+	<li><a href="../symbols/JKIL.uri.html">JKIL.uri</a></li>
+	
+	<li><a href="../symbols/JKIL.utilities.html">JKIL.utilities</a></li>
+	
+	<li><a href="../symbols/JKIL.utilities.Ajax.html">JKIL.utilities.Ajax</a></li>
 	
 </ul>
 <hr />
@@ -202,7 +218,7 @@ ul.inheritsList
 <!-- ============================== class title ============================ -->
 			<h1 class="classTitle">
 				
-				Namespace _JKIL
+				Namespace JKIL.uri
 			</h1>
 
 <!-- ============================== class summary ========================== -->			
@@ -210,7 +226,7 @@ ul.inheritsList
 				
 				
 			
-				JKIL
+				
 				
 				
 					<br /><i>Defined in: </i> <a href="../symbols/src/source_JKIL.js.html">JKIL.js</a>.
@@ -219,7 +235,7 @@ ul.inheritsList
 
 <!-- ============================== constructor summary ==================== -->			
 			
-			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class _JKIL.">
+			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class JKIL.uri.">
 				<caption>Namespace Summary</caption>
 				<thead>
 					<tr>
@@ -232,9 +248,9 @@ ul.inheritsList
 						<td class="attributes">&nbsp;</td>
 						<td class="nameDescription" >
 							<div class="fixedFont">
-								<b><a href="../symbols/_JKIL.html#constructor">_JKIL</a></b>
+								<b><a href="../symbols/JKIL.uri.html#constructor">JKIL.uri</a></b>
 							</div>
-							<div class="description">A private property which holds the JKIL namespace itself.</div>
+							<div class="description">A namespace for URI methods.</div>
 						</td>
 					</tr>
 				</tbody>
@@ -245,6 +261,42 @@ ul.inheritsList
 			
 
 <!-- ============================== methods summary ======================== -->
+			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class JKIL.uri.">
+					<caption>Method Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Method Attributes</th>
+							<th scope="col">Method Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">JKIL.uri.<b><a href="../symbols/JKIL.uri.html#.getQueryParameters">getQueryParameters</a></b>()
+								</div>
+								<div class="description">Gets URI query parameters.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">JKIL.uri.<b><a href="../symbols/JKIL.uri.html#.getQueryParametersOrderly">getQueryParametersOrderly</a></b>()
+								</div>
+								<div class="description">Gets URI query parameters in the order they occur.</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
 			
 <!-- ============================== events summary ======================== -->
 			
@@ -257,11 +309,11 @@ ul.inheritsList
 				</div>
 				
 				<div class="fixedFont">
-						<b>_JKIL</b>
+						<b>JKIL.uri</b>
 				</div>
 				
 				<div class="description">
-					A private property which holds the JKIL namespace itself.<br />				It is referenced in the global scope after <code>JKIL.js</code> has been loaded.<br />
+					A namespace for URI methods.<br />
 					
 				</div>
 				
@@ -284,6 +336,107 @@ ul.inheritsList
 
 <!-- ============================== method details ========================= -->		
 			
+				<div class="sectionTitle">
+					Method Detail
+				</div>
+				
+					<a name=".getQueryParameters"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{hash}</span>
+					<span class="light">JKIL.uri.</span><b>getQueryParameters</b>()
+					
+					</div>
+					<div class="description">
+						Gets URI query parameters.<br />
+						
+							<br />
+							<i>Defined in: </i> <a href="../symbols/src/source_JKIL.uri.getQueryParameters.js.html">JKIL.uri.getQueryParameters.js</a>.
+						
+						
+					</div>
+					
+					
+					
+					<pre class="code">       <b>Syntax:</b>                JKIL.uri.getQueryParameters ()</pre>
+					
+					<pre class="code">       <b>Example:</b>                var a = JKIL.uri.getQueryParameters (); // returns {secondParam: "true", firstParam: "12"} for www.myURI.net?firstParam=12&secondParam=true</pre>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{hash}</span> Returns a hash of URI parameters/values.</dd>
+							
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="../symbols/JKIL.uri.html#.getQueryParametersOrderly">JKIL.uri.getQueryParametersOrderly</a> ()</dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name=".getQueryParametersOrderly"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{array}</span>
+					<span class="light">JKIL.uri.</span><b>getQueryParametersOrderly</b>()
+					
+					</div>
+					<div class="description">
+						Gets URI query parameters in the order they occur.<br />
+						
+							<br />
+							<i>Defined in: </i> <a href="../symbols/src/source_JKIL.uri.getQueryParametersOrderly.js.html">JKIL.uri.getQueryParametersOrderly.js</a>.
+						
+						
+					</div>
+					
+					
+					
+					<pre class="code">       <b>Syntax:</b>                JKIL.uri.getQueryParametersOrderly ()</pre>
+					
+					<pre class="code">       <b>Example:</b>                var a = JKIL.uri.getQueryParametersOrderly (); // returns [{p: "firstParam", v: "12"}, {p: "secondParam", v: "true"}] for www.myURI.net?firstParam=12&secondParam=true</pre>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{array}</span> Returns an array of URI parameter/value hashes.</dd>
+							
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="../symbols/JKIL.uri.html#.getQueryParameters">JKIL.uri.getQueryParameters</a> ()</dd>
+							
+							</dl>
+						
+
+					
+				
+			
 			
 <!-- ============================== event details ========================= -->		
 			
@@ -295,7 +448,7 @@ ul.inheritsList
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
 			
-			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Wed Mar 18 2015 22:57:51 GMT+0100 (CET)
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Wed Apr 15 2015 22:45:33 GMT+0200 (CEST)
 		</div>
 	</body>
 </html>
