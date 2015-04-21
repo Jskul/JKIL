@@ -113,6 +113,22 @@
     _errors = "TODO",
     
     /**
+     * @fieldOf        JKIL
+     * 
+     * @private
+     * 
+     * @description    A private property which keeps JKIL constants.<br />
+     * 
+     * @type           hash
+     * 
+     * @since          TODO
+     * @author         TODO
+     */
+    _constants = {
+    		
+    },
+    
+    /**
      * @methodOf    JKIL
      * 
      * @private
