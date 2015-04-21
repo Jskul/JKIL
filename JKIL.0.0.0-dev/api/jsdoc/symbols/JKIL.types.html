@@ -277,9 +277,9 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.evalsTo">evalsTo</a></b>(pm_value, ph_options)
+								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.evalsTo">evalsTo</a></b>(pm_value)
 								</div>
-								<div class="description">TODO</div>
+								<div class="description">Gets the boolean evaluation of <code>pm_value</code>.</div>
 							</td>
 						</tr>
 					
@@ -295,18 +295,18 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.getClassName">getClassName</a></b>(pm_value)
+								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.getClassName">getClassName</a></b>(pm_value, ph_options)
 								</div>
-								<div class="description">Gets the value of the hidden [[Class]] property for the given value, <i>i&#46;e&#46;</i> the &ldquo;class&rdquo; name.</div>
+								<div class="description">Gets the value of the hidden <code>[[Class]]</code> property for the given value, <i>i&#46;e&#46;</i> the &ldquo;class&rdquo; name.</div>
 							</td>
 						</tr>
 					
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.hasClass">hasClass</a></b>(pm_value, ps_className)
+								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.hasClassName">hasClassName</a></b>(pm_value, ps_className, ph_options)
 								</div>
-								<div class="description">TODO</div>
+								<div class="description">Checks if <code>pm_value</code> has the &ldquo;class&rdquo; name given in <code>ps_className</code>.</div>
 							</td>
 						</tr>
 					
@@ -559,15 +559,19 @@ ul.inheritsList
 					<a name=".evalsTo"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
-					
-					<span class="light">JKIL.types.</span><b>evalsTo</b>(pm_value, ph_options)
+					<span class="light">{boolean}</span>
+					<span class="light">JKIL.types.</span><b>evalsTo</b>(pm_value)
 					
 					</div>
 					<div class="description">
-						TODO
+						Gets the boolean evaluation of <code>pm_value</code>.<br />
 						
 						
 					</div>
+					
+					
+					
+					<pre class="code">       <b>Syntax:</b>                JKIL.types.evalsTo ( pm_value )</pre>
 					
 					
 					
@@ -576,22 +580,23 @@ ul.inheritsList
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<b>pm_value</b>
+									<span class="light fixedFont">{mixed}</span> <b>pm_value</b>
 									
 								</dt>
-								<dd></dd>
-							
-								<dt>
-									<b>ph_options</b>
-									
-								</dt>
-								<dd></dd>
+								<dd>A value.</dd>
 							
 							</dl>
 						
 						
 						
 						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{boolean}</span> A boolean evaluation of <code>pm_value</code>.</dd>
+							
+							</dl>
 						
 						
 						
@@ -638,18 +643,22 @@ ul.inheritsList
 					<div class="fixedFont">&lt;static&gt; 
 					
 					<span class="light">{string}</span>
-					<span class="light">JKIL.types.</span><b>getClassName</b>(pm_value)
+					<span class="light">JKIL.types.</span><b>getClassName</b>(pm_value, ph_options)
 					
 					</div>
 					<div class="description">
-						Gets the value of the hidden [[Class]] property for the given value, <i>i&#46;e&#46;</i> the &ldquo;class&rdquo; name.<br />
+						Gets the value of the hidden <code>[[Class]]</code> property for the given value, <i>i&#46;e&#46;</i> the &ldquo;class&rdquo; name.<br />
 						
 						
 					</div>
 					
 					
 					
-					<pre class="code">       <b>Syntax:</b>                JKIL.types.getClassName ( pm_value )</pre>
+					<pre class="code">       <b>Syntax:</b>                JKIL.types.getClassName ( pm_value[, ph_options] )</pre>
+					
+					<pre class="code">       <b>Example 1: </b>                var myObject = new MyObject();                var className = JKIL.types.getClassName ( myObject, {checkConstructor: false} ); // "Object"</pre>
+					
+					<pre class="code">       <b>Example 2: </b>                var myObject = new MyObject();                var className = JKIL.types.getClassName ( myObject, {checkConstructor: true} ); // "MyObject"</pre>
 					
 					
 					
@@ -661,7 +670,19 @@ ul.inheritsList
 									<span class="light fixedFont">{mixed}</span> <b>pm_value</b>
 									
 								</dt>
-								<dd>The value whose "class" is to be determined.</dd>
+								<dd>The value whose "class" is to be determined.<br /><br /></dd>
+							
+								<dt>
+									<span class="light fixedFont">{hash}</span> <b>ph_options</b>
+									<i>Optional</i>
+								</dt>
+								<dd>A hash of options:<br /><br /></dd>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>ph_options.checkConstructor</b>
+									<i>Optional, Default: false</i>
+								</dt>
+								<dd>If <code>true</code>, for objects the method checks whether <code>pm_value</code> is an instance of its <code>constructor</code> property (<i>i.e.</i> if <code>constructor</code> has not been altered) and returns the name of this constructor.</dd>
 							
 							</dl>
 						
@@ -678,28 +699,25 @@ ul.inheritsList
 						
 						
 						
-							<dl class="detailList">
-							<dt class="heading">See:</dt>
-							
-								<dd>TODO récupérer références</dd>
-							
-							</dl>
-						
 
 					<hr />
 				
-					<a name=".hasClass"> </a>
+					<a name=".hasClassName"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
-					
-					<span class="light">JKIL.types.</span><b>hasClass</b>(pm_value, ps_className)
+					<span class="light">{boolean}</span>
+					<span class="light">JKIL.types.</span><b>hasClassName</b>(pm_value, ps_className, ph_options)
 					
 					</div>
 					<div class="description">
-						TODO
+						Checks if <code>pm_value</code> has the &ldquo;class&rdquo; name given in <code>ps_className</code>.<br />
 						
 						
 					</div>
+					
+					
+					
+					<pre class="code">       <b>Syntax:</b>                JKIL.types.hasClassName ( pm_value, ps_className[, ph_options] )</pre>
 					
 					
 					
@@ -708,24 +726,67 @@ ul.inheritsList
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<b>pm_value</b>
+									<span class="light fixedFont">{mixed}</span> <b>pm_value</b>
 									
 								</dt>
-								<dd></dd>
+								<dd>The value whose "class" is to be checked.<br /><br /></dd>
 							
 								<dt>
-									<b>ps_className</b>
+									<span class="light fixedFont">{string}</span> <b>ps_className</b>
 									
 								</dt>
-								<dd></dd>
+								<dd>A "class" name.<br /><br /></dd>
+							
+								<dt>
+									<span class="light fixedFont">{hash}</span> <b>ph_options</b>
+									<i>Optional</i>
+								</dt>
+								<dd>A hash of options:<br /><br /></dd>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>ph_options.checkConstructor</b>
+									<i>Optional, Default: false</i>
+								</dt>
+								<dd>If <code>true</code>, for objects the method checks whether <code>pm_value</code> is an instance of its <code>constructor</code> property (<i>i.e.</i> if <code>constructor</code> has not been altered) and returns the name of this constructor.</dd>
 							
 							</dl>
 						
 						
 						
 						
+							<dl class="detailList">
+							<dt class="heading">Throws:</dt>
+							
+								<dt>
+									 <b></b>
+								</dt>
+								<dd>TODO</dd>
+							
+							</dl>
 						
 						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{boolean}</span> Returns <code>true</code> if <code>pm_value</code> has the &ldquo;class&rdquo; name given in <code>ps_className</code>, <code>false</code> otherwise.<br /></dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Requires:</dt>
+							
+								<dd>JKIL.types.getClassName()</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="../symbols/JKIL.types.html#.getClassName">JKIL.types.getClassName</a>()</dd>
+							
+							</dl>
 						
 
 					<hr />
@@ -780,13 +841,6 @@ ul.inheritsList
 							
 							</dl>
 						
-						
-							<dl class="detailList">
-							<dt class="heading">See:</dt>
-							
-								<dd>TODO récupérer références</dd>
-							
-							</dl>
 						
 
 					<hr />
@@ -2020,7 +2074,7 @@ ul.inheritsList
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
 			
-			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Wed Apr 15 2015 22:45:33 GMT+0200 (CEST)
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Tue Apr 21 2015 20:24:15 GMT+0200 (CEST)
 		</div>
 	</body>
 </html>

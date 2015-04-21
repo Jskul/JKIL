@@ -147,15 +147,17 @@
             /**
              * @methodOf       JKIL.types
              * 
-             * @description    TODO
+             * @description    Gets the boolean evaluation of <code>pm_value</code>.<br />
+             * 
+             * @example        <b>Syntax:</b>
+             *                 JKIL.types.evalsTo ( pm_value )
+             * 
+             * @param          {mixed}      pm_value    A value.
+             * 
+             * @returns        {boolean}    A boolean evaluation of <code>pm_value</code>.
              */
-            evalsTo: function ( pm_value, ph_options ) {
-            	// TODO check
-            	var _b_status = false;
-            	
-            	// TODO
-            	
-            	return _b_status;
+            evalsTo: function ( pm_value ) {
+            	return !!pm_value;
             },
         		
         	/**
@@ -170,31 +172,36 @@
             /**
              * @methodOf       JKIL.types
              * 
-             * @description    Gets the value of the hidden [[Class]] property for the given value, <i>i&#46;e&#46;</i> the &ldquo;class&rdquo; name.<br />
+             * @description    Gets the value of the hidden <code>[[Class]]</code> property for the given value, <i>i&#46;e&#46;</i> the &ldquo;class&rdquo; name.<br />
              * 
              * @example        <b>Syntax:</b>
-             *                 JKIL.types.getClassName ( pm_value )
+             *                 JKIL.types.getClassName ( pm_value[, ph_options] )
+             *                 
+             * @example        <b>Example 1: </b>
+             *                 var myObject = new MyObject();
+             *                 var className = JKIL.types.getClassName ( myObject, {checkConstructor: false} ); // "Object"
+             *                         
+             * @example        <b>Example 2: </b>
+             *                 var myObject = new MyObject();
+             *                 var className = JKIL.types.getClassName ( myObject, {checkConstructor: true} ); // "MyObject"
              * 
-             * @param          {mixed}     pm_value    The value whose "class" is to be determined.
+             * @param          {mixed}      pm_value        The value whose "class" is to be determined.<br /><br />
+             * 
+             * @param          {hash}       [ph_options]    A hash of options:<br /><br />
+             * 
+             * @param          {boolean}    [ph_options.checkConstructor=false]    If <code>true</code>, for objects the method checks whether <code>pm_value</code> is an instance of its <code>constructor</code> property (<i>i.e.</i> if <code>constructor</code> has not been altered) and returns the name of this constructor.
              * 
              * @returns        {string}    A string describing the [[Class]] property (for instance "Object", "Array", "String", "Boolean" and so on).<br />
              *                             Notice: <code>window</code> returns "Window" even for Google Chrome.
-             * 
-             * @see            TODO récupérer références
              */
-            getClassName: function ( pm_value ) {
+            getClassName: function ( pm_value, ph_options ) {
+            	if (typeof ph_options !== "object" || ph_options === null) {ph_options = {};}
+                if (typeof ph_options.checkConstructor !== "boolean") {ph_options.checkConstructor = false;}
+            	
+                // Get the string describing the [[Class]] property.
                 var _s_class = Object.prototype.toString.call ( pm_value ).match( /^\[object\s(.*)\]$/ )[1];
-                
-//                // TODO statuer sur l'utilisé de ça et sur la façon dont ça doit fonctionner
-//                //if ( ph_options.override === true ) {
-//                    var s_constructor = "";
-//                    if ( /*JSS.isEmpty ( pm_value ) === false && plante sur constructeurs vides */ typeof pm_value !== "undefined" && pm_value !== null && typeof pm_value.constructor === "function" ) { // TODO check
-//                        s_constructor = pm_value.constructor.toString().match(/^function\s(.*)\(.*/)[1];
-//                    } else if ( JSS.isPlainObject ( pm_value ) === true ) {
-//                        s_constructor = pm_value.constructor.toString().match(/^\[object\s(.*)\]$/)[1];
-//                    }
-//                //}
-                
+
+                // Patches.
                 switch ( _s_class ) {
                     // Google Chrome returns "global" instead of "Window".
                     case "global":
@@ -202,21 +209,49 @@
                     break;
                 }
                 
+                // For objects, if one wants to get the name of the constructor which has instantiated pm_value instead of "Object".
+                if (ph_options.checkConstructor === true && typeof pm_value === "object" && pm_value !== null) {
+                	// Ensure that pm_value is an instance of its constructor property (i.e. that its constructor has not been altered).
+                	if (pm_value instanceof pm_value.constructor) {
+                		_s_class = pm_value.constructor.toString().match(/^function\s(.*)\(.*/)[1];
+                	}
+                }
+
                 return _s_class;
             },
             
             /**
              * @methodOf       JKIL.types
              * 
-             * @description    TODO
+             * @description    Checks if <code>pm_value</code> has the &ldquo;class&rdquo; name given in <code>ps_className</code>.<br />
+             * 
+             * @example        <b>Syntax:</b>
+             *                 JKIL.types.hasClassName ( pm_value, ps_className[, ph_options] )
+             * 
+             * @param          {mixed}       pm_value        The value whose "class" is to be checked.<br /><br />
+             * 
+             * @param          {string}      ps_className    A "class" name.<br /><br />
+             * 
+             * @param          {hash}        [ph_options]    A hash of options:<br /><br />
+             * 
+             * @param          {boolean}     [ph_options.checkConstructor=false]    If <code>true</code>, for objects the method checks whether <code>pm_value</code> is an instance of its <code>constructor</code> property (<i>i.e.</i> if <code>constructor</code> has not been altered) and returns the name of this constructor.
+             * 
+             * @returns        {boolean}     Returns <code>true</code> if <code>pm_value</code> has the &ldquo;class&rdquo; name given in <code>ps_className</code>, <code>false</code> otherwise.<br />
+             *                             
+             * @throws         TODO
+             * 
+             * @requires       JKIL.types.getClassName()
+             * 
+             * @see            JKIL.types.getClassName()
              */
-            hasClass: function ( pm_value, ps_className ) {
-            	// TODO check
-            	var _b_status = false;
+            hasClassName: function ( pm_value, ps_className, ph_options ) {
+            	if (typeof ps_className !== "string") {
+            		throw new Error("TODO JKIL.types.hasClass ps_className string litteral expected"); // TODO
+            	}
             	
-            	// TODO
-            	
-            	return _b_status;
+            	var _s_className = JKIL.types.getClassName ( pm_value, ph_options );
+
+            	return ps_className === _s_className;
             },
             
             /**
@@ -232,8 +267,6 @@
              * @returns        {boolean}    Returns <code>true</code> if the given value is an array, <code>false</code> otherwise.
              * 
              * @requires       JKIL.types.getClassName ()
-             * 
-             * @see            TODO récupérer références
              */
             isArray: function ( pm_value ) {
                 return JKIL.types.getClassName ( pm_value ) === "Array";
