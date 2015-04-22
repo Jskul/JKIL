@@ -15,7 +15,7 @@
  * 
  * @throws         TODO
  * 
- * TODO process string litterals AND String objects
+ * TODO process string literals AND String objects
  */
 JKIL.comparators.compareStringsByLength = function (ps_a, ps_b) {
     /*

@@ -15,7 +15,7 @@
  * 
  * @throws         TODO
  * 
- * TODO process string litterals AND String objects
+ * TODO process string literals AND String objects
  */
 JKIL.comparators.compareStringsByLengthThenLocale = function (ps_a, ps_b) {
     /*

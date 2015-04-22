@@ -197,6 +197,8 @@ ul.inheritsList
 	
 	<li><a href="../symbols/JKIL.configuration.html">JKIL.configuration</a></li>
 	
+	<li><a href="../symbols/JKIL.park.html">JKIL.park</a></li>
+	
 	<li><a href="../symbols/JKIL.sortings.html">JKIL.sortings</a></li>
 	
 	<li><a href="../symbols/JKIL.sortings.array.html">JKIL.sortings.array</a></li>
@@ -208,6 +210,8 @@ ul.inheritsList
 	<li><a href="../symbols/JKIL.utilities.html">JKIL.utilities</a></li>
 	
 	<li><a href="../symbols/JKIL.utilities.Ajax.html">JKIL.utilities.Ajax</a></li>
+	
+	<li><a href="../symbols/JKIL.zoo.html">JKIL.zoo</a></li>
 	
 </ul>
 <hr />
@@ -324,16 +328,16 @@ ul.inheritsList
 							<td class="nameDescription">
 								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.isBoolean">isBoolean</a></b>(pm_value, ph_options)
 								</div>
-								<div class="description">Checks whether the given value is a boolean litteral, a <code>Boolean</code> object, or either a boolean litteral or a <code>Boolean</code> object.</div>
+								<div class="description">Checks whether the given value is a boolean literal, a <code>Boolean</code> object, or either a boolean literal or a <code>Boolean</code> object.</div>
 							</td>
 						</tr>
 					
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.isBooleanLitteral">isBooleanLitteral</a></b>(pm_value)
+								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.isBooleanLiteral">isBooleanLiteral</a></b>(pm_value)
 								</div>
-								<div class="description">Checks whether the given value is a boolean litteral (<i>e&#46;g&#46;</i> <code>true</code>).</div>
+								<div class="description">Checks whether the given value is a boolean literal (<i>e&#46;g&#46;</i> <code>true</code>).</div>
 							</td>
 						</tr>
 					
@@ -349,9 +353,9 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.isBooleanObjectOrLitteral">isBooleanObjectOrLitteral</a></b>(pm_value)
+								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.isBooleanObjectOrLiteral">isBooleanObjectOrLiteral</a></b>(pm_value)
 								</div>
-								<div class="description">Checks whether the given value is a boolean litteral or a <code>Boolean</code> object (<i>e&#46;g&#46;</i> <code>true</code> or <code>new Boolean( true )</code>).</div>
+								<div class="description">Checks whether the given value is a boolean literal or a <code>Boolean</code> object (<i>e&#46;g&#46;</i> <code>true</code> or <code>new Boolean( true )</code>).</div>
 							</td>
 						</tr>
 					
@@ -361,6 +365,33 @@ ul.inheritsList
 								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.isEmpty">isEmpty</a></b>(pm_value, ph_options)
 								</div>
 								<div class="description">TODO</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.isEmptyArray">isEmptyArray</a></b>(pm_value, ph_options)
+								</div>
+								<div class="description">Checks whether the given value is an empty array, that is an array having a 0 length.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.isEmptyObject">isEmptyObject</a></b>(pm_value, ph_options)
+								</div>
+								<div class="description">TODO</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.isEmptyString">isEmptyString</a></b>(pm_value, ph_options)
+								</div>
+								<div class="description">Checks whether the given value is an empty string literal or string object, that is a string having a 0 length.</div>
 							</td>
 						</tr>
 					
@@ -414,16 +445,16 @@ ul.inheritsList
 							<td class="nameDescription">
 								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.isNumber">isNumber</a></b>(pm_value, ph_options)
 								</div>
-								<div class="description">Checks whether the given value is a number litteral, a <code>Number</code> object, or either a number litteral or a <code>Number</code> object.</div>
+								<div class="description">Checks whether the given value is a number literal, a <code>Number</code> object, or either a number literal or a <code>Number</code> object.</div>
 							</td>
 						</tr>
 					
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.isNumberLitteral">isNumberLitteral</a></b>(pm_value)
+								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.isNumberLiteral">isNumberLiteral</a></b>(pm_value)
 								</div>
-								<div class="description">Checks whether the given value is a number litteral (<i>e&#46;g&#46;</i> <code>12</code>).</div>
+								<div class="description">Checks whether the given value is a number literal (<i>e&#46;g&#46;</i> <code>12</code>).</div>
 							</td>
 						</tr>
 					
@@ -439,9 +470,9 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.isNumberObjectOrLitteral">isNumberObjectOrLitteral</a></b>(pm_value)
+								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.isNumberObjectOrLiteral">isNumberObjectOrLiteral</a></b>(pm_value)
 								</div>
-								<div class="description">Checks whether the given value is a number litteral or a <code>Number</code> object (<i>e&#46;g&#46;</i> <code>12</code> or <code>new Number( 12 )</code>).</div>
+								<div class="description">Checks whether the given value is a number literal or a <code>Number</code> object (<i>e&#46;g&#46;</i> <code>12</code> or <code>new Number( 12 )</code>).</div>
 							</td>
 						</tr>
 					
@@ -466,18 +497,27 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.isString">isString</a></b>(pm_value, ph_options)
+								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.isRegExp">isRegExp</a></b>(pm_value)
 								</div>
-								<div class="description">Checks whether the given value is a string litteral, a <code>String</code> object, or either a string litteral or a <code>String</code> object.</div>
+								<div class="description">Checks whether the given value is a <code>RegExp</code> object.</div>
 							</td>
 						</tr>
 					
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.isStringLitteral">isStringLitteral</a></b>(pm_value)
+								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.isString">isString</a></b>(pm_value, ph_options)
 								</div>
-								<div class="description">Checks whether the given value is a string litteral (<i>e&#46;g&#46;</i> "a string").</div>
+								<div class="description">Checks whether the given value is a string literal, a <code>String</code> object, or either a string literal or a <code>String</code> object.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.isStringLiteral">isStringLiteral</a></b>(pm_value)
+								</div>
+								<div class="description">Checks whether the given value is a string literal (<i>e&#46;g&#46;</i> "a string").</div>
 							</td>
 						</tr>
 					
@@ -493,9 +533,9 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.isStringObjectOrLitteral">isStringObjectOrLitteral</a></b>(pm_value)
+								<div class="fixedFont">JKIL.types.<b><a href="../symbols/JKIL.types.html#.isStringObjectOrLiteral">isStringObjectOrLiteral</a></b>(pm_value)
 								</div>
-								<div class="description">Checks whether the given value is a string litteral or a <code>String</code> object (<i>e&#46;g&#46;</i> <code>"a string"</code> or <code>new String( "a string" )</code>).</div>
+								<div class="description">Checks whether the given value is a string literal or a <code>String</code> object (<i>e&#46;g&#46;</i> <code>"a string"</code> or <code>new String( "a string" )</code>).</div>
 							</td>
 						</tr>
 					
@@ -693,7 +733,7 @@ ul.inheritsList
 							<dl class="detailList">
 							<dt class="heading">Returns:</dt>
 							
-								<dd><span class="light fixedFont">{string}</span> A string describing the [[Class]] property (for instance "Object", "Array", "String", "Boolean" and so on).<br />                            Notice: <code>window</code> returns "Window" even for Google Chrome.</dd>
+								<dd><span class="light fixedFont">{string}</span> A string describing the [[Class]] property (for instance "Object", "Array", "String", "Boolean" and so on).<br />                             Notice: <code>window</code> returns "Window" even for Google Chrome.</dd>
 							
 							</dl>
 						
@@ -853,7 +893,7 @@ ul.inheritsList
 					
 					</div>
 					<div class="description">
-						Checks whether the given value is a boolean litteral, a <code>Boolean</code> object, or either a boolean litteral or a <code>Boolean</code> object.<br />
+						Checks whether the given value is a boolean literal, a <code>Boolean</code> object, or either a boolean literal or a <code>Boolean</code> object.<br />
 						
 						
 					</div>
@@ -862,11 +902,11 @@ ul.inheritsList
 					
 					<pre class="code">       <b>Syntax:</b>                JKIL.types.isBoolean ( pm_value[, ph_options] )</pre>
 					
-					<pre class="code">       <b>Example 1 - Synonym of JKIL.types.isBooleanLitteral(): </b>                var v = true;                var b = JKIL.types.isBooleanLitteral ( v, {litteral: true, object: false} ); // true</pre>
+					<pre class="code">       <b>Example 1 - Synonym of JKIL.types.isBooleanLiteral(): </b>                var v = true;                var b = JKIL.types.isBooleanLiteral ( v, {literal: true, object: false} ); // true</pre>
 					
-					<pre class="code">       <b>Example 2 - Synonym of JKIL.types.isBooleanObject(): </b>                var v = new Boolean(true);                var b = JKIL.types.isBooleanLitteral ( v, {litteral: false, object: true} ); // true</pre>
+					<pre class="code">       <b>Example 2 - Synonym of JKIL.types.isBooleanObject(): </b>                var v = new Boolean(true);                var b = JKIL.types.isBooleanLiteral ( v, {literal: false, object: true} ); // true</pre>
 					
-					<pre class="code">       <b>Example 3 - Synonym of JKIL.types.isBooleanObjectOrLitteral(): </b>                var v1 = true;                var b = JKIL.types.isBooleanLitteral ( v1, {litteral: true, object: true} ); // true                var v2 = new Boolean(true);                var b = JKIL.types.isBooleanLitteral ( v2, {litteral: true, object: true} ); // true</pre>
+					<pre class="code">       <b>Example 3 - Synonym of JKIL.types.isBooleanObjectOrLiteral(): </b>                var v1 = true;                var b = JKIL.types.isBooleanLiteral ( v1, {literal: true, object: true} ); // true                var v2 = new Boolean(true);                var b = JKIL.types.isBooleanLiteral ( v2, {literal: true, object: true} ); // true</pre>
 					
 					
 					
@@ -887,16 +927,16 @@ ul.inheritsList
 								<dd>A hash of options:<br /><br /></dd>
 							
 								<dt>
-									<span class="light fixedFont">{boolean}</span> <b>ph_options.litteral</b>
+									<span class="light fixedFont">{boolean}</span> <b>ph_options.literal</b>
 									<i>Optional, Default: true</i>
 								</dt>
-								<dd>If <code>true</code>, the method returns <code>true</code> for boolean litterals. <code>ph_options.litteral</code> and <code>ph_options.object</code> cannot be both <code>false</code>.<br /><br /></dd>
+								<dd>If <code>true</code>, the method returns <code>true</code> for boolean literals. <code>ph_options.literal</code> and <code>ph_options.object</code> cannot be both <code>false</code>.<br /><br /></dd>
 							
 								<dt>
 									<span class="light fixedFont">{boolean}</span> <b>ph_options.object</b>
 									<i>Optional, Default: true</i>
 								</dt>
-								<dd>If <code>true</code>, the method returns <code>true</code> for <code>Boolean</code> objects. <code>ph_options.litteral</code> and <code>ph_options.object</code> cannot be both <code>false</code>.</dd>
+								<dd>If <code>true</code>, the method returns <code>true</code> for <code>Boolean</code> objects. <code>ph_options.literal</code> and <code>ph_options.object</code> cannot be both <code>false</code>.</dd>
 							
 							</dl>
 						
@@ -907,7 +947,7 @@ ul.inheritsList
 							<dl class="detailList">
 							<dt class="heading">Returns:</dt>
 							
-								<dd><span class="light fixedFont">{boolean}</span> Returns <code>true</code> if the given value is strictly a boolean litteral, or strictly a <code>Boolean</code> object, or either a boolean litteral or a <code>Boolean</code> object. Returns <code>false</code> otherwise.</dd>
+								<dd><span class="light fixedFont">{boolean}</span> Returns <code>true</code> if the given value is strictly a boolean literal, or strictly a <code>Boolean</code> object, or either a boolean literal or a <code>Boolean</code> object. Returns <code>false</code> otherwise.</dd>
 							
 							</dl>
 						
@@ -923,33 +963,33 @@ ul.inheritsList
 							<dl class="detailList">
 							<dt class="heading">See:</dt>
 							
-								<dd><a href="../symbols/JKIL.types.html#.isBooleanLitteral">JKIL.types.isBooleanLitteral</a>()</dd>
+								<dd><a href="../symbols/JKIL.types.html#.isBooleanLiteral">JKIL.types.isBooleanLiteral</a>()</dd>
 							
 								<dd><a href="../symbols/JKIL.types.html#.isBooleanObject">JKIL.types.isBooleanObject</a>()</dd>
 							
-								<dd><a href="../symbols/JKIL.types.html#.isBooleanObjectOrLitteral">JKIL.types.isBooleanObjectOrLitteral</a>()</dd>
+								<dd><a href="../symbols/JKIL.types.html#.isBooleanObjectOrLiteral">JKIL.types.isBooleanObjectOrLiteral</a>()</dd>
 							
 							</dl>
 						
 
 					<hr />
 				
-					<a name=".isBooleanLitteral"> </a>
+					<a name=".isBooleanLiteral"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
 					<span class="light">{boolean}</span>
-					<span class="light">JKIL.types.</span><b>isBooleanLitteral</b>(pm_value)
+					<span class="light">JKIL.types.</span><b>isBooleanLiteral</b>(pm_value)
 					
 					</div>
 					<div class="description">
-						Checks whether the given value is a boolean litteral (<i>e&#46;g&#46;</i> <code>true</code>).<br />
+						Checks whether the given value is a boolean literal (<i>e&#46;g&#46;</i> <code>true</code>).<br />
 						
 						
 					</div>
 					
 					
 					
-					<pre class="code">       <b>Syntax:</b>                JKIL.types.isBooleanLitteral ( pm_value )</pre>
+					<pre class="code">       <b>Syntax:</b>                JKIL.types.isBooleanLiteral ( pm_value )</pre>
 					
 					
 					
@@ -972,7 +1012,7 @@ ul.inheritsList
 							<dl class="detailList">
 							<dt class="heading">Returns:</dt>
 							
-								<dd><span class="light fixedFont">{boolean}</span> Returns <code>true</code> if the given value is a boolean litteral, <code>false</code> otherwise.</dd>
+								<dd><span class="light fixedFont">{boolean}</span> Returns <code>true</code> if the given value is a boolean literal, <code>false</code> otherwise.</dd>
 							
 							</dl>
 						
@@ -1049,22 +1089,22 @@ ul.inheritsList
 
 					<hr />
 				
-					<a name=".isBooleanObjectOrLitteral"> </a>
+					<a name=".isBooleanObjectOrLiteral"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
 					<span class="light">{boolean}</span>
-					<span class="light">JKIL.types.</span><b>isBooleanObjectOrLitteral</b>(pm_value)
+					<span class="light">JKIL.types.</span><b>isBooleanObjectOrLiteral</b>(pm_value)
 					
 					</div>
 					<div class="description">
-						Checks whether the given value is a boolean litteral or a <code>Boolean</code> object (<i>e&#46;g&#46;</i> <code>true</code> or <code>new Boolean( true )</code>).<br />
+						Checks whether the given value is a boolean literal or a <code>Boolean</code> object (<i>e&#46;g&#46;</i> <code>true</code> or <code>new Boolean( true )</code>).<br />
 						
 						
 					</div>
 					
 					
 					
-					<pre class="code">       <b>Syntax:</b>                JKIL.types.isBooleanObjectOrLitteral ( pm_value )</pre>
+					<pre class="code">       <b>Syntax:</b>                JKIL.types.isBooleanObjectOrLiteral ( pm_value )</pre>
 					
 					
 					
@@ -1087,7 +1127,7 @@ ul.inheritsList
 							<dl class="detailList">
 							<dt class="heading">Returns:</dt>
 							
-								<dd><span class="light fixedFont">{boolean}</span> Returns <code>true</code> if the given value is a boolean litteral or a <code>Boolean</code> object, <code>false</code> otherwise.</dd>
+								<dd><span class="light fixedFont">{boolean}</span> Returns <code>true</code> if the given value is a boolean literal or a <code>Boolean</code> object, <code>false</code> otherwise.</dd>
 							
 							</dl>
 						
@@ -1148,6 +1188,206 @@ ul.inheritsList
 						
 						
 						
+						
+
+					<hr />
+				
+					<a name=".isEmptyArray"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{boolean}</span>
+					<span class="light">JKIL.types.</span><b>isEmptyArray</b>(pm_value, ph_options)
+					
+					</div>
+					<div class="description">
+						Checks whether the given value is an empty array, that is an array having a 0 length.<br />
+						
+						
+					</div>
+					
+					
+					
+					<pre class="code">       <b>Syntax:</b>                JKIL.types.isEmptyArray ( pm_value )</pre>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{mixed}</span> <b>pm_value</b>
+									
+								</dt>
+								<dd>The value which is to be checked.<br /><br /></dd>
+							
+								<dt>
+									<b>ph_options</b>
+									
+								</dt>
+								<dd></dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{boolean}</span> Returns <code>true</code> if the given value is an empty array, <code>false</code> if it is not an array or if it is a populated array.</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Requires:</dt>
+							
+								<dd>JKIL.types.getClassName()</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd>JKIL.arrays.isEmpty()</dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name=".isEmptyObject"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">JKIL.types.</span><b>isEmptyObject</b>(pm_value, ph_options)
+					
+					</div>
+					<div class="description">
+						TODO
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>pm_value</b>
+									
+								</dt>
+								<dd></dd>
+							
+								<dt>
+									<b>ph_options</b>
+									
+								</dt>
+								<dd></dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isEmptyString"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{boolean}</span>
+					<span class="light">JKIL.types.</span><b>isEmptyString</b>(pm_value, ph_options)
+					
+					</div>
+					<div class="description">
+						Checks whether the given value is an empty string literal or string object, that is a string having a 0 length.<br />                If <code>pm_value</code> is a string literal or a string object, it can be trimmed on both sides before checking if the string length is 0 or not.<br />
+						
+						
+					</div>
+					
+					
+					
+					<pre class="code">       <b>Syntax:</b>                JKIL.types.isEmptyString ( pm_value[, ph_options] )</pre>
+					
+					<pre class="code">       <b>Example 1: </b>                var v = new Object();                var b = JKIL.types.isEmptyString ( v ); // false</pre>
+					
+					<pre class="code">       <b>Example 2: </b>                var v = " ";                var b = JKIL.types.isEmptyString ( v ); // false</pre>
+					
+					<pre class="code">       <b>Example 3: </b>                var v = "       ";                var b = JKIL.types.isEmptyString ( v, {trimSequence: "\\s+"} ); // true</pre>
+					
+					<pre class="code">       <b>Example 4: </b>                var v = "xXxX";                var b = JKIL.types.isEmptyString ( v, {trimSequence: "x+", ignore: ""} ); // false</pre>
+					
+					<pre class="code">       <b>Example 5: </b>                var v = "xXxX";                var b = JKIL.types.isEmptyString ( v, {trimSequence: "x+", ignore: "i"} ); // true</pre>
+					
+					<pre class="code">       <b>Example 6: </b>                var v = new String("\n\t \v\n");                var b = JKIL.types.isEmptyString ( v, {trimSequence: "\\s+"} ); // true</pre>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{mixed}</span> <b>pm_value</b>
+									
+								</dt>
+								<dd>The value which is to be checked.<br /><br /></dd>
+							
+								<dt>
+									<span class="light fixedFont">{hash}</span> <b>ph_options</b>
+									<i>Optional</i>
+								</dt>
+								<dd>A hash of options:<br /><br /></dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>ph_options.trimSequence</b>
+									<i>Optional, Default: ""</i>
+								</dt>
+								<dd>A regular expression representing the sequence that has to be removed from both sides of the string before checking its length (trimming is operated over multiple lines).<br /><br /></dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>ph_options.ignore</b>
+									<i>Optional, Default: ""</i>
+								</dt>
+								<dd>Either <code>""</code> (by default, trimming is case sensitive) or <code>"i"</code> (if case has to be ignored when trimming).</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{boolean}</span> Returns <code>true</code> if the given value is an empty string literal or string object (after trimming or not, depending on options). Returns <code>false</code> otherwise (<i>i.e.</i> is not a string or is not an empty string).</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Requires:</dt>
+							
+								<dd>JKIL.types.getClassName()</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd>JKIL.strings.isEmpty()</dd>
+							
+							</dl>
 						
 
 					<hr />
@@ -1392,7 +1632,7 @@ ul.inheritsList
 					
 					</div>
 					<div class="description">
-						Checks whether the given value is a number litteral, a <code>Number</code> object, or either a number litteral or a <code>Number</code> object.<br />
+						Checks whether the given value is a number literal, a <code>Number</code> object, or either a number literal or a <code>Number</code> object.<br />
 						
 						
 					</div>
@@ -1401,11 +1641,11 @@ ul.inheritsList
 					
 					<pre class="code">       <b>Syntax:</b>                JKIL.types.isNumber ( pm_value[, ph_options] )</pre>
 					
-					<pre class="code">       <b>Example 1 - Synonym of JKIL.types.isNumberLitteral(): </b>                var v = 12;                var b = JKIL.types.isNumberLitteral ( v, {litteral: true, object: false} ); // true</pre>
+					<pre class="code">       <b>Example 1 - Synonym of JKIL.types.isNumberLiteral(): </b>                var v = 12;                var b = JKIL.types.isNumberLiteral ( v, {literal: true, object: false} ); // true</pre>
 					
-					<pre class="code">       <b>Example 2 - Synonym of JKIL.types.isNumberObject(): </b>                var v = new Number(12);                var b = JKIL.types.isNumberLitteral ( v, {litteral: false, object: true} ); // true</pre>
+					<pre class="code">       <b>Example 2 - Synonym of JKIL.types.isNumberObject(): </b>                var v = new Number(12);                var b = JKIL.types.isNumberLiteral ( v, {literal: false, object: true} ); // true</pre>
 					
-					<pre class="code">       <b>Example 3 - Synonym of JKIL.types.isNumberObjectOrLitteral(): </b>                var v1 = 12;                var b = JKIL.types.isNumberLitteral ( v1, {litteral: true, object: true} ); // true                var v2 = new Number(12);                var b = JKIL.types.isNumberLitteral ( v2, {litteral: true, object: true} ); // true</pre>
+					<pre class="code">       <b>Example 3 - Synonym of JKIL.types.isNumberObjectOrLiteral(): </b>                var v1 = 12;                var b = JKIL.types.isNumberLiteral ( v1, {literal: true, object: true} ); // true                var v2 = new Number(12);                var b = JKIL.types.isNumberLiteral ( v2, {literal: true, object: true} ); // true</pre>
 					
 					
 					
@@ -1426,16 +1666,16 @@ ul.inheritsList
 								<dd>A hash of options:<br /><br /></dd>
 							
 								<dt>
-									<span class="light fixedFont">{boolean}</span> <b>ph_options.litteral</b>
+									<span class="light fixedFont">{boolean}</span> <b>ph_options.literal</b>
 									<i>Optional, Default: true</i>
 								</dt>
-								<dd>If <code>true</code>, the method returns <code>true</code> for number litterals. <code>ph_options.litteral</code> and <code>ph_options.object</code> cannot be both <code>false</code>.<br /><br /></dd>
+								<dd>If <code>true</code>, the method returns <code>true</code> for number literals. <code>ph_options.literal</code> and <code>ph_options.object</code> cannot be both <code>false</code>.<br /><br /></dd>
 							
 								<dt>
 									<span class="light fixedFont">{boolean}</span> <b>ph_options.object</b>
 									<i>Optional, Default: true</i>
 								</dt>
-								<dd>If <code>true</code>, the method returns <code>true</code> for <code>Number</code> objects. <code>ph_options.litteral</code> and <code>ph_options.object</code> cannot be both <code>false</code>.</dd>
+								<dd>If <code>true</code>, the method returns <code>true</code> for <code>Number</code> objects. <code>ph_options.literal</code> and <code>ph_options.object</code> cannot be both <code>false</code>.</dd>
 							
 							</dl>
 						
@@ -1446,7 +1686,7 @@ ul.inheritsList
 							<dl class="detailList">
 							<dt class="heading">Returns:</dt>
 							
-								<dd><span class="light fixedFont">{boolean}</span> Returns <code>true</code> if the given value is strictly a number litteral, or strictly a <code>Number</code> object, or either a number litteral or a <code>Number</code> object. Returns <code>false</code> otherwise.</dd>
+								<dd><span class="light fixedFont">{boolean}</span> Returns <code>true</code> if the given value is strictly a number literal, or strictly a <code>Number</code> object, or either a number literal or a <code>Number</code> object. Returns <code>false</code> otherwise.</dd>
 							
 							</dl>
 						
@@ -1462,33 +1702,33 @@ ul.inheritsList
 							<dl class="detailList">
 							<dt class="heading">See:</dt>
 							
-								<dd><a href="../symbols/JKIL.types.html#.isNumberLitteral">JKIL.types.isNumberLitteral</a>()</dd>
+								<dd><a href="../symbols/JKIL.types.html#.isNumberLiteral">JKIL.types.isNumberLiteral</a>()</dd>
 							
 								<dd><a href="../symbols/JKIL.types.html#.isNumberObject">JKIL.types.isNumberObject</a>()</dd>
 							
-								<dd><a href="../symbols/JKIL.types.html#.isNumberObjectOrLitteral">JKIL.types.isNumberObjectOrLitteral</a>()</dd>
+								<dd><a href="../symbols/JKIL.types.html#.isNumberObjectOrLiteral">JKIL.types.isNumberObjectOrLiteral</a>()</dd>
 							
 							</dl>
 						
 
 					<hr />
 				
-					<a name=".isNumberLitteral"> </a>
+					<a name=".isNumberLiteral"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
 					<span class="light">{boolean}</span>
-					<span class="light">JKIL.types.</span><b>isNumberLitteral</b>(pm_value)
+					<span class="light">JKIL.types.</span><b>isNumberLiteral</b>(pm_value)
 					
 					</div>
 					<div class="description">
-						Checks whether the given value is a number litteral (<i>e&#46;g&#46;</i> <code>12</code>).<br />
+						Checks whether the given value is a number literal (<i>e&#46;g&#46;</i> <code>12</code>).<br />
 						
 						
 					</div>
 					
 					
 					
-					<pre class="code">       <b>Syntax:</b>                JKIL.types.isNumberLitteral ( pm_value )</pre>
+					<pre class="code">       <b>Syntax:</b>                JKIL.types.isNumberLiteral ( pm_value )</pre>
 					
 					
 					
@@ -1511,7 +1751,7 @@ ul.inheritsList
 							<dl class="detailList">
 							<dt class="heading">Returns:</dt>
 							
-								<dd><span class="light fixedFont">{boolean}</span> Returns <code>true</code> if the given value is a number litteral, <code>false</code> otherwise.</dd>
+								<dd><span class="light fixedFont">{boolean}</span> Returns <code>true</code> if the given value is a number literal, <code>false</code> otherwise.</dd>
 							
 							</dl>
 						
@@ -1588,22 +1828,22 @@ ul.inheritsList
 
 					<hr />
 				
-					<a name=".isNumberObjectOrLitteral"> </a>
+					<a name=".isNumberObjectOrLiteral"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
 					<span class="light">{boolean}</span>
-					<span class="light">JKIL.types.</span><b>isNumberObjectOrLitteral</b>(pm_value)
+					<span class="light">JKIL.types.</span><b>isNumberObjectOrLiteral</b>(pm_value)
 					
 					</div>
 					<div class="description">
-						Checks whether the given value is a number litteral or a <code>Number</code> object (<i>e&#46;g&#46;</i> <code>12</code> or <code>new Number( 12 )</code>).<br />
+						Checks whether the given value is a number literal or a <code>Number</code> object (<i>e&#46;g&#46;</i> <code>12</code> or <code>new Number( 12 )</code>).<br />
 						
 						
 					</div>
 					
 					
 					
-					<pre class="code">       <b>Syntax:</b>                JKIL.types.isNumberObjectOrLitteral ( pm_value )</pre>
+					<pre class="code">       <b>Syntax:</b>                JKIL.types.isNumberObjectOrLiteral ( pm_value )</pre>
 					
 					
 					
@@ -1626,7 +1866,7 @@ ul.inheritsList
 							<dl class="detailList">
 							<dt class="heading">Returns:</dt>
 							
-								<dd><span class="light fixedFont">{boolean}</span> Returns <code>true</code> if the given value is a number litteral or a <code>Number</code> object, <code>false</code> otherwise.</dd>
+								<dd><span class="light fixedFont">{boolean}</span> Returns <code>true</code> if the given value is a number literal or a <code>Number</code> object, <code>false</code> otherwise.</dd>
 							
 							</dl>
 						
@@ -1743,111 +1983,22 @@ ul.inheritsList
 
 					<hr />
 				
-					<a name=".isString"> </a>
+					<a name=".isRegExp"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
 					<span class="light">{boolean}</span>
-					<span class="light">JKIL.types.</span><b>isString</b>(pm_value, ph_options)
+					<span class="light">JKIL.types.</span><b>isRegExp</b>(pm_value)
 					
 					</div>
 					<div class="description">
-						Checks whether the given value is a string litteral, a <code>String</code> object, or either a string litteral or a <code>String</code> object.<br />
+						Checks whether the given value is a <code>RegExp</code> object.<br />
 						
 						
 					</div>
 					
 					
 					
-					<pre class="code">       <b>Syntax:</b>                JKIL.types.isString ( pm_value[, ph_options] )</pre>
-					
-					<pre class="code">       <b>Example 1 - Synonym of JKIL.types.isStringLitteral(): </b>                var v = "a string";                var b = JKIL.types.isStringLitteral ( v, {litteral: true, object: false} ); // true</pre>
-					
-					<pre class="code">       <b>Example 2 - Synonym of JKIL.types.isStringObject(): </b>                var v = new String("a string");                var b = JKIL.types.isStringLitteral ( v, {litteral: false, object: true} ); // true</pre>
-					
-					<pre class="code">       <b>Example 3 - Synonym of JKIL.types.isStringObjectOrLitteral(): </b>                var v1 = "a string";                var b = JKIL.types.isStringLitteral ( v1, {litteral: true, object: true} ); // true                var v2 = new String("a string");                var b = JKIL.types.isStringLitteral ( v2, {litteral: true, object: true} ); // true</pre>
-					
-					
-					
-						
-							<dl class="detailList">
-							<dt class="heading">Parameters:</dt>
-							
-								<dt>
-									<span class="light fixedFont">{mixed}</span> <b>pm_value</b>
-									
-								</dt>
-								<dd>The value whose type is to be checked.<br /><br /></dd>
-							
-								<dt>
-									<span class="light fixedFont">{hash}</span> <b>ph_options</b>
-									<i>Optional</i>
-								</dt>
-								<dd>A hash of options:<br /><br /></dd>
-							
-								<dt>
-									<span class="light fixedFont">{boolean}</span> <b>ph_options.litteral</b>
-									<i>Optional, Default: true</i>
-								</dt>
-								<dd>If <code>true</code>, the method returns <code>true</code> for string litterals. <code>ph_options.litteral</code> and <code>ph_options.object</code> cannot be both <code>false</code>.<br /><br /></dd>
-							
-								<dt>
-									<span class="light fixedFont">{boolean}</span> <b>ph_options.object</b>
-									<i>Optional, Default: true</i>
-								</dt>
-								<dd>If <code>true</code>, the method returns <code>true</code> for <code>String</code> objects. <code>ph_options.litteral</code> and <code>ph_options.object</code> cannot be both <code>false</code>.</dd>
-							
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{boolean}</span> Returns <code>true</code> if the given value is strictly a string litteral, or strictly a <code>String</code> object, or either a string litteral or a <code>String</code> object. Returns <code>false</code> otherwise.</dd>
-							
-							</dl>
-						
-						
-							<dl class="detailList">
-							<dt class="heading">Requires:</dt>
-							
-								<dd>JKIL.types.getClassName()</dd>
-							
-							</dl>
-						
-						
-							<dl class="detailList">
-							<dt class="heading">See:</dt>
-							
-								<dd><a href="../symbols/JKIL.types.html#.isStringLitteral">JKIL.types.isStringLitteral</a>()</dd>
-							
-								<dd><a href="../symbols/JKIL.types.html#.isStringObject">JKIL.types.isStringObject</a>()</dd>
-							
-								<dd><a href="../symbols/JKIL.types.html#.isStringObjectOrLitteral">JKIL.types.isStringObjectOrLitteral</a>()</dd>
-							
-							</dl>
-						
-
-					<hr />
-				
-					<a name=".isStringLitteral"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{boolean}</span>
-					<span class="light">JKIL.types.</span><b>isStringLitteral</b>(pm_value)
-					
-					</div>
-					<div class="description">
-						Checks whether the given value is a string litteral (<i>e&#46;g&#46;</i> "a string").<br />
-						
-						
-					</div>
-					
-					
-					
-					<pre class="code">       <b>Syntax:</b>                JKIL.types.isStringLitteral ( pm_value )</pre>
+					<pre class="code">       <b>Syntax:</b>                JKIL.types.isRegExp ( pm_value )</pre>
 					
 					
 					
@@ -1870,7 +2021,150 @@ ul.inheritsList
 							<dl class="detailList">
 							<dt class="heading">Returns:</dt>
 							
-								<dd><span class="light fixedFont">{boolean}</span> Returns <code>true</code> if the given value is a string litteral, <code>false</code> otherwise.</dd>
+								<dd><span class="light fixedFont">{boolean}</span> Returns <code>true</code> if the given value is a <code>RegExp</code> object, <code>false</code> otherwise.</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Requires:</dt>
+							
+								<dd>JKIL.types.getClassName ()</dd>
+							
+							</dl>
+						
+						
+
+					<hr />
+				
+					<a name=".isString"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{boolean}</span>
+					<span class="light">JKIL.types.</span><b>isString</b>(pm_value, ph_options)
+					
+					</div>
+					<div class="description">
+						Checks whether the given value is a string literal, a <code>String</code> object, or either a string literal or a <code>String</code> object.<br />
+						
+						
+					</div>
+					
+					
+					
+					<pre class="code">       <b>Syntax:</b>                JKIL.types.isString ( pm_value[, ph_options] )</pre>
+					
+					<pre class="code">       <b>Example 1 - Synonym of JKIL.types.isStringLiteral(): </b>                var v = "a string";                var b = JKIL.types.isStringLiteral ( v, {literal: true, object: false} ); // true</pre>
+					
+					<pre class="code">       <b>Example 2 - Synonym of JKIL.types.isStringObject(): </b>                var v = new String("a string");                var b = JKIL.types.isStringLiteral ( v, {literal: false, object: true} ); // true</pre>
+					
+					<pre class="code">       <b>Example 3 - Synonym of JKIL.types.isStringObjectOrLiteral(): </b>                var v1 = "a string";                var b = JKIL.types.isStringLiteral ( v1, {literal: true, object: true} ); // true                var v2 = new String("a string");                var b = JKIL.types.isStringLiteral ( v2, {literal: true, object: true} ); // true</pre>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{mixed}</span> <b>pm_value</b>
+									
+								</dt>
+								<dd>The value whose type is to be checked.<br /><br /></dd>
+							
+								<dt>
+									<span class="light fixedFont">{hash}</span> <b>ph_options</b>
+									<i>Optional</i>
+								</dt>
+								<dd>A hash of options:<br /><br /></dd>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>ph_options.literal</b>
+									<i>Optional, Default: true</i>
+								</dt>
+								<dd>If <code>true</code>, the method returns <code>true</code> for string literals. <code>ph_options.literal</code> and <code>ph_options.object</code> cannot be both <code>false</code>.<br /><br /></dd>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>ph_options.object</b>
+									<i>Optional, Default: true</i>
+								</dt>
+								<dd>If <code>true</code>, the method returns <code>true</code> for <code>String</code> objects. <code>ph_options.literal</code> and <code>ph_options.object</code> cannot be both <code>false</code>.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{boolean}</span> Returns <code>true</code> if the given value is strictly a string literal, or strictly a <code>String</code> object, or either a string literal or a <code>String</code> object. Returns <code>false</code> otherwise.</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Requires:</dt>
+							
+								<dd>JKIL.types.getClassName()</dd>
+							
+							</dl>
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="../symbols/JKIL.types.html#.isStringLiteral">JKIL.types.isStringLiteral</a>()</dd>
+							
+								<dd><a href="../symbols/JKIL.types.html#.isStringObject">JKIL.types.isStringObject</a>()</dd>
+							
+								<dd><a href="../symbols/JKIL.types.html#.isStringObjectOrLiteral">JKIL.types.isStringObjectOrLiteral</a>()</dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name=".isStringLiteral"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{boolean}</span>
+					<span class="light">JKIL.types.</span><b>isStringLiteral</b>(pm_value)
+					
+					</div>
+					<div class="description">
+						Checks whether the given value is a string literal (<i>e&#46;g&#46;</i> "a string").<br />
+						
+						
+					</div>
+					
+					
+					
+					<pre class="code">       <b>Syntax:</b>                JKIL.types.isStringLiteral ( pm_value )</pre>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{mixed}</span> <b>pm_value</b>
+									
+								</dt>
+								<dd>The value whose type is to be checked.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{boolean}</span> Returns <code>true</code> if the given value is a string literal, <code>false</code> otherwise.</dd>
 							
 							</dl>
 						
@@ -1947,22 +2241,22 @@ ul.inheritsList
 
 					<hr />
 				
-					<a name=".isStringObjectOrLitteral"> </a>
+					<a name=".isStringObjectOrLiteral"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
 					<span class="light">{boolean}</span>
-					<span class="light">JKIL.types.</span><b>isStringObjectOrLitteral</b>(pm_value)
+					<span class="light">JKIL.types.</span><b>isStringObjectOrLiteral</b>(pm_value)
 					
 					</div>
 					<div class="description">
-						Checks whether the given value is a string litteral or a <code>String</code> object (<i>e&#46;g&#46;</i> <code>"a string"</code> or <code>new String( "a string" )</code>).<br />
+						Checks whether the given value is a string literal or a <code>String</code> object (<i>e&#46;g&#46;</i> <code>"a string"</code> or <code>new String( "a string" )</code>).<br />
 						
 						
 					</div>
 					
 					
 					
-					<pre class="code">       <b>Syntax:</b>                JKIL.types.isStringObjectOrLitteral ( pm_value )</pre>
+					<pre class="code">       <b>Syntax:</b>                JKIL.types.isStringObjectOrLiteral ( pm_value )</pre>
 					
 					
 					
@@ -1985,7 +2279,7 @@ ul.inheritsList
 							<dl class="detailList">
 							<dt class="heading">Returns:</dt>
 							
-								<dd><span class="light fixedFont">{boolean}</span> Returns <code>true</code> if the given value is a string litteral or a <code>String</code> object, <code>false</code> otherwise.</dd>
+								<dd><span class="light fixedFont">{boolean}</span> Returns <code>true</code> if the given value is a string literal or a <code>String</code> object, <code>false</code> otherwise.</dd>
 							
 							</dl>
 						
@@ -2074,7 +2368,7 @@ ul.inheritsList
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
 			
-			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Tue Apr 21 2015 20:24:15 GMT+0200 (CEST)
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Wed Apr 22 2015 22:12:11 GMT+0200 (CEST)
 		</div>
 	</body>
 </html>

@@ -18,7 +18,7 @@
  * @see            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare<br /><br />
  * @see            http://speakingjs.com/es5/ch18.html TODO<br /><br />
  * 
- * TODO process string litterals AND String objects
+ * TODO process string literals AND String objects
  */
 JKIL.comparators.compareStringsLocale = function (ps_a, ps_b) {
     /*

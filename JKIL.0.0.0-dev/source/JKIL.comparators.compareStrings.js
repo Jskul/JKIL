@@ -21,7 +21,7 @@
  * - http://www.javascriptkit.com/javatutors/arraysort.shtml
  * - http://www.javascriptkit.com/javatutors/arraysort2.shtml
  * 
- * TODO process string litterals AND String objects
+ * TODO process string literals AND String objects
  */
 JKIL.comparators.compareStrings = function (ps_a, ps_b) {
     /*

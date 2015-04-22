@@ -21,7 +21,7 @@
  * - http://www.javascriptkit.com/javatutors/arraysort.shtml
  * - http://www.javascriptkit.com/javatutors/arraysort2.shtml
  * 
- * TODO process number litterals AND Number objects
+ * TODO process number literals AND Number objects
  */
 JKIL.comparators.compareNumbers = function (pn_a, pn_b) {
     /*
