@@ -1568,6 +1568,14 @@ JKIL.comparators = {};
  * @memberof    JKIL
  * @namespace
  * 
+ * @description    A namespace for Unicode methods.<br />
+ */
+JKIL.unicode = {};
+
+/**
+ * @memberof    JKIL
+ * @namespace
+ * 
  * @description    A namespace for URI methods.<br />
  */
 JKIL.uri = {};

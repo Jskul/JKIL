@@ -25,6 +25,14 @@
 		<script src="../source/JKIL.uri.getQueryParameters.js"></script>
 		<script src="../source/JKIL.uri.getQueryParametersOrderly.js"></script>
 		
+		<script src="../source/JKIL.objects.create.js"></script>
+		
+		<script src="../source/JKIL.unicode.toSurrogatePair.js"></script>
+		<script src="../source/JKIL.unicode.fromSurrogatePair.js"></script>
+		
+		<script src="../source/JKIL.unicode.escapeToHexadecimal.js"></script>
+		<script src="../source/JKIL.unicode.unescapeFromHexadecimal.js"></script>
+		
 
 		<script>
 
@@ -336,6 +344,46 @@
             
             */
             
+            /*
+            console.log("var surrogatePair = JKIL.unicode.toSurrogatePair ( 0x1F4A9 );");
+            var surrogatePair = JKIL.unicode.toSurrogatePair ( 0x1F4A9 );
+            console.log(surrogatePair);
+            
+            console.log("var surrogatePair = JKIL.unicode.toSurrogatePair ( 128169 );");
+            var surrogatePair = JKIL.unicode.toSurrogatePair ( 128169 );
+            console.log(surrogatePair);
+
+            console.log("var surrogatePair = JKIL.unicode.toSurrogatePair ( 65 );");
+            var surrogatePair = JKIL.unicode.toSurrogatePair ( 65 );
+            console.log(surrogatePair);
+            
+            
+            console.log("var codePoint = JKIL.unicode.fromSurrogatePair ( {high:55357, low:56489} );");
+            var codePoint = JKIL.unicode.fromSurrogatePair ( {high:55357, low:56489} );
+            console.log(codePoint);
+            
+            console.log("var codePoint = JKIL.unicode.fromSurrogatePair ( {high:65, low:undefined} );");
+            var codePoint = JKIL.unicode.fromSurrogatePair ( {high:65, low:undefined} );
+            console.log(codePoint);
+            */
+            
+            console.log("var surrogatePair = JKIL.unicode.escapeToHexadecimal ( -2...257 );");
+            var escapedToHex;
+            for (var i=-2; i<258; i++) {
+            	try {
+            		escapedToHex = JKIL.unicode.escapeToHexadecimal ( i, {padLeadingZero: true} );
+            	} catch(e) {
+            		escapedToHex = "undefined";
+            	} finally {
+            		console.log(i + "\tescapeToHexadecimal\t" + escapedToHex + "\t" + JKIL.unicode.unescapeFromHexadecimal(escapedToHex, {to:"code"}) + "\t" + JKIL.unicode.unescapeFromHexadecimal(escapedToHex, {}));
+            	}
+            }
+
+            
+            
+            
+            
+
             /*
             console.log(
             		  JKIL.sortings.array.doSelectionSort ( data.arrayB, {ascending: false, comparator: function(a, b) {

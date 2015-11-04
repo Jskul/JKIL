@@ -1,0 +1,12 @@
+http://ejohn.org/blog/simple-javascript-inheritance/
+
+
+
+function instanceOf(object, constructor) {
+  while (object != null) {
+    if (object == constructor.prototype)
+      return true;
+    object = Object.getPrototypeOf(object);
+  }
+  return false;
+}
