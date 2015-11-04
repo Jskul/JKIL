@@ -103,14 +103,35 @@
      * 
      * @private
      * 
-     * @description    A private property which keeps JKIL error codes and messages.<br />
+     * @description    A private property which keeps JKIL error names and messages.<br />
      * 
      * @type           hash
      * 
      * @since          TODO
      * @author         TODO
      */
-    _errors = "TODO",
+    _errorConstants = {
+    	JKILTypeError: {
+    		name: "JKILTypeError",
+    		messagePrefix: "Invalid type: ",
+    		defaultMessage: "Invalid type"
+    	},
+    	JKILParameterTypeError: {
+    		name: "JKILParameterTypeError",
+    		messagePrefix: "Invalid parameter type: ",
+    		defaultMessage: "Invalid parameter type"
+    	},
+    	JKILRangeError: {
+    		name: "JKILRangeError",
+    		messagePrefix: "Invalid range: ",
+    		defaultMessage: "Invalid range"
+    	},
+    	JKILParameterRangeError: {
+    		name: "JKILParameterRangeError",
+    		messagePrefix: "Invalid parameter range: ",
+    		defaultMessage: "Invalid parameter range"
+    	}
+    },
     
     /**
      * @fieldOf        JKIL
@@ -150,6 +171,31 @@
          */
         JKIL.configuration = {
         		
+        };
+    	
+        /**
+         * @memberof       JKIL
+         * @namespace
+         * 
+         * @description    A namespace for errors.<br />
+         */
+        JKIL.errors = {
+        	throwJKILTypeError: function ( ps_message ) {
+        		
+        	}
+        	
+        		// http://stackoverflow.com/questions/1382107/whats-a-good-way-to-extend-error-in-javascript
+/*        		function MyError(message) {
+        		    this.name = 'MyError';
+        		    this.message = message;
+        		    this.stack = (new Error()).stack;
+        		}
+        		MyError.prototype = new Error;*/
+        		
+        		
+        		/*
+MyError(message) { this.message = message; this.stack = Error().stack; } MyError.prototype = Object.create(Error.prototype); MyError.prototype.name = "MyError";
+        		 */
         };
         
         /**
@@ -222,7 +268,10 @@
              * 
              * @param          {hash}       [ph_options]    A hash of options:<br /><br />
              * 
-             * @param          {boolean}    [ph_options.checkConstructor=false]    If <code>true</code>, for objects the method checks whether <code>pm_value</code> is an instance of its <code>constructor</code> property (<i>i.e.</i> if <code>constructor</code> has not been altered) and returns the name of this constructor.
+             * @param          {boolean}    [ph_options.checkConstructor=false]    If <code>true</code>, for objects the method checks whether <code>pm_value</code> 
+             *                              is an instance of its <code>constructor</code> property (<i>i.e.</i> if <code>constructor</code> has not been altered)
+             *                              and returns the name of this constructor.<br />
+             *                              Notice: The method returns an empty string when an anonymous function is used as constructor. 
              * 
              * @returns        {string}     A string describing the [[Class]] property (for instance "Object", "Array", "String", "Boolean" and so on).<br />
              *                              Notice: <code>window</code> returns "Window" even for Google Chrome.
@@ -247,7 +296,6 @@
                 	// Ensure that pm_value is an instance of its constructor property (i.e. that its constructor has not been altered).
                 	if (pm_value instanceof pm_value.constructor) {
                 		_s_class = pm_value.constructor.toString().match(/^function\s(.*)\(.*/)[1];
-                		// TODO / TOFIX - For objects like JKIL.types.Ajax(), _s_class === ""
                 	}
                 }
 
@@ -930,7 +978,7 @@
              * @see            http://www.w3.org/TR/XMLHttpRequest/#the-status-attribute
              * @see            http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
         	 */
-        	Ajax: function () {
+        	Ajax: function Ajax () {
         		/**
 	             * @memberOf       JKIL.utilities.Ajax
 	             * @private
@@ -1523,4 +1571,12 @@ JKIL.comparators = {};
  * @description    A namespace for URI methods.<br />
  */
 JKIL.uri = {};
+
+/**
+ * @memberof    JKIL
+ * @namespace
+ * 
+ * @description    A namespace for objects related methods.<br />
+ */
+JKIL.objects = {};
 
